@@ -2,7 +2,8 @@
 // Service Worker — PWA offline support
 // ═══════════════════════════════════════════════════════
 
-const CACHE_NAME = 'mymusic-v1';
+const CACHE_VERSION = '__VERSION__';
+const CACHE_NAME = `mymusic-${CACHE_VERSION}`;
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -48,43 +49,49 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch — network first for API, cache first for static
+// Fetch — network-first for HTML/page, stale-while-revalidate for static, network-first for API
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // API requests — network first
+  // API requests — network first, cache fallback
   if (url.pathname.startsWith('/api/')) {
-    event.respondWith(
-      fetch(event.request)
-        .then(response => {
-          // Cache successful API responses
-          if (response.ok) {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
-          }
-          return response;
-        })
-        .catch(() => {
-          // Fallback to cache
-          return caches.match(event.request);
-        })
-    );
+    event.respondWith(networkFirst(event.request));
     return;
   }
 
-  // Static assets — cache first
-  event.respondWith(
-    caches.match(event.request).then(cached => {
-      const fetchPromise = fetch(event.request).then(response => {
-        // Cache new assets
-        if (response.ok) {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
-        }
-        return response;
-      }).catch(() => cached);
+  // HTML / navigation — network first (always get latest app)
+  if (event.request.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname === '/') {
+    event.respondWith(networkFirst(event.request));
+    return;
+  }
 
-      return cached || fetchPromise;
-    })
-  );
+  // All other static assets — stale-while-revalidate
+  event.respondWith(staleWhileRevalidate(event.request));
 });
+
+// ── Helpers ──
+
+async function networkFirst(request) {
+  try {
+    const response = await fetch(request);
+    if (response.ok) {
+      const cache = await caches.open(CACHE_NAME);
+      cache.put(request, response.clone());
+    }
+    return response;
+  } catch {
+    const cached = await caches.match(request);
+    return cached || new Response('Offline', { status: 503 });
+  }
+}
+
+async function staleWhileRevalidate(request) {
+  const cache = await caches.open(CACHE_NAME);
+  const cached = await cache.match(request);
+  const fetchPromise = fetch(request).then(response => {
+    if (response.ok) cache.put(request, response.clone());
+    return response;
+  }).catch(() => cached);
+
+  return cached || fetchPromise;
+}

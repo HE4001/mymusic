@@ -46,6 +46,14 @@ function build() {
     cpSync(PUBLIC, DIST, { recursive: true });
   }
 
+  // Inject build version into service worker
+  const pkg = JSON.parse(readFileSync(`${__dirname}../package.json`, 'utf-8'));
+  const buildVersion = `${pkg.version}-${Date.now()}`;
+  let swContent = readFileSync(`${DIST}/sw.js`, 'utf-8');
+  swContent = swContent.replace('__VERSION__', buildVersion);
+  writeFileSync(`${DIST}/sw.js`, swContent, 'utf-8');
+  console.log(`🧹 Service Worker cache version: ${buildVersion}`);
+
   // Icons: convert SVG → PNG
   console.log('🖼️  Icons...');
   try {
