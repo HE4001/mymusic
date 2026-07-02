@@ -4,10 +4,9 @@
 
 export function detectPlatform(ua) {
   if (/iPhone|iPad|iPod/i.test(ua)) return 'ios';
+  if (/Android/i.test(ua)) return 'android';
   if (/Windows|Macintosh|Linux/i.test(ua) && !/Mobi|Android/i.test(ua)) return 'desktop';
-  // Default: check for touch capability
-  if ('ontouchstart' in window && window.innerWidth < 1024) return 'ios';
-  return 'desktop';
+  return 'unknown';
 }
 
 export function formatTime(seconds) {
@@ -55,7 +54,7 @@ export function generateId(fileName) {
   return fileName
     .replace(/\.(mp3|flac|ogg|wav|m4a|aac)$/i, '')
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/[^a-z0-9一-鿿]+/g, '-')
     .replace(/^-+|-+$/g, '');
 }
 

@@ -37,6 +37,7 @@ function build() {
   copyFileSync(`${SRC}/_middleware.ts`, `${DIST}/_middleware.ts`);
   copyFileSync(`${SRC}/functions/b2.ts`, `${DIST}/functions/b2.ts`);
   copyFileSync(`${SRC}/functions/types.ts`, `${DIST}/functions/types.ts`);
+  copyFileSync(`${SRC}/functions/song-manifest.ts`, `${DIST}/functions/song-manifest.ts`);
   copyFileSync(`${SRC}/functions/api/stream/[id].ts`, `${DIST}/functions/api/stream/[id].ts`);
 
   // Public assets
@@ -55,8 +56,7 @@ function build() {
     }
   } catch {
     console.log('   ⚠️  Icon conversion skipped (install rsvg-convert or use online tool)');
-    if (existsSync(`${PUBLIC}/icon-192.svg`)) copyFileSync(`${PUBLIC}/icon-192.svg`, `${DIST}/icon-192.png`);
-    if (existsSync(`${PUBLIC}/icon-512.svg`)) copyFileSync(`${PUBLIC}/icon-512.svg`, `${DIST}/icon-512.png`);
+    console.log('   ℹ️  SVG icons will be used as fallback.');
   }
 
   console.log('\n✅ Build complete! Output: dist/\n');
@@ -71,8 +71,8 @@ async function syncManifest() {
 
   const B2_KEY = process.env.B2_ACCESS_KEY_ID;
   const B2_SECRET = process.env.B2_SECRET_ACCESS_KEY;
-  const B2_BUCKET = process.env.B2_BUCKET || 'my-music';
-  const B2_ENDPOINT = process.env.B2_ENDPOINT || 'https://s3.us-west-002.backblazeb2.com';
+  const B2_BUCKET = process.env.B2_BUCKET || 'lizhinb123';
+  const B2_ENDPOINT = process.env.B2_ENDPOINT || 'https://s3.us-east-005.backblazeb2.com';
 
   if (!B2_KEY || !B2_SECRET) {
     console.error('❌ Missing B2 credentials.');

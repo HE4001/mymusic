@@ -1,24 +1,21 @@
-import { B2Auth, signRequest, parseTimestamp, generatePresignedUrl } from '../b2.ts';
+import { B2Auth, signRequest, generatePresignedUrl } from '../b2.ts';
+import { findSong } from '../song-manifest.ts';
+import type { Env } from '../../types.ts';
 
-export interface Env {
-  B2_ENDPOINT: string;
-  B2_BUCKET: string;
-  B2_REGION: string;
-  B2_ACCESS_KEY_ID: string;
-  B2_SECRET_ACCESS_KEY: string;
-  PRESIGN_EXPIRY: string;
+interface KVEnv extends Env {
   URL_CACHE: KVNamespace;
+  PRESIGN_EXPIRY: string;
 }
 
 export async function onRequestGet(context: {
-  env: Env;
+  env: KVEnv;
   params: { id: string };
 }): Promise<Response> {
   const { env, params } = context;
   const songId = decodeURIComponent(params.id);
 
-  // Validate songId format (alphanumeric + dash)
-  if (!/^[a-z0-9-]+$/i.test(songId)) {
+  // Validate songId format
+  if (!/^[a-zA-Z0-9一-鿿-]+$/.test(songId)) {
     return jsonResponse({ error: 'Invalid song ID' }, 400);
   }
 
@@ -26,17 +23,20 @@ export async function onRequestGet(context: {
   const ttl = parseInt(env.PRESIGN_EXPIRY || '3600');
 
   // Check cache
-  const cached = await env.URL_CACHE.get(cacheKey);
-  if (cached) {
-    const data = JSON.parse(cached);
-    if (Date.now() < data.expiresAt) {
-      return jsonResponse({ url: data.url, expiresIn: data.expiresAt - Date.now() });
-    }
-    // Expired — fall through to regenerate
+  if (env.URL_CACHE) {
+    try {
+      const cached = await env.URL_CACHE.get(cacheKey);
+      if (cached) {
+        const data = JSON.parse(cached);
+        if (Date.now() < data.expiresAt) {
+          return jsonResponse({ url: data.url, expiresIn: Math.floor((data.expiresAt - Date.now()) / 1000) });
+        }
+      }
+    } catch { /* cache miss */ }
   }
 
-  // Find song in manifest
-  const song = SONG_MANIFEST.find(s => s.id === songId);
+  // Find song in server-side manifest
+  const song = findSong(songId);
   if (!song) {
     return jsonResponse({ error: 'Song not found' }, 404);
   }
@@ -50,9 +50,13 @@ export async function onRequestGet(context: {
     const expiresAt = Date.now() + ttl * 1000;
 
     // Cache the URL
-    await env.URL_CACHE.put(cacheKey, JSON.stringify({ url, expiresAt }), {
-      expirationTtl: ttl,
-    });
+    if (env.URL_CACHE) {
+      try {
+        await env.URL_CACHE.put(cacheKey, JSON.stringify({ url, expiresAt }), {
+          expirationTtl: ttl,
+        });
+      } catch { /* cache write failed */ }
+    }
 
     return jsonResponse({ url, expiresIn: ttl });
   } catch (err) {
@@ -61,7 +65,7 @@ export async function onRequestGet(context: {
   }
 }
 
-async function jsonResponse(data: unknown, status = 200): Promise<Response> {
+function jsonResponse(data: unknown, status = 200): Response {
   return new Response(JSON.stringify(data), {
     status,
     headers: {

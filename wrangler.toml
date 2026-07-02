@@ -3,12 +3,14 @@ compatibility_date = "2025-06-01"
 compatibility_flags = ["nodejs_compat"]
 
 [vars]
-B2_ENDPOINT = "https://s3.us-west-002.backblazeb2.com"
-B2_BUCKET = "my-music"
-B2_REGION = "us-west-002"
+B2_ENDPOINT = "https://s3.us-east-005.backblazeb2.com"
+B2_BUCKET = "lizhinb123"
+B2_REGION = "us-east-005"
 PRESIGN_EXPIRY = "3600"
 APP_NAME = "MyMusic"
 
 [[kv_namespaces]]
 binding = "URL_CACHE"
+# Run: wrangler kv namespace create URL_CACHE
+# Then replace the id below with the one returned by the command
 id = "REPLACE_WITH_YOUR_KV_ID"
