@@ -1,0 +1,621 @@
+/* ═══════════════════════════════════════════════════════
+   iOS Styles — iPhone / iPad
+   Only applies when device has no hover + touch capability
+   ═══════════════════════════════════════════════════════ */
+
+@media (hover: none) and (pointer: coarse) {
+
+  /* Show iOS layout, hide desktop */
+  .platform-ios {
+    display: flex !important;
+  }
+  .platform-desktop {
+    display: none !important;
+  }
+
+  /* Reset body for mobile */
+  body {
+    overscroll-behavior-y: none;
+  }
+
+  /* ── iOS List View ── */
+  .ios-view {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+  }
+
+  .ios-header {
+    padding-top: var(--safe-top);
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .ios-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-4) var(--space-2);
+  }
+
+  .ios-app-title {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  .ios-search-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4) var(--space-3);
+  }
+
+  .ios-search-bar.hidden {
+    display: none;
+  }
+
+  .ios-search-input {
+    flex: 1;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    padding: var(--space-2) var(--space-4);
+    color: var(--text-primary);
+    font-size: var(--text-base);
+    font-family: var(--font-sans);
+    outline: none;
+  }
+
+  .ios-search-input:focus {
+    border-color: var(--accent);
+  }
+
+  .btn-ios-search-cancel {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: var(--text-base);
+    font-family: var(--font-sans);
+    cursor: pointer;
+    padding: var(--space-2);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Filter Tabs */
+  .ios-filter-tabs {
+    display: flex;
+    gap: var(--space-1);
+    padding: 0 var(--space-4) var(--space-3);
+  }
+
+  .ios-tab {
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    border: none;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ios-tab.active {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+  }
+
+  .ios-tab:active {
+    transform: scale(0.95);
+  }
+
+  /* Song List */
+  .ios-list-container {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+
+  .ios-song-list {
+    padding-bottom: calc(var(--player-bar-height) + var(--safe-bottom) + var(--space-4));
+  }
+
+  .ios-list-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-16);
+    gap: var(--space-4);
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+  }
+
+  .ios-list-loading.hidden {
+    display: none;
+  }
+
+  .ios-list-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-16);
+    gap: var(--space-4);
+    color: var(--text-muted);
+  }
+
+  .ios-list-empty.hidden {
+    display: none;
+  }
+
+  /* iOS Song List Item */
+  .ios-song-list .playlist-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+    grid-template-columns: none;
+    transition: background var(--transition-fast);
+  }
+
+  .ios-song-list .playlist-item:active {
+    background: var(--bg-active);
+    transform: scale(0.98);
+  }
+
+  .ios-song-list .item-index {
+    display: none;
+  }
+
+  .ios-song-list .item-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ios-song-list .item-title {
+    font-size: var(--text-base);
+  }
+
+  .ios-song-list .item-artist {
+    font-size: var(--text-sm);
+  }
+
+  .ios-song-list .item-duration {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+  }
+
+  .ios-song-list .item-actions {
+    display: flex;
+    gap: var(--space-1);
+    opacity: 1;
+  }
+
+  .ios-song-list .item-action-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* ── Mini Player ── */
+  .ios-mini-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-player-bar);
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding-bottom: var(--safe-bottom);
+  }
+
+  .ios-mini-progress {
+    height: var(--mini-progress-height);
+    background: var(--bg-hover);
+    position: relative;
+  }
+
+  .ios-mini-progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+
+  .ios-mini-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-4);
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ios-mini-cover {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    background: var(--bg-tertiary);
+    flex-shrink: 0;
+  }
+
+  .ios-mini-info {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .ios-mini-title {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ios-mini-artist {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ios-mini-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .ios-mini-handle {
+    width: 36px;
+    height: 4px;
+    background: var(--text-muted);
+    border-radius: var(--radius-full);
+    margin: var(--space-1) auto var(--space-2);
+    opacity: 0.5;
+  }
+
+  /* ── Full Screen Player ── */
+  .ios-full-player {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-full-player);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .ios-full-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(60px) saturate(0.5) brightness(0.3);
+    transform: scale(1.2);
+    transition: background-image 0.5s ease;
+  }
+
+  .ios-full-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .ios-full-content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--safe-top) var(--space-6) var(--safe-bottom);
+    animation: ios-full-enter 0.35s ease;
+  }
+
+  @keyframes ios-full-enter {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .ios-full-handle-area {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-2) 0 var(--space-4);
+    cursor: grab;
+  }
+
+  .ios-full-handle {
+    width: 36px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-full);
+  }
+
+  .ios-full-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-6);
+  }
+
+  .ios-full-header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ios-full-header-label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-secondary);
+  }
+
+  .ios-full-header-source {
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  /* Cover Art */
+  .ios-full-cover-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    padding: var(--space-4) 0;
+  }
+
+  .ios-full-cover {
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 1;
+    border-radius: var(--radius-xl);
+    object-fit: cover;
+    box-shadow: var(--shadow-xl);
+    transition: transform var(--transition-slow);
+  }
+
+  /* Song Info */
+  .ios-full-info {
+    padding: var(--space-4) 0 var(--space-6);
+  }
+
+  .ios-full-info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+  }
+
+  .ios-full-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .ios-full-title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+  }
+
+  .ios-full-artist {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .btn-ios-fav {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-ios-fav.active svg {
+    fill: var(--accent);
+    stroke: var(--accent);
+  }
+
+  /* Progress */
+  .ios-full-progress-container {
+    margin-bottom: var(--space-6);
+  }
+
+  .ios-full-progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .ios-full-progress-fill {
+    height: 100%;
+    background: var(--text-primary);
+    border-radius: var(--radius-full);
+    width: 0%;
+    position: relative;
+  }
+
+  .ios-full-time-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-2);
+  }
+
+  .ios-time-current,
+  .ios-time-total {
+    font-size: var(--text-xs);
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Controls */
+  .ios-full-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    padding-bottom: var(--safe-bottom);
+  }
+
+  /* ── Action Sheet ── */
+  .ios-action-sheet {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal);
+  }
+
+  .ios-action-sheet.hidden {
+    display: none;
+  }
+
+  .ios-action-sheet-backdrop {
+    position: absolute;
+    inset: 0;
+    background: var(--bg-overlay);
+  }
+
+  .ios-action-sheet-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-4);
+    padding-bottom: calc(var(--space-4) + var(--safe-bottom));
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    animation: ios-action-enter 0.3s ease;
+  }
+
+  @keyframes ios-action-enter {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .ios-action-sheet-title {
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: var(--space-2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ios-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    width: 100%;
+    padding: var(--space-4);
+    border: none;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: var(--text-lg);
+    font-family: var(--font-sans);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-2);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background var(--transition-fast);
+  }
+
+  .ios-action-btn:active {
+    background: var(--bg-active);
+  }
+
+  .ios-action-cancel {
+    background: var(--bg-elevated);
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ── iOS-specific: Remove desktop-only styles ── */
+  .player-bar,
+  .sidebar,
+  .now-playing-panel,
+  .top-bar,
+  .search-box .search-shortcut,
+  .btn-bar-fav,
+  .btn-queue {
+    display: none !important;
+  }
+
+  /* Touch targets */
+  .btn-icon,
+  .btn-ios-control {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .ios-tab {
+    min-height: 36px;
+  }
+
+  .ios-action-btn {
+    min-height: 50px;
+  }
+
+  /* No selection on interactive elements */
+  .ios-song-list,
+  .ios-mini-content,
+  .btn-ios-control,
+  .ios-action-btn {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Prevent pull-to-refresh */
+  .ios-view {
+    overscroll-behavior-y: contain;
+  }
+
+  /* Prevent zoom on double tap */
+  .ios-mini-content,
+  .ios-full-handle-area {
+    touch-action: manipulation;
+  }
+}
+
+/* iOS-specific: also hide desktop elements on iPad */
+@supports (-webkit-touch-callout: none) {
+  .player-bar,
+  .sidebar,
+  .now-playing-panel,
+  .top-bar {
+    display: none !important;
+  }
+}

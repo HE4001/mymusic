@@ -1,0 +1,14 @@
+name = "mymusic"
+compatibility_date = "2025-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+B2_ENDPOINT = "https://s3.us-west-002.backblazeb2.com"
+B2_BUCKET = "my-music"
+B2_REGION = "us-west-002"
+PRESIGN_EXPIRY = "3600"
+APP_NAME = "MyMusic"
+
+[[kv_namespaces]]
+binding = "URL_CACHE"
+id = "REPLACE_WITH_YOUR_KV_ID"

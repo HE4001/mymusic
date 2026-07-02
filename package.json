@@ -1,0 +1,17 @@
+{
+  "name": "mymusic",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "sync-manifest": "npx tsx scripts/sync-manifest.ts",
+    "dev": "wrangler pages dev dist",
+    "deploy": "wrangler pages deploy dist",
+    "types:check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250508.0",
+    "wrangler": "^4.43.0"
+  }
+}
