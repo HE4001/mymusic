@@ -142,5 +142,18 @@ export async function listB2Files(env: Env): Promise<{ fileName: string; size: n
   }
 
   const data = await res.json() as { files: Array<{ fileName: string; size: number; contentType: string }> };
-  return data.files || [];
+
+  const audioExts = ['.mp3', '.flac', '.ogg', '.wav', '.m4a', '.aac'];
+  const videoExts = ['.mp4', '.webm', '.avi', '.mov', '.mkv', '.flv', '.wmv', '.m4v', '.mpg', '.mpeg', '.3gp'];
+  const docExts = ['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx', '.txt', '.md', '.epub'];
+  const excludedExts = [...videoExts, ...docExts];
+
+  const filteredFiles = (data.files || []).filter((f: { fileName: string }) => {
+    const lower = f.fileName.toLowerCase();
+    const isAudio = audioExts.some(ext => lower.endsWith(ext));
+    const isExcluded = excludedExts.some(ext => lower.endsWith(ext));
+    return isAudio && !isExcluded;
+  });
+
+  return filteredFiles;
 }

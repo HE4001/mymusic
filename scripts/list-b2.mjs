@@ -126,10 +126,19 @@ async function main() {
   const files = await b2ListFiles(auth, bucketId);
   console.log(`Total files returned: ${files.length}`);
 
-  const audioExts = ['.mp3', '.flac', '.ogg', '.wav', '.m4a', '.aac'];
-  const audioFiles = files
-    .filter(f => !f.fileName.endsWith('.openlist'))
-    .filter(f => audioExts.some(ext => f.fileName.toLowerCase().endsWith(ext)));
+    const audioExts = ['.mp3', '.flac', '.ogg', '.wav', '.m4a', '.aac'];
+    const videoExts = ['.mp4', '.webm', '.avi', '.mov', '.mkv', '.flv', '.wmv', '.m4v', '.mpg', '.mpeg', '.3gp'];
+    const docExts = ['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx', '.txt', '.md', '.epub'];
+    const excludedExts = [...videoExts, ...docExts];
+
+    const audioFiles = files
+      .filter(f => !f.fileName.endsWith('.openlist'))
+      .filter(f => {
+        const lower = f.fileName.toLowerCase();
+        const isAudio = audioExts.some(ext => lower.endsWith(ext));
+        const isExcluded = excludedExts.some(ext => lower.endsWith(ext));
+        return isAudio && !isExcluded;
+      });
 
   console.log(`Audio files: ${audioFiles.length}`);
 
