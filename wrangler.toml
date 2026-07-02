@@ -17,3 +17,7 @@ id = "REPLACE_WITH_YOUR_KV_ID"
 
 [assets]
 directory = "./dist"
+
+[build]
+command = "npm run build"
+output_directory = "./dist"

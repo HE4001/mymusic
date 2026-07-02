@@ -71,23 +71,48 @@ function parseSongPath(fileName) {
     // Structure: Artist/Album/01 Title
     const artist = parts[0].trim();
     const album = parts[1].trim();
-    const title = parts.slice(2).join(' / ').trim();
+    const title = cleanTrackNumber(parts.slice(2).join(' / ').trim());
     return { artist, album, title };
   } else if (parts.length === 2) {
     // Structure: Artist/01 Title
     const artist = parts[0].trim();
-    const title = parts[1].trim();
+    const title = cleanTrackNumber(parts[1].trim());
     return { artist, album: '', title };
   } else {
     // Single file: try "Artist - Title" format
     const dashParts = name.split(/\s*-\s*/);
     if (dashParts.length >= 2) {
       const artist = dashParts[0].trim();
-      const title = dashParts.slice(1).join(' - ').trim();
+      const title = cleanTrackNumber(dashParts.slice(1).join(' - ').trim());
       return { artist, album: '', title };
     }
-    return { artist: 'Unknown Artist', album: '', title: name };
+    return { artist: 'Unknown Artist', album: '', title: cleanTrackNumber(name) };
   }
+}
+
+function cleanTrackNumber(title) {
+  return title
+    .replace(/^\d+[\s._-]+/, '')
+    .replace(/^\d{1,2}(?=[\u4e00-\u9fff])/, '')
+    .replace(/^[（(]\d+[)）]\s*/, '')
+    .trim();
+}
+
+function cleanTitle(title, artist) {
+  let cleaned = title;
+  if (artist && artist !== 'Unknown Artist') {
+    const artistPrefix = `${artist} - `;
+    if (cleaned.startsWith(artistPrefix)) {
+      cleaned = cleaned.slice(artistPrefix.length);
+    }
+    const artistSuffix = ` - ${artist}`;
+    if (cleaned.endsWith(artistSuffix)) {
+      cleaned = cleaned.slice(0, -artistSuffix.length);
+    }
+  }
+  cleaned = cleanTrackNumber(cleaned);
+  cleaned = cleaned.replace(/\s+/g, ' ').trim();
+  return cleaned;
 }
 
 async function main() {
@@ -156,9 +181,11 @@ async function main() {
       .replace(/[^a-z0-9一-鿿]+/g, '-')
       .replace(/^-+|-+$/g, '');
 
+    const title = cleanTitle(parsed.title, parsed.artist);
+
     return {
       id,
-      title: parsed.title,
+      title,
       artist: parsed.artist,
       album: parsed.album,
       duration: 0,

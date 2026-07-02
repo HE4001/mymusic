@@ -32,18 +32,25 @@ export function parseFileName(fileName) {
   if (dashSplit.length >= 2) {
     return {
       artist: dashShift(dashSplit, 0),
-      title: dashShift(dashSplit, 1),
+      title: cleanTrackNumber(dashShift(dashSplit, 1)),
     };
   }
 
   // Try "Title by Artist" format
   const byMatch = name.match(/^(.+?)\s+by\s+(.+)$/i);
   if (byMatch) {
-    return { title: byMatch[1].trim(), artist: byMatch[2].trim() };
+    return { title: cleanTrackNumber(byMatch[1].trim()), artist: byMatch[2].trim() };
   }
 
   // Fallback: use full name as title
-  return { title: name, artist: 'Unknown Artist' };
+  return { title: cleanTrackNumber(name), artist: 'Unknown Artist' };
+}
+
+function cleanTrackNumber(title) {
+  return title
+    .replace(/^\d+[\s._-]+/, '')
+    .replace(/^[（(]\d+[)）]\s*/, '')
+    .trim();
 }
 
 function dashShift(parts, startIndex) {
