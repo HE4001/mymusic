@@ -1,4 +1,11 @@
-export const onRequest = async (context: { fetch: (request: Request) => Promise<Response>; request: Request; env: Env; waitUntil: (promise: Promise<unknown>) => void; next: (input?: Request | string, init?: RequestInit) => Promise<Response>; passThroughOnException: () => void }) => {
+export const onRequest = async (context: {
+  fetch: (request: Request) => Promise<Response>;
+  request: Request;
+  env: { ASSETS: { fetch: (req: Request) => Promise<Response> } };
+  waitUntil: (promise: Promise<unknown>) => void;
+  next: (input?: Request | string, init?: RequestInit) => Promise<Response>;
+  passThroughOnException: () => void;
+}) => {
   const { request, env, next } = context;
   const url = new URL(request.url);
 
