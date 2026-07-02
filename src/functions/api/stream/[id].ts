@@ -1,5 +1,5 @@
-import { B2Auth, signRequest, generatePresignedUrl } from '../b2.ts';
-import { findSong } from '../song-manifest.ts';
+import { B2Auth, signRequest, generatePresignedUrl } from '../../b2.ts';
+import { findSong } from '../../song-manifest.ts';
 import type { Env } from '../../types.ts';
 
 interface KVEnv extends Env {
