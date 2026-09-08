@@ -15,3 +15,5 @@
 当前配置共五项：B2_ENDPOINT、B2_REGION是普通变量；B2_BUCKET、B2_KEY_ID、B2_APPLICATION_KEY是Pages Secrets。浏览器能够看到签名URL里的桶名、对象路径和key ID，应用私钥不发送客户端。持有网址的人可以获取曲库和播放票据。
 
 真实B2读取、Range、票据过期和手机后台播放仍需配置真实环境验收。早期任务书保留为历史分工记录，其中Access要求已被本轮用户指令替代。当前使用说明以README和DEPLOY为准。
+
+曲库同步续作：新增构建前B2 ListObjectsV2同步，复用aws4fetch，XML解析器仅开发依赖。32项测试通过（新增4项覆盖分页/编码、稳定ID/元数据、格式错误、失败与重复分页），普通构建保持离线。未读取真实密钥，未实际列出用户桶；真实同步需Pages提供Secrets、listFiles权限及music/目录。

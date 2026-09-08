@@ -14,7 +14,9 @@
     "test:ablation": "node scripts/ablation.mjs",
     "build": "npm run validate:library && vite build && wrangler pages functions build functions --outdir .build/functions",
     "preview:pages": "wrangler pages dev dist",
-    "deploy": "npm run check && npm run build && wrangler pages deploy dist --project-name cloud-music"
+    "deploy": "npm run check && npm run build && wrangler pages deploy dist --project-name cloud-music",
+    "sync:library": "tsx scripts/sync-library.ts",
+    "build:b2": "npm run sync:library && npm run build"
   },
   "dependencies": {
     "aws4fetch": "1.0.20",
@@ -27,6 +29,7 @@
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.7",
     "@vitejs/plugin-react": "6.1.1",
+    "fast-xml-parser": "5.11.1",
     "happy-dom": "20.14.0",
     "tsx": "4.23.13",
     "typescript": "7.0.2",

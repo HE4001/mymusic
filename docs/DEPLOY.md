@@ -93,3 +93,19 @@ npx wrangler pages secret put B2_APPLICATION_KEY --project-name cloud-music --en
 日常流程是上传音频、更新 `server/library.json`、检查和构建、发布 Pages。删除或改名对象前先同步清单，尽量用新 key 替换正在使用的文件，减少缓存和 Range 内容不一致。
 
 定期查看 B2 流量与 Functions 错误；日志不得记录完整签名 URL、Cookie 或 B2 application key。密钥轮换在 B2 和 Pages Secret 两端完成。首版不提供上传管理、多用户收藏同步、歌词、转码、离线下载、音频代理或数据库。
+
+## 从 B2 自动生成曲库
+
+Pages 构建命令改为 `npm run build:b2`，每次部署先读取 B2 的 `music/` 文件列表，再生成服务端清单并构建。普通 `npm run build` 仍只使用现有清单，不访问 B2。
+
+沿用五项 B2 配置，无需增加新的 Key 名称。同步所用 Application Key 必须对目标桶具备 `listFiles` 和 `readFiles`，不需要上传、删除或管理桶权限。Pages 的环境变量和 Secrets 在构建时提供给同步脚本；生产和预览分别配置。不要把凭据写进命令或源码。
+
+支持 mp3、m4a、aac、flac、wav、ogg、opus；只读取文件列表，不下载音频或提取标签。新歌曲用文件名作标题，时长由浏览器播放时读取；已有同路径曲目的ID及人工编辑元数据保留。文件名排序、分页读取，ID由对象路径稳定生成。浏览器是否能解码仍以实际格式为准。
+
+目录里没有支持的音频、请求失败或分页不完整会停止构建，不覆盖旧清单，也不会发布半份曲库。成功同步会移除已经不在桶列表中的歌曲。服务端清单只在该次构建中生成，不自动提交回Git；人工标题若要跨部署保留，应写入仓库清单。
+
+本地也可在通过环境变量提供配置后执行 `npm run sync:library`。脚本不会自动读取 `.dev.vars`；Node支持时可用 `node --env-file=.dev.vars --import tsx scripts/sync-library.ts` 明确加载本地配置。密钥不要出现在命令参数中。
+
+如果实际音频不在 `music/`，先确认目录再修改同步和路径校验，不必搬动或复制整个桶。新上传歌曲需要重新触发部署才出现在网页中。
+
+依据：[B2 List Objects V2](https://www.backblaze.com/apidocs/s3-list-objects-v2)、[Pages环境变量与Secret](https://developers.cloudflare.com/pages/functions/bindings/)。

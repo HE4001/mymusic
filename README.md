@@ -41,13 +41,29 @@ npm run preview:pages
 
 ## 配置生产曲库
 
-1. 在私有 B2 桶中上传自有音频，记录每个对象的完整 key。首版不从 B2 自动扫描，也不在网页中上传文件。
+1. 在私有 B2 桶中上传自有音频，记录每个对象的完整 key。可以手动编辑清单，或使用下述构建同步；网页不提供上传。
 2. 编辑 [`server/library.json`](server/library.json)，为每首要开放播放的音频加入稳定且唯一的 `id`、`title`、`artist`、`album`、`duration`、`mimeType` 和 `objectKey`。
 3. `objectKey` 应使用 `music/` 开头的对象路径，例如 `music/artist-a/album-a/01-night-flight.mp3`。保留路径中的 `/`；不要写反斜杠、空路径段、`.`、`..` 或控制字符，也不要把 B2 URL、bucket 或凭据写进清单。
 4. `duration` 可以是 `null`；有值时使用正的有限秒数，实际播放时长仍以浏览器媒体元数据为准。没有标签时填写合适的文件名和“未知歌手”等展示值。
 5. 更新清单后运行 `npm run check`、`npm run build`，再按 [`docs/DEPLOY.md`](docs/DEPLOY.md) 发布。
 
 清单是服务端输入，前端接口只返回安全展示字段，不会把 `objectKey` 作为普通曲库字段暴露给浏览器。删除或改名 B2 对象时，要同步更新清单；稳定的 `id` 只有在歌曲本身被替换或删除时才改变或移除。
+
+## 从 B2 自动生成曲库
+
+Pages 构建命令改为 `npm run build:b2`，每次部署先读取 B2 的 `music/` 文件列表，再生成服务端清单并构建。普通 `npm run build` 仍只使用现有清单，不访问 B2。
+
+沿用五项 B2 配置，无需增加新的 Key 名称。同步所用 Application Key 必须对目标桶具备 `listFiles` 和 `readFiles`，不需要上传、删除或管理桶权限。Pages 的环境变量和 Secrets 在构建时提供给同步脚本；生产和预览分别配置。不要把凭据写进命令或源码。
+
+支持 mp3、m4a、aac、flac、wav、ogg、opus；只读取文件列表，不下载音频或提取标签。新歌曲用文件名作标题，时长由浏览器播放时读取；已有同路径曲目的ID及人工编辑元数据保留。文件名排序、分页读取，ID由对象路径稳定生成。浏览器是否能解码仍以实际格式为准。
+
+目录里没有支持的音频、请求失败或分页不完整会停止构建，不覆盖旧清单，也不会发布半份曲库。成功同步会移除已经不在桶列表中的歌曲。服务端清单只在该次构建中生成，不自动提交回Git；人工标题若要跨部署保留，应写入仓库清单。
+
+本地也可在通过环境变量提供配置后执行 `npm run sync:library`。脚本不会自动读取 `.dev.vars`；Node支持时可用 `node --env-file=.dev.vars --import tsx scripts/sync-library.ts` 明确加载本地配置。密钥不要出现在命令参数中。
+
+如果实际音频不在 `music/`，先确认目录再修改同步和路径校验，不必搬动或复制整个桶。新上传歌曲需要重新触发部署才出现在网页中。
+
+依据：[B2 List Objects V2](https://www.backblaze.com/apidocs/s3-list-objects-v2)、[Pages环境变量与Secret](https://developers.cloudflare.com/pages/functions/bindings/)。
 
 ## 生产配置
 
