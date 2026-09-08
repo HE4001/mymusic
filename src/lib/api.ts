@@ -88,7 +88,7 @@ async function requestJson(path: string, signal?: AbortSignal): Promise<unknown>
 
   const contentType = response.headers.get('content-type')?.toLowerCase() ?? '';
   if (response.redirected || contentType.includes('text/html')) {
-    throw new ApiError('AUTH_REQUIRED', '登录已过期，请重新进入', response.status);
+    throw new ApiError('INVALID_RESPONSE', '服务返回了网页，请检查部署或访问限制', response.status);
   }
 
   if (!contentType.includes('application/json') && !contentType.includes('+json')) {

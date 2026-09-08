@@ -1,8 +1,10 @@
 # 云端音乐
 
-云端音乐是一个面向个人或少量亲友使用的私有音乐播放器：前端使用 Vite、React 和 TypeScript，页面部署到 Cloudflare Pages，Pages Functions 提供曲库和短期播放地址，浏览器通过原生 `audio` 直接从私有 Backblaze B2 播放音频。Cloudflare Access 负责入口访问控制，B2 密钥只在服务端配置。
+云端音乐是一个使用私有 B2 存储的浏览器音乐播放器：前端使用 Vite、React 和 TypeScript，页面部署到 Cloudflare Pages，Pages Functions 提供曲库和短期播放地址，浏览器通过原生 `audio` 直接从私有 Backblaze B2 播放音频。
 
-本仓库包含可部署的代码、配置示例和维护说明。本轮没有配置真实 B2、Cloudflare Access 或 Pages，也没有执行云端部署；默认曲库可以为空。
+播放器无登录和用户认证。任何访客都可以读取曲库并请求短期 B2 签名；B2 桶保持私有，B2 密钥只在服务端配置，接口只为曲库清单中的对象签名。
+
+本仓库包含可部署的代码、配置示例和维护说明。本轮没有配置真实 B2 或 Pages，也没有执行云端部署；默认曲库可以为空。
 
 ## 本地开发
 
@@ -23,7 +25,7 @@ npm run dev
 http://localhost:5173/?demo=1
 ```
 
-演示模式只在开发环境且 URL 明确带有 `demo=1` 时启用，使用本地生成的测试音频 fixture；它明确是“演示曲库”，不需要真实 B2，也不会在生产鉴权或曲库请求失败后自动启用。演示模式不能用于判断生产 B2、Access、Range 或音频编码是否正常。
+演示模式只在开发环境且 URL 明确带有 `demo=1` 时启用，使用本地生成的测试音频 fixture；它不需要真实 B2，也不会在生产 API 失败后自动启用。演示模式不能用于判断生产 B2、Range 或音频编码是否正常。
 
 常用检查命令如下：
 
@@ -47,11 +49,23 @@ npm run preview:pages
 
 清单是服务端输入，前端接口只返回安全展示字段，不会把 `objectKey` 作为普通曲库字段暴露给浏览器。删除或改名 B2 对象时，要同步更新清单；稳定的 `id` 只有在歌曲本身被替换或删除时才改变或移除。
 
-## 生产配置要点
+## 生产配置
 
-本轮只交付可部署代码和配置示例，不需要云账号，也没有执行真实部署。生产需要一个私有 B2 桶、限制为目标桶/目录只读的 application key 和 Cloudflare Access 应用。`B2_ENDPOINT`、`B2_REGION`、`ACCESS_TEAM_DOMAIN`、`ACCESS_AUD` 是普通变量，写在 [`wrangler.jsonc`](wrangler.jsonc) 的生产 `vars` 和独立的 `env.preview.vars` 占位值中；`B2_BUCKET`、`B2_KEY_ID`、`B2_APPLICATION_KEY` 全部通过 Cloudflare Pages Secrets 管理，不写入 `vars`。由于文件包含 `pages_build_output_dir`，它是 Pages 项目配置的 source of truth，同字段不能再从 Dashboard 编辑。任何凭据都不能使用 `VITE_` 前缀、提交到仓库、放进静态文件，或粘贴到聊天中。`.dev.vars.example` 只提供本地占位示例；复制出的 `.dev.vars` 仅供本地使用且不提交。完整流程见 [`docs/DEPLOY.md`](docs/DEPLOY.md)。
+运行时固定使用五项配置：
 
-生产和 Preview 使用独立的 Pages 变量与 secrets。没有真实配置时，生产路径应显示配置或访问错误；不能把演示曲库当作生产回退。
+| 名称 | 类型 | 位置 |
+| --- | --- | --- |
+| `B2_ENDPOINT` | 普通变量 | `wrangler.jsonc` 的 `vars` / `env.preview.vars` |
+| `B2_REGION` | 普通变量 | `wrangler.jsonc` 的 `vars` / `env.preview.vars` |
+| `B2_BUCKET` | Secret | Cloudflare Pages Secret |
+| `B2_KEY_ID` | Secret | Cloudflare Pages Secret |
+| `B2_APPLICATION_KEY` | Secret | Cloudflare Pages Secret |
+
+前两项是与私有桶匹配的 S3 endpoint 和 region；后三项是私有桶的只读 B2 application key 信息。任何凭据都不能使用 `VITE_` 前缀、提交到仓库、放进静态文件或粘贴到聊天中。`.dev.vars.example` 只提供本地占位示例；复制出的 `.dev.vars` 仅供本地使用且不提交。完整流程见 [`docs/DEPLOY.md`](docs/DEPLOY.md)。
+
+签名 URL 在有效期内可被持有者使用，因此应使用短期 TTL，并留意流量和费用。浏览器直连 B2，不代表音频经过 Cloudflare CDN 或享有某种免费出站额度。
+
+如果曾在 Cloudflare 平台为播放器域名配置 Cloudflare Access 策略，代码不能移除平台策略；需要在 Cloudflare 平台取消对播放器域名的保护，避免无登录播放器被平台拦截。只处理播放器域名，不修改其他应用的策略。
 
 ## 文档
 

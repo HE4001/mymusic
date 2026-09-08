@@ -1,18 +1,7 @@
-import {
-  SignJWT,
-  exportJWK,
-  generateKeyPair,
-  type JWK,
-} from 'jose';
-import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
-import { onRequest as accessMiddleware } from '../functions/api/_middleware';
-import { AccessUnauthorizedError, verifyAccess } from '../server/access';
+import { describe, expect, it, vi } from 'vitest';
+import { onRequest as middleware } from '../functions/api/_middleware';
 import { signTrack, type B2Env } from '../server/b2';
-import {
-  findTrack,
-  toPublicLibrary,
-  validateLibrary,
-} from '../server/library';
+import { findTrack, toPublicLibrary, validateLibrary } from '../server/library';
 
 const validManifest = {
   schemaVersion: 1,
@@ -36,69 +25,6 @@ const validB2Env: B2Env = {
   B2_APPLICATION_KEY: 'test-application-key',
   B2_URL_TTL_SECONDS: '60',
 };
-
-let accessPrivateKey: CryptoKey;
-let accessPublicJwk: JWK;
-
-beforeAll(async () => {
-  const keyPair = await generateKeyPair('RS256');
-  accessPrivateKey = keyPair.privateKey;
-  accessPublicJwk = {
-    ...(await exportJWK(keyPair.publicKey)),
-    alg: 'RS256',
-    kid: 'test-access-key',
-    use: 'sig',
-  };
-
-  vi.stubGlobal(
-    'fetch',
-    vi.fn(async () =>
-      new Response(JSON.stringify({ keys: [accessPublicJwk] }), {
-        headers: { 'Content-Type': 'application/json' },
-      })),
-  );
-});
-
-afterAll(() => {
-  vi.unstubAllGlobals();
-});
-
-async function accessToken(options: {
-  issuer: string;
-  audience: string;
-  expires?: boolean;
-}): Promise<string> {
-  let token = new SignJWT({ sub: 'test-user' })
-    .setProtectedHeader({ alg: 'RS256', kid: 'test-access-key' })
-    .setIssuer(options.issuer)
-    .setAudience(options.audience)
-    .setIssuedAt();
-
-  if (options.expires !== false) {
-    token = token.setExpirationTime('5m');
-  }
-  return token.sign(accessPrivateKey);
-}
-
-function middlewareContext(
-  request: Request,
-  env: Record<string, string> = {
-    ACCESS_TEAM_DOMAIN: 'https://example.cloudflareaccess.com',
-    ACCESS_AUD: 'test-audience',
-  },
-  next = vi.fn(async () => new Response('{}')),
-) {
-  return {
-    request,
-    env,
-    params: {},
-    data: {},
-    functionPath: '/api/_middleware',
-    waitUntil: vi.fn(),
-    passThroughOnException: vi.fn(),
-    next,
-  };
-}
 
 describe('library manifest', () => {
   it('normalizes optional metadata and strips object keys from the public library', () => {
@@ -187,127 +113,33 @@ describe('B2 signing', () => {
 });
 
 describe('API middleware', () => {
-  it('rejects a missing Access JWT without calling the route', async () => {
-    const next = vi.fn(async () => new Response('{}'));
-    const context = middlewareContext(
-      new Request('https://music.example/api/library'),
-      undefined,
-      next,
-    );
+  const context = (path: string, next = vi.fn(async () => new Response('{}'))) => ({
+    request: new Request(`https://music.example${path}`), env: {}, next,
+  });
 
-    const response = await accessMiddleware(context as never);
-    expect(response.status).toBe(401);
-    expect(await response.json()).toEqual({
-      error: { code: 'AUTH_REQUIRED', message: '登录已过期，请重新进入' },
-    });
-    expect(next).not.toHaveBeenCalled();
+  it('allows requests without authentication and prevents response caching', async () => {
+    const ctx = context('/api/library');
+    const response = await middleware(ctx as never);
+    expect(response.status).toBe(200);
+    expect(ctx.next).toHaveBeenCalledOnce();
     expect(response.headers.get('Cache-Control')).toBe('private, no-store');
   });
 
-  it('fails closed when Access configuration is absent', async () => {
-    const next = vi.fn(async () => new Response('{}'));
-    const context = middlewareContext(
-      new Request('https://music.example/api/library', {
-        headers: { 'Cf-Access-Jwt-Assertion': 'header.payload.signature' },
-      }),
-      {},
-      next,
-    );
-
-    const response = await accessMiddleware(context as never);
-    expect(response.status).toBe(500);
-    expect(await response.json()).toEqual({
-      error: { code: 'ACCESS_CONFIG_ERROR', message: '服务访问配置错误' },
-    });
-    expect(next).not.toHaveBeenCalled();
-  });
-
-  it('returns JSON for unknown API routes without invoking a static fallback', async () => {
-    const next = vi.fn(async () => new Response('{"secret":true}'));
-    const context = middlewareContext(
-      new Request('https://music.example/api/library.json'),
-      undefined,
-      next,
-    );
-
-    const response = await accessMiddleware(context as never);
+  it('rejects unknown API paths', async () => {
+    const ctx = context('/api/library.json');
+    const response = await middleware(ctx as never);
     expect(response.status).toBe(404);
-    expect(await response.json()).toEqual({
-      error: { code: 'API_NOT_FOUND', message: '接口不存在' },
-    });
-    expect(next).not.toHaveBeenCalled();
+    expect(ctx.next).not.toHaveBeenCalled();
   });
 
   it('does not expose details from an unexpected signing failure', async () => {
-    const env = {
-      ACCESS_TEAM_DOMAIN: 'https://example.cloudflareaccess.com',
-      ACCESS_AUD: 'test-audience',
-    };
-    const assertion = await accessToken({
-      issuer: env.ACCESS_TEAM_DOMAIN,
-      audience: env.ACCESS_AUD,
-    });
-    const next = vi.fn(async () => {
+    const ctx = context('/api/play-url?id=trk_test', vi.fn(async () => {
       throw new Error('application-key-marker X-Amz-Signature=signature-marker');
-    });
-    const context = middlewareContext(
-      new Request('https://music.example/api/play-url?id=trk_test', {
-        headers: { 'Cf-Access-Jwt-Assertion': assertion },
-      }),
-      env,
-      next,
-    );
-
-    const response = await accessMiddleware(context as never);
+    }));
+    const response = await middleware(ctx as never);
     expect(response.status).toBe(500);
-    const responseText = await response.text();
-    expect(JSON.parse(responseText)).toEqual({
+    expect(await response.json()).toEqual({
       error: { code: 'INTERNAL_ERROR', message: '服务暂时不可用' },
     });
-    expect(responseText).not.toMatch(/application-key-marker|signature-marker|X-Amz-/);
-  });
-});
-
-describe('Cloudflare Access JWT verification', () => {
-  const env = {
-    ACCESS_TEAM_DOMAIN: 'https://jwt-test.cloudflareaccess.com',
-    ACCESS_AUD: 'expected-audience',
-  };
-
-  it('accepts a correctly signed, unexpired RS256 assertion', async () => {
-    const assertion = await accessToken({
-      issuer: env.ACCESS_TEAM_DOMAIN,
-      audience: env.ACCESS_AUD,
-    });
-    const request = new Request('https://music.example/api/library', {
-      headers: { 'Cf-Access-Jwt-Assertion': assertion },
-    });
-
-    await expect(verifyAccess(request, env)).resolves.toBeUndefined();
-  });
-
-  it('rejects a correctly signed assertion without exp', async () => {
-    const assertion = await accessToken({
-      issuer: env.ACCESS_TEAM_DOMAIN,
-      audience: env.ACCESS_AUD,
-      expires: false,
-    });
-    const request = new Request('https://music.example/api/library', {
-      headers: { 'Cf-Access-Jwt-Assertion': assertion },
-    });
-
-    await expect(verifyAccess(request, env)).rejects.toBeInstanceOf(AccessUnauthorizedError);
-  });
-
-  it('rejects a correctly signed assertion with the wrong audience', async () => {
-    const assertion = await accessToken({
-      issuer: env.ACCESS_TEAM_DOMAIN,
-      audience: 'wrong-audience',
-    });
-    const request = new Request('https://music.example/api/library', {
-      headers: { 'Cf-Access-Jwt-Assertion': assertion },
-    });
-
-    await expect(verifyAccess(request, env)).rejects.toBeInstanceOf(AccessUnauthorizedError);
   });
 });

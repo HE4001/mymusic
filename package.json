@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "aws4fetch": "1.0.20",
-    "jose": "6.2.12",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },

@@ -14,12 +14,11 @@ const ablationRoot = resolve(projectRoot, '.cache', 'ablation');
 const runRoot = resolve(ablationRoot, `run-${Date.now()}-${randomUUID()}`);
 const resultsPath = resolve(ablationRoot, 'results.json');
 const vitestEntry = resolve(projectRoot, 'node_modules', 'vitest', 'vitest.mjs');
-const accessSourcePath = resolve(projectRoot, 'server', 'access.ts');
+const sourcePath = resolve(projectRoot, 'src/hooks/usePlayer.ts');
 
 // Keep this list explicit. Copy only the files needed by the selected tests;
 // node_modules stays at the real project root and is never copied.
 const copiedFiles = [
-  'server/access.ts',
   'server/b2.ts',
   'server/http.ts',
   'server/library.ts',
@@ -52,30 +51,8 @@ const variants = [
   },
   {
     name: 'baseline',
-    description: '原始服务端访问校验',
+    description: '原始播放与服务端逻辑',
     expectedFailedTests: [],
-  },
-  {
-    name: 'remove-exp-required-claim',
-    description: "移除 jwtVerify requiredClaims 中的 exp",
-    mutation: {
-      needle: "requiredClaims: ['exp', 'iss', 'aud']",
-      replacement: "requiredClaims: ['iss', 'aud']",
-    },
-    expectedFailedTests: [
-      'Cloudflare Access JWT verification rejects a correctly signed assertion without exp',
-    ],
-  },
-  {
-    name: 'remove-audience-verification',
-    description: '移除 jwtVerify 的 audience 配置',
-    mutation: {
-      needle: '      audience,\n',
-      replacement: '',
-    },
-    expectedFailedTests: [
-      'Cloudflare Access JWT verification rejects a correctly signed assertion with the wrong audience',
-    ],
   },
 ];
 
@@ -304,7 +281,7 @@ async function runVariant(source, variant) {
     if (variant.sourceFile) source = (await readFile(resolve(projectRoot, variant.sourceFile), 'utf8')).replace(/\r\n?/g, '\n');
     const mutated = applyMutation(source, variant);
     matchCount = mutated.matchCount;
-    const targetPath = resolve(variantDirectory, variant.sourceFile ?? 'server/access.ts');
+    const targetPath = resolve(variantDirectory, variant.sourceFile ?? 'src/hooks/usePlayer.ts');
     assertInside(runRoot, targetPath);
     await writeFile(targetPath, mutated.source, 'utf8');
   }
@@ -355,7 +332,7 @@ async function main() {
   assertInside(ablationRoot, runRoot);
   assertInside(ablationRoot, resultsPath);
 
-  const source = (await readFile(accessSourcePath, 'utf8')).replace(/\r\n?/g, '\n');
+  const source = (await readFile(sourcePath, 'utf8')).replace(/\r\n?/g, '\n');
   const variantResults = [];
 
   for (const variant of [...variants].sort((a, b) => Number(b.name === 'baseline') - Number(a.name === 'baseline'))) {

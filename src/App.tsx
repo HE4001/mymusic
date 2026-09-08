@@ -14,38 +14,17 @@ type Filter = 'all' | 'favorites';
 
 interface LoadError {
   message: string;
-  requiresLogin: boolean;
 }
 
 function normalizeSearch(value: string): string {
   return value.normalize('NFKC').trim().toLocaleLowerCase('zh-CN');
 }
 
-function getErrorProperty(error: unknown, property: 'code' | 'message' | 'status'): unknown {
-  if (typeof error !== 'object' || error === null || !(property in error)) {
-    return undefined;
-  }
-  return error[property as keyof typeof error];
-}
-
 function describeLibraryError(error: unknown): LoadError {
-  const codeValue = getErrorProperty(error, 'code');
-  const statusValue = getErrorProperty(error, 'status');
-  const messageValue = getErrorProperty(error, 'message');
-  const code = typeof codeValue === 'string' ? codeValue : '';
-  const message = typeof messageValue === 'string' ? messageValue : '';
-  const requiresLogin = statusValue === 401 || code.toUpperCase() === 'AUTH_REQUIRED';
-
-  if (requiresLogin) {
-    return {
-      message: '登录状态可能已失效，请重新进入后再试。',
-      requiresLogin: true,
-    };
-  }
-
   return {
-    message: message || '暂时无法读取曲库，请检查网络后重试。',
-    requiresLogin: false,
+    message: error instanceof Error && error.message
+      ? error.message
+      : '暂时无法读取曲库，请检查网络后重试。',
   };
 }
 
@@ -242,12 +221,9 @@ export default function App() {
           {libraryState === 'error' && loadError ? (
             <div className="state-panel state-panel-error" role="alert">
               <span className="state-icon" aria-hidden="true">!</span>
-              <h3>{loadError.requiresLogin ? '需要重新登录' : '曲库加载失败'}</h3>
+              <h3>曲库加载失败</h3>
               <p>{loadError.message}</p>
               <div className="state-actions">
-                {loadError.requiresLogin ? (
-                  <a className="primary-action" href="/">重新进入</a>
-                ) : null}
                 <button type="button" className="secondary-action" onClick={retryLibrary}>重试</button>
               </div>
             </div>
@@ -300,6 +276,3 @@ export default function App() {
     </div>
   );
 }
-
-
-

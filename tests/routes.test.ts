@@ -3,11 +3,6 @@ import { onRequest as middleware } from '../functions/api/_middleware';
 import { onRequest as library } from '../functions/api/library';
 import { onRequest as playUrl } from '../functions/api/play-url';
 
-// JWT cryptography is exercised separately in server.test.ts; these cover route wiring.
-vi.mock('../server/access', async (original) => ({
-  ...await original<typeof import('../server/access')>(),
-  verifyAccess: vi.fn(async () => undefined),
-}));
 
 vi.mock('../server/library', async (original) => {
   const library = await original<typeof import('../server/library')>();
@@ -40,7 +35,7 @@ async function request(
   return middleware(context as never);
 }
 
-describe('authenticated API route wiring', () => {
+describe('public API route wiring', () => {
   it('serves the manifest as JSON without caching', async () => {
     const response = await request('/api/library');
     expect(response.status).toBe(200);
