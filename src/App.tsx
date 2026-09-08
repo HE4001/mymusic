@@ -185,14 +185,6 @@ export default function App() {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <div className="brand-block">
-          <div className="brand-mark" aria-hidden="true" />
-          <div>
-            <h1>云端音乐</h1>
-            <p>私人音乐收藏</p>
-          </div>
-        </div>
-
         <div className="search-field">
           <span className="search-icon"><Icon name="search" /></span>
           <label className="visually-hidden" htmlFor="library-search">搜索曲库</label>
@@ -225,7 +217,7 @@ export default function App() {
           <div className="library-heading">
             <div>
               <p className="eyebrow">我的资料库</p>
-              <h2>{sectionTitle}</h2>
+              <h1>{sectionTitle}</h1>
             </div>
             {libraryState === 'ready' ? (
               <span className="track-total" aria-live="polite">
@@ -308,5 +300,6 @@ export default function App() {
     </div>
   );
 }
+
 
 
