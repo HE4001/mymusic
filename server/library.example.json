@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-07T00:00:00Z",
+  "tracks": [
+    {
+      "id": "replace-with-a-stable-id",
+      "title": "替换为真实歌曲（此示例文件不会被应用加载）",
+      "artist": "",
+      "album": "",
+      "duration": null,
+      "mimeType": "audio/mpeg",
+      "objectKey": "music/replace-with-your-object.mp3"
+    }
+  ]
+}

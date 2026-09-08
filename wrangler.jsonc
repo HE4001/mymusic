@@ -1,0 +1,21 @@
+{
+  "name": "cloud-music",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-09-07",
+  "vars": {
+    "B2_ENDPOINT": "https://s3.YOUR-REGION.backblazeb2.com",
+    "B2_REGION": "YOUR-REGION",
+    "ACCESS_TEAM_DOMAIN": "https://YOUR-TEAM.cloudflareaccess.com",
+    "ACCESS_AUD": "YOUR-ACCESS-AUDIENCE"
+  },
+  "env": {
+    "preview": {
+      "vars": {
+        "B2_ENDPOINT": "https://s3.PREVIEW-REGION.backblazeb2.com",
+        "B2_REGION": "PREVIEW-REGION",
+        "ACCESS_TEAM_DOMAIN": "https://PREVIEW-TEAM.cloudflareaccess.com",
+        "ACCESS_AUD": "PREVIEW-ACCESS-AUDIENCE"
+      }
+    }
+  }
+}
