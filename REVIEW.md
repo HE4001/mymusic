@@ -9,3 +9,7 @@
 
 移除搜索栏；SITE_PASSWORD签名会话保护library/play-url/stream，session登录校验Origin并限制输入长度及单实例尝试频率。新增同源媒体重定向以同步触发play，避免Safari异步签名丢失手势。42项测试、类型检查、Vite和Pages Functions编译通过；本机浏览器验证登录、播放时间推进、退出及390px页面，未做真实iPhone测试。源码与构建产物69个文件未匹配本地B2凭据或桶名称。生产密码由用户在Pages Secret配置，代码无默认生产密码。
 
+
+## 系统媒体控件与后台生命周期
+
+Sol xhigh实现Media Session，Luna max实现AuthGate离线与生命周期处理；主代理审查整合。修正Vitest仅收录ts导致tsx测试被遗漏的问题，完整52项测试通过。会话请求15秒超时；明确失效仍退出，临时网络失败保留播放器。没有添加保活轮询、静音音轨、封面下载或新权限。iPhone16/Safari直接打开为主要验收环境，实际iOS版本、后台5分钟、锁屏30分钟跨曲、系统灵动岛效果均待真机确认。

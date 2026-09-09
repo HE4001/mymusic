@@ -11,6 +11,13 @@ import type {
 import { ApiError, getPlayTicket } from '../lib/api';
 import { getDemoPlayTicket, revokeDemoAudioUrls } from '../lib/demo';
 import {
+  clearMediaSession,
+  registerMediaSessionActionHandlers,
+  setMediaSessionMetadata,
+  setMediaSessionPlaybackState,
+  setMediaSessionPositionState,
+} from '../lib/media-session';
+import {
   DEFAULT_PREFERENCES,
   loadPreferences,
   prunePreferences,
@@ -650,6 +657,11 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
     });
   }, []);
 
+  const currentTrack = useMemo(
+    () => tracks.find((track) => track.id === currentTrackId) ?? null,
+    [currentTrackId, tracks],
+  );
+
   useEffect(() => {
     const audio = new Audio();
     // Native audio playback does not need CORS; no Web Audio processing is used.
@@ -690,6 +702,23 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
     const onEnded = () => {
       if (mediaReadyRef.current && wantsPlaybackRef.current) handleEndedRef.current();
     };
+    const onVisibilityChange = () => {
+      if (document.visibilityState !== 'visible') return;
+      const currentId = currentTrackIdRef.current;
+      if (!currentId || activeTrackIdRef.current !== currentId || !mediaReadyRef.current) return;
+
+      if (Number.isFinite(audio.currentTime)) setCurrentTime(Math.max(0, audio.currentTime));
+      const nextDuration = validMediaDuration(audio);
+      if (nextDuration !== null) setDuration(nextDuration);
+
+      if (audio.ended || audio.paused) {
+        wantsPlaybackRef.current = false;
+        if (statusRef.current !== 'error') setStatus('paused');
+      } else {
+        wantsPlaybackRef.current = true;
+        setStatus('playing');
+      }
+    };
 
     audio.addEventListener('timeupdate', onTimeUpdate);
     audio.addEventListener('durationchange', onDurationChange);
@@ -698,6 +727,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
     audio.addEventListener('pause', onPause);
     audio.addEventListener('error', onError);
     audio.addEventListener('ended', onEnded);
+    document.addEventListener('visibilitychange', onVisibilityChange);
 
     return () => {
       operationIdRef.current += 1;
@@ -712,6 +742,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       audio.removeEventListener('pause', onPause);
       audio.removeEventListener('error', onError);
       audio.removeEventListener('ended', onEnded);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
       audio.pause();
       audio.removeAttribute('src');
       audio.load();
@@ -726,6 +757,50 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       if (demoEnabled) revokeDemoAudioUrls();
     };
   }, [demoEnabled, persistPreferences, setCurrentTime, setDuration, setStatus, writePreferences]);
+
+  useEffect(() => {
+    setMediaSessionMetadata(currentTrack);
+  }, [currentTrack]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!currentTrackId || !audio) {
+      setMediaSessionPlaybackState('none');
+      setMediaSessionPositionState(null, 0, 1);
+      return;
+    }
+
+    setMediaSessionPlaybackState(!audio.paused && !audio.ended ? 'playing' : 'paused');
+    setMediaSessionPositionState(
+      mediaReady ? duration : null,
+      audio.currentTime,
+      audio.playbackRate,
+    );
+  }, [currentTime, currentTrackId, duration, mediaReady, status]);
+
+  useEffect(
+    () =>
+      registerMediaSessionActionHandlers({
+        play: () => {
+          if (!wantsPlaybackRef.current) toggle();
+        },
+        pause: () => pause(),
+        previoustrack: () => previous(),
+        nexttrack: () => next(),
+        seekto: (details) => {
+          if (typeof details.seekTime === 'number') seek(details.seekTime);
+        },
+        seekbackward: (details) => {
+          seek(currentTimeRef.current - (details.seekOffset ?? 10));
+        },
+        seekforward: (details) => {
+          seek(currentTimeRef.current + (details.seekOffset ?? 10));
+        },
+      }),
+    [next, pause, previous, seek, toggle],
+  );
+
+  useEffect(() => () => clearMediaSession(), []);
 
   useEffect(() => {
     if (demoEnabled) return undefined;
@@ -796,11 +871,6 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
     tracks,
     writePreferences,
   ]);
-
-  const currentTrack = useMemo(
-    () => tracks.find((track) => track.id === currentTrackId) ?? null,
-    [currentTrackId, tracks],
-  );
 
   return {
     currentTrack,

@@ -20,6 +20,7 @@ class FakeAudio extends EventTarget {
   currentTime = 0;
   duration = NaN;
   readyState = 0;
+  playbackRate = 1;
   paused = true;
   ended = false;
   play = vi.fn(async () => {
@@ -68,6 +69,26 @@ async function render(list: Track[], libraryLoaded = true) {
 }
 const audio = () => FakeAudio.instances.at(-1)!;
 
+class FakeMediaMetadata {
+  title = '';
+  artist = '';
+  album = '';
+  artwork?: readonly MediaImage[];
+  constructor(init: MediaMetadataInit = {}) { Object.assign(this, init); }
+}
+
+class FakeMediaSession {
+  metadata: FakeMediaMetadata | null = null;
+  playbackState: MediaSessionPlaybackState = 'none';
+  handlers = new Map<MediaSessionAction, MediaSessionActionHandler>();
+  positionStates: Array<MediaPositionState | undefined> = [];
+  setActionHandler(action: MediaSessionAction, handler: MediaSessionActionHandler | null) {
+    if (handler) this.handlers.set(action, handler);
+    else this.handlers.delete(action);
+  }
+  setPositionState(state?: MediaPositionState) { this.positionStates.push(state); }
+}
+
 beforeEach(() => {
   vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true);
   vi.stubGlobal('Audio', FakeAudio);
@@ -81,6 +102,7 @@ beforeEach(() => {
 afterEach(async () => {
   await act(async () => root.unmount());
   host.remove();
+  Reflect.deleteProperty(navigator, 'mediaSession');
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
 });
@@ -167,5 +189,63 @@ describe('player flow', () => {
     expect(player.favorites).toEqual([]);
     expect(player.currentTrack).toBeNull();
     expect(player.currentTime).toBe(0);
+  });
+
+  it('routes system media actions through the player and never resumes on visibility alone', async () => {
+    const mediaSession = new FakeMediaSession();
+    Object.defineProperty(navigator, 'mediaSession', { configurable: true, value: mediaSession });
+    vi.stubGlobal('MediaMetadata', FakeMediaMetadata);
+    vi.mocked(getPlayTicket).mockImplementation(async id => ticket(id));
+    const detailedTracks = tracks.map(track => ({
+      ...track,
+      title: `Title ${track.id}`,
+      artist: `Artist ${track.id}`,
+      album: `Album ${track.id}`,
+    }));
+
+    await render(detailedTracks);
+    await act(async () => player.selectTrack(detailedTracks[0], detailedTracks));
+    await act(async () => audio().metadata());
+
+    expect(mediaSession.metadata).toMatchObject({
+      title: 'Title a', artist: 'Artist a', album: 'Album a',
+    });
+    expect(mediaSession.metadata?.artwork).toBeUndefined();
+    expect(mediaSession.playbackState).toBe('playing');
+    expect(mediaSession.positionStates).toContainEqual({
+      duration: 180, position: 0, playbackRate: 1,
+    });
+    expect([...mediaSession.handlers.keys()]).toEqual(expect.arrayContaining([
+      'play', 'pause', 'previoustrack', 'nexttrack', 'seekto', 'seekbackward', 'seekforward',
+    ]));
+
+    await act(async () => mediaSession.handlers.get('nexttrack')?.({ action: 'nexttrack' }));
+    await act(async () => audio().metadata());
+    expect(player.currentTrack?.id).toBe('b');
+    expect(mediaSession.metadata?.title).toBe('Title b');
+
+    await act(async () => mediaSession.handlers.get('previoustrack')?.({ action: 'previoustrack' }));
+    await act(async () => audio().metadata());
+    expect(player.currentTrack?.id).toBe('a');
+
+    await act(async () => mediaSession.handlers.get('pause')?.({ action: 'pause' }));
+    const playCallsAfterPause = audio().play.mock.calls.length;
+    expect(player.status).toBe('paused');
+    expect(mediaSession.playbackState).toBe('paused');
+
+    audio().currentTime = 37;
+    await act(async () => document.dispatchEvent(new Event('visibilitychange')));
+    expect(audio().play).toHaveBeenCalledTimes(playCallsAfterPause);
+    expect(player.status).toBe('paused');
+    expect(player.currentTime).toBe(37);
+
+    await act(async () => mediaSession.handlers.get('play')?.({ action: 'play' }));
+    expect(audio().play).toHaveBeenCalledTimes(playCallsAfterPause + 1);
+    expect(player.status).toBe('playing');
+
+    await act(async () => mediaSession.handlers.get('seekforward')?.({
+      action: 'seekforward', seekOffset: 8,
+    }));
+    expect(audio().currentTime).toBe(45);
   });
 });
