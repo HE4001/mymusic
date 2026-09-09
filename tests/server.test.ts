@@ -1,3 +1,4 @@
+import { sessionCookie } from '../server/auth';
 import { describe, expect, it, vi } from 'vitest';
 import { onRequest as middleware } from '../functions/api/_middleware';
 import { signTrack, type B2Env } from '../server/b2';
@@ -114,11 +115,12 @@ describe('B2 signing', () => {
 
 describe('API middleware', () => {
   const context = (path: string, next = vi.fn(async () => new Response('{}'))) => ({
-    request: new Request(`https://music.example${path}`), env: {}, next,
+    request: new Request(`https://music.example${path}`), env: { SITE_PASSWORD: 'test-only-password-123' }, next,
   });
 
-  it('allows requests without authentication and prevents response caching', async () => {
+  it('allows valid sessions and prevents response caching', async () => {
     const ctx = context('/api/library');
+    ctx.request = new Request(ctx.request, { headers: { Cookie: await sessionCookie(ctx.request, ctx.env) } });
     const response = await middleware(ctx as never);
     expect(response.status).toBe(200);
     expect(ctx.next).toHaveBeenCalledOnce();
@@ -136,6 +138,7 @@ describe('API middleware', () => {
     const ctx = context('/api/play-url?id=trk_test', vi.fn(async () => {
       throw new Error('application-key-marker X-Amz-Signature=signature-marker');
     }));
+    ctx.request = new Request(ctx.request, { headers: { Cookie: await sessionCookie(ctx.request, ctx.env) } });
     const response = await middleware(ctx as never);
     expect(response.status).toBe(500);
     expect(await response.json()).toEqual({

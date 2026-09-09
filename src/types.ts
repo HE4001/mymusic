@@ -24,6 +24,7 @@ export type PlaybackMode = 'sequence' | 'shuffle' | 'repeat-one';
 
 export interface PlayerOptions {
   demo?: boolean;
+  directPlayback?: boolean;
   /** Only reconcile saved IDs after the library has actually loaded. */
   libraryLoaded?: boolean;
 }

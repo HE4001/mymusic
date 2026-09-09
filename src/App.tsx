@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { AuthGate } from './components/AuthGate';
 import { Icon } from './components/Icon';
 import { PlayerBar } from './components/PlayerBar';
 import { QueuePanel } from './components/QueuePanel';
@@ -16,9 +17,6 @@ interface LoadError {
   message: string;
 }
 
-function normalizeSearch(value: string): string {
-  return value.normalize('NFKC').trim().toLocaleLowerCase('zh-CN');
-}
 
 function describeLibraryError(error: unknown): LoadError {
   return {
@@ -63,13 +61,17 @@ function FilterButtons({
 }
 
 export default function App() {
+  const demo = import.meta.env.DEV && new URLSearchParams(window.location.search).get('demo') === '1';
+  return demo ? <LibraryApp /> : <AuthGate><LibraryApp /></AuthGate>;
+}
+
+function LibraryApp() {
   const demoMode =
     import.meta.env.DEV && new URLSearchParams(window.location.search).get('demo') === '1';
   const [library, setLibrary] = useState<Library | null>(demoMode ? demoLibrary : null);
   const [libraryState, setLibraryState] = useState<LibraryState>(demoMode ? 'ready' : 'loading');
   const [loadError, setLoadError] = useState<LoadError | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
-  const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<Filter>('all');
   const [album, setAlbum] = useState('');
   const [queueOpen, setQueueOpen] = useState(false);
@@ -105,20 +107,18 @@ export default function App() {
   const tracks = library?.tracks ?? [];
   const player = usePlayer(tracks, {
     demo: demoMode,
+    directPlayback: true,
     libraryLoaded: libraryState === 'ready',
   });
   const favoriteIds = useMemo(() => new Set(player.favorites), [player.favorites]);
-  const normalizedQuery = normalizeSearch(query);
   const albums = useMemo(() => [...new Set(tracks.map(track => track.album).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'zh-CN')), [tracks]);
   const filteredTracks = useMemo(() => {
     return tracks.filter((track) => {
       if (album && track.album !== album) return false;
       if (filter === 'favorites' && !favoriteIds.has(track.id)) return false;
-      if (!normalizedQuery) return true;
-      const searchable = normalizeSearch(`${track.title} ${track.artist} ${track.album}`);
-      return searchable.includes(normalizedQuery);
+      return true;
     });
-  }, [album, favoriteIds, filter, normalizedQuery, tracks]);
+  }, [album, favoriteIds, filter, tracks]);
 
   const retryLibrary = useCallback(() => setReloadKey((value) => value + 1), []);
 
@@ -166,25 +166,6 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <header className="topbar">
-        <div className="search-field">
-          <span className="search-icon"><Icon name="search" /></span>
-          <label className="visually-hidden" htmlFor="library-search">搜索曲库</label>
-          <input
-            id="library-search"
-            type="search"
-            value={query}
-            placeholder="搜索歌曲、歌手、专辑"
-            autoComplete="off"
-            onChange={(event) => setQuery(event.target.value)}
-          />
-          {query ? (
-            <button type="button" className="clear-search" aria-label="清空搜索" onClick={() => setQuery('')}>
-              <Icon name="close" />
-            </button>
-          ) : null}
-        </div>
-      </header>
 
       {demoMode ? (
         <div className="demo-banner" role="status">
@@ -246,11 +227,8 @@ export default function App() {
           {libraryState === 'ready' && noResults ? (
             <div className="state-panel" role="status">
               <span className="state-icon"><Icon name="search" /></span>
-              <h3>{filter === 'favorites' && !query && !album ? '还没有收藏歌曲' : '没有找到匹配歌曲'}</h3>
-              <p>{query || album ? '换个关键词或专辑后再试。' : '在歌曲列表中点按爱心即可收藏。'}</p>
-              {query ? (
-                <button type="button" className="secondary-action" onClick={() => setQuery('')}>清空搜索</button>
-              ) : null}
+              <h3>{filter === 'favorites' && !album ? '还没有收藏歌曲' : '没有找到匹配歌曲'}</h3>
+              <p>{album ? '切换专辑或查看全部音乐。' : '在歌曲列表中点按爱心即可收藏。'}</p>
             </div>
           ) : null}
 

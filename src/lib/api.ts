@@ -103,6 +103,7 @@ async function requestJson(path: string, signal?: AbortSignal): Promise<unknown>
   }
 
   if (!response.ok) {
+    if (response.status === 401) window.dispatchEvent(new Event('session-expired'));
     const payload = isRecord(body) ? (body as ApiErrorPayload) : undefined;
     const code =
       typeof payload?.error?.code === 'string' ? payload.error.code : 'REQUEST_FAILED';

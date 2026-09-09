@@ -1,7 +1,9 @@
+import { sessionCookie } from '../server/auth';
 import { describe, expect, it, vi } from 'vitest';
 import { onRequest as middleware } from '../functions/api/_middleware';
 import { onRequest as library } from '../functions/api/library';
 import { onRequest as playUrl } from '../functions/api/play-url';
+import { onRequest as stream } from '../functions/api/stream';
 
 
 vi.mock('../server/library', async (original) => {
@@ -25,17 +27,29 @@ async function request(
   method = 'GET',
   env: Record<string, string> = {},
 ) {
+  env = { ...env, SITE_PASSWORD: 'test-only-password-123' };
+  const cookie = await sessionCookie(new Request('https://music.example'), env);
   const context = {
-    request: new Request(`https://music.example${path}`, { method }),
+    request: new Request(`https://music.example${path}`, { method, headers: { Cookie: cookie } }),
     env, params: {}, data: {}, functionPath: '/api',
     waitUntil: vi.fn(), passThroughOnException: vi.fn(),
     next: () => path.startsWith('/api/library')
-      ? library(context as never) : playUrl(context as never),
+      ? library(context as never) : path.startsWith('/api/stream') ? stream(context as never) : playUrl(context as never),
   };
   return middleware(context as never);
 }
 
-describe('public API route wiring', () => {
+describe('authenticated API route wiring', () => {
+  it('redirects authenticated media requests without caching or proxying audio bytes', async () => {
+    const response = await request('/api/stream?id=trk_test', 'GET', {
+      B2_ENDPOINT: 'https://s3.us-west-004.backblazeb2.com', B2_REGION: 'us-west-004',
+      B2_BUCKET: 'music-bucket', B2_KEY_ID: 'test-id', B2_APPLICATION_KEY: 'test-secret',
+    });
+    expect(response.status).toBe(302);
+    expect(new URL(response.headers.get('location')!).hostname).toBe('s3.us-west-004.backblazeb2.com');
+    expect(response.headers.get('cache-control')).toContain('no-store');
+    expect(await response.text()).toBe('');
+  });
   it('serves the manifest as JSON without caching', async () => {
     const response = await request('/api/library');
     expect(response.status).toBe(200);

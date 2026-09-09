@@ -86,6 +86,20 @@ afterEach(async () => {
 });
 
 describe('player flow', () => {
+  it('starts the protected media URL within the tap and preserves pause during metadata loading', async () => {
+    await act(async () => root.render(createElement(Harness, { list: tracks, options: { libraryLoaded: true, directPlayback: true } })));
+    act(() => {
+      player.selectTrack(tracks[0], tracks);
+      // Must happen synchronously, before any ticket fetch or metadata event.
+      expect(audio().play).toHaveBeenCalledOnce();
+      expect(audio().src).toBe('/api/stream?id=a');
+      player.pause();
+    });
+    await act(async () => audio().metadata());
+    expect(player.status).toBe('paused');
+    expect(audio().paused).toBe(true);
+    expect(getPlayTicket).not.toHaveBeenCalled();
+  });
   it('ignores an older ticket that resolves after the latest selection', async () => {
     const a = deferred<PlayTicket>();
     const b = deferred<PlayTicket>();

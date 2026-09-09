@@ -77,6 +77,7 @@ function playbackErrorMessage(error: unknown): string {
 
 export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerController {
   const demoEnabled = import.meta.env.DEV && options.demo === true;
+  const directPlayback = options.directPlayback === true && !demoEnabled;
   const initialPreferencesRef = useRef<PlayerPreferences | null>(null);
   if (initialPreferencesRef.current === null) {
     initialPreferencesRef.current = demoEnabled
@@ -344,7 +345,9 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       persistPreferences();
 
       try {
-        const ticket = await requestTicket(id, abortController.signal);
+        const ticket: PlayTicket = directPlayback
+          ? { trackId: id, url: `/api/stream?id=${encodeURIComponent(id)}`, expiresAt: Date.now() + 60_000 }
+          : await requestTicket(id, abortController.signal);
         if (operationId !== operationIdRef.current || abortController.signal.aborted) return;
 
         ticketRef.current = ticket;
@@ -352,6 +355,8 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
         audio.preload = 'metadata';
         audio.src = ticket.url;
         audio.load();
+        // Invoke play before any await so Safari retains the user's tap gesture.
+        const startedPlay = directPlayback && shouldPlay ? safePlay(audio, operationId, id) : null;
         await waitForMetadata(audio, operationId);
         if (operationId !== operationIdRef.current) return;
 
@@ -368,13 +373,14 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
         setMediaReady(true);
 
         if (shouldPlay && wantsPlaybackRef.current) {
-          setStatus('buffering');
-          await safePlay(audio, operationId, id);
+          if (startedPlay) await startedPlay;
+          else { setStatus('buffering'); await safePlay(audio, operationId, id); }
         } else {
           setStatus('paused');
         }
       } catch (loadError) {
         if (operationId !== operationIdRef.current || isNamedError(loadError, 'AbortError')) return;
+        if (directPlayback) window.dispatchEvent(new Event('session-check'));
         if (
           ticketRef.current !== null &&
           isTicketNearExpiry(ticketRef.current) &&
@@ -395,6 +401,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       }
     },
     [
+      directPlayback,
       beginOperation,
       persistPreferences,
       requestTicket,

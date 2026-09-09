@@ -2,7 +2,7 @@
 
 云端音乐是一个使用私有 B2 存储的浏览器音乐播放器：前端使用 Vite、React 和 TypeScript，页面部署到 Cloudflare Pages，Pages Functions 提供曲库和短期播放地址，浏览器通过原生 `audio` 直接从私有 Backblaze B2 播放音频。
 
-播放器无登录和用户认证。任何访客都可以读取曲库并请求短期 B2 签名；B2 桶保持私有，B2 密钥只在服务端配置，接口只为曲库清单中的对象签名。
+播放器使用共享密码登录；通过服务端校验后才能读取曲库和请求播放地址。B2 桶保持私有，B2 密钥只在服务端配置，接口只为曲库清单中的对象签名。
 
 本仓库包含可部署的代码、配置示例和维护说明。本轮没有配置真实 B2 或 Pages，也没有执行云端部署；默认曲库可以为空。
 
@@ -81,7 +81,7 @@ Pages 构建命令改为 `npm run build:b2`，每次部署先读取 B2 全桶文
 
 签名 URL 在有效期内可被持有者使用，因此应使用短期 TTL，并留意流量和费用。浏览器直连 B2，不代表音频经过 Cloudflare CDN 或享有某种免费出站额度。
 
-如果曾在 Cloudflare 平台为播放器域名配置 Cloudflare Access 策略，代码不能移除平台策略；需要在 Cloudflare 平台取消对播放器域名的保护，避免无登录播放器被平台拦截。只处理播放器域名，不修改其他应用的策略。
+如果曾在 Cloudflare 平台为播放器域名配置 Cloudflare Access 策略，代码不能移除平台策略；需要在 Cloudflare 平台取消对播放器域名的保护，避免播放器被平台拦截。只处理播放器域名，不修改其他应用的策略。
 
 ## 文档
 
@@ -99,3 +99,11 @@ Pages 构建命令改为 `npm run build:b2`，每次部署先读取 B2 全桶文
 兼容变量别名：`B2_ACCESS_KEY_ID` 对应 `B2_KEY_ID`，`B2_SECRET_ACCESS_KEY` 对应 `B2_APPLICATION_KEY`，标准名称优先。每项只设置一个名称；两项凭据和 `B2_BUCKET` 存为 Pages Secret，禁止添加 `VITE_` 前缀。
 
 实际联调：579个对象中识别425首音频，整理为29个专辑分组；修复旧GBK标签乱码、双碟名称后缀和目录内少数错误专辑标签。目录内超过半数歌曲使用同一专辑标签时统一该组，其余混合集合保留各自标签，人工编辑的已有专辑优先。
+
+## 网站密码与 iOS Safari
+
+在 Cloudflare Pages → 设置 → 变量和机密中新增 `SITE_PASSWORD`，选择 Secret，值为你自行设置的至少12个字符的密码；生产与预览环境分别设置，再重新部署。不要使用 `VITE_` 前缀，不要写入 wrangler.jsonc 或前端代码。本地写入被Git忽略的 `.dev.vars`。未配置时服务端返回503并关闭访问。
+
+登录使用同源POST和HttpOnly Cookie，HTTPS下带Secure、SameSite=Strict，有效期7天。修改密码并重新部署会使原会话失效；退出删除当前浏览器会话。应用包含每个Worker实例的简单尝试频率限制，该限制并非跨实例的全局限流。已签发的B2短期链接在自身到期前仍然有效。
+
+首页已移除搜索栏，保留专辑和收藏筛选。点歌时同步调用Audio.play()，通过受保护的 `/api/stream?id=...` 服务端302跳转到B2，以保留Safari触摸播放许可；音频字节不经过Pages。适配刘海、底部安全区、动态视口与16px输入框；恢复页面不自动播放。iOS音量使用设备按键。Windows上的手机尺寸检查不等于真实iPhone测试，锁屏续播及具体编码兼容性仍需真机验证。依据：[WebKit播放策略](https://webkit.org/blog/6784/new-video-policies-for-ios/)、[Cookie配置](https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Cookies)。
