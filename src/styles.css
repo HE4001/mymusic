@@ -183,3 +183,6 @@ dialog::backdrop { background: #24221c55; }
 }
 
 
+
+.album-filter { max-width: min(42vw, 320px); margin-bottom: 10px; padding: 8px 24px 8px 10px; border: 1px solid #d8d5cc; border-radius: 2px; color: inherit; background: transparent; font: inherit; font-size: 13px; }
+@media (max-width: 600px) { .library-toolbar { flex-wrap: wrap; gap: 8px; } .album-filter { max-width: 100%; } }

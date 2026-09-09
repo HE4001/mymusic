@@ -77,7 +77,7 @@ export function TrackList({
                 </span>
                 <span className="track-title-block">
                   <strong title={track.title}>{track.title}</strong>
-                  <span className="mobile-track-artist" title={artist}>{artist}</span>
+                  <span className="mobile-track-artist" title={`${artist} · ${album}`}>{artist} · {album}</span>
                 </span>
               </button>
               <span className="track-cell track-artist" title={artist}>{artist}</span>

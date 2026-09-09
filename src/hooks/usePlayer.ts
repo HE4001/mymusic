@@ -349,7 +349,6 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
 
         ticketRef.current = ticket;
         activeTrackIdRef.current = id;
-        audio.crossOrigin = 'anonymous';
         audio.preload = 'metadata';
         audio.src = ticket.url;
         audio.load();
@@ -646,7 +645,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
 
   useEffect(() => {
     const audio = new Audio();
-    audio.crossOrigin = 'anonymous';
+    // Native audio playback does not need CORS; no Web Audio processing is used.
     audio.preload = 'metadata';
     audio.volume = volumeRef.current;
     audioRef.current = audio;

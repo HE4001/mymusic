@@ -71,6 +71,7 @@ export default function App() {
   const [reloadKey, setReloadKey] = useState(0);
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<Filter>('all');
+  const [album, setAlbum] = useState('');
   const [queueOpen, setQueueOpen] = useState(false);
 
   useEffect(() => {
@@ -108,14 +109,16 @@ export default function App() {
   });
   const favoriteIds = useMemo(() => new Set(player.favorites), [player.favorites]);
   const normalizedQuery = normalizeSearch(query);
+  const albums = useMemo(() => [...new Set(tracks.map(track => track.album).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'zh-CN')), [tracks]);
   const filteredTracks = useMemo(() => {
     return tracks.filter((track) => {
+      if (album && track.album !== album) return false;
       if (filter === 'favorites' && !favoriteIds.has(track.id)) return false;
       if (!normalizedQuery) return true;
       const searchable = normalizeSearch(`${track.title} ${track.artist} ${track.album}`);
       return searchable.includes(normalizedQuery);
     });
-  }, [favoriteIds, filter, normalizedQuery, tracks]);
+  }, [album, favoriteIds, filter, normalizedQuery, tracks]);
 
   const retryLibrary = useCallback(() => setReloadKey((value) => value + 1), []);
 
@@ -207,7 +210,10 @@ export default function App() {
 
           <div className="library-toolbar">
             <FilterButtons value={filter} favoriteCount={player.favorites.length} onChange={setFilter} />
-            <span className="keyboard-hint"><kbd>Space</kbd> 播放 / 暂停</span>
+            {albums.length > 0 ? <select className="album-filter" aria-label="筛选专辑" value={album} onChange={event => setAlbum(event.target.value)}>
+              <option value="">全部专辑（{albums.length}）</option>
+              {albums.map(name => <option key={name} value={name}>{name}</option>)}
+            </select> : null}
           </div>
 
           {libraryState === 'loading' ? (
@@ -240,8 +246,8 @@ export default function App() {
           {libraryState === 'ready' && noResults ? (
             <div className="state-panel" role="status">
               <span className="state-icon"><Icon name="search" /></span>
-              <h3>{filter === 'favorites' && !query ? '还没有收藏歌曲' : '没有找到匹配歌曲'}</h3>
-              <p>{query ? '换个关键词，或清空搜索后再试。' : '在歌曲列表中点按爱心即可收藏。'}</p>
+              <h3>{filter === 'favorites' && !query && !album ? '还没有收藏歌曲' : '没有找到匹配歌曲'}</h3>
+              <p>{query || album ? '换个关键词或专辑后再试。' : '在歌曲列表中点按爱心即可收藏。'}</p>
               {query ? (
                 <button type="button" className="secondary-action" onClick={() => setQuery('')}>清空搜索</button>
               ) : null}

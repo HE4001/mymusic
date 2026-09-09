@@ -44,7 +44,7 @@ describe('library manifest', () => {
   });
 
   it.each([
-    'other/song.mp3',
+    'https://example.com/song.mp3',
     'music/../song.mp3',
     'music//song.mp3',
     'music/artist\\song.mp3',

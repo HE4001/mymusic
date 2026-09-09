@@ -102,8 +102,8 @@ export function validateObjectKey(value: unknown, path = 'objectKey'): string {
   if (typeof value !== 'string' || value.length === 0) {
     return fail(path, '必须是非空字符串');
   }
-  if (!value.startsWith('music/')) {
-    return fail(path, '必须位于 music/ 目录');
+  if (/^[a-z][a-z0-9+.-]*:\/\//i.test(value)) {
+    return fail(path, '不能使用 URL');
   }
   if (value.includes('\\')) {
     return fail(path, '不能包含反斜杠');

@@ -14,6 +14,8 @@ export interface B2Env {
   B2_BUCKET?: string;
   B2_KEY_ID?: string;
   B2_APPLICATION_KEY?: string;
+  B2_ACCESS_KEY_ID?: string;
+  B2_SECRET_ACCESS_KEY?: string;
   B2_URL_TTL_SECONDS?: string;
 }
 
@@ -98,8 +100,8 @@ export async function signTrack(env: B2Env, objectKey: string): Promise<SignedTr
     return invalidConfiguration();
   }
 
-  const accessKeyId = requiredValue(env.B2_KEY_ID);
-  const secretAccessKey = requiredValue(env.B2_APPLICATION_KEY);
+  const accessKeyId = requiredValue(env.B2_KEY_ID ?? env.B2_ACCESS_KEY_ID);
+  const secretAccessKey = requiredValue(env.B2_APPLICATION_KEY ?? env.B2_SECRET_ACCESS_KEY);
   const ttlSeconds = readTtlSeconds(env.B2_URL_TTL_SECONDS);
   const validObjectKey = validateObjectKey(objectKey);
   const encodedObjectKey = validObjectKey.split('/').map(encodeURIComponent).join('/');
