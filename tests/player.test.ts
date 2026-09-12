@@ -122,6 +122,39 @@ describe('player flow', () => {
     expect(audio().paused).toBe(true);
     expect(getPlayTicket).not.toHaveBeenCalled();
   });
+  it('publishes before native play and restores metadata on lifecycle events without restarting audio', async () => {
+    const session = new FakeMediaSession();
+    Object.defineProperty(navigator, 'mediaSession', { configurable: true, value: session });
+    vi.stubGlobal('MediaMetadata', FakeMediaMetadata);
+    await act(async () => root.render(createElement(Harness, {
+      list: tracks, options: { libraryLoaded: true, directPlayback: true },
+    })));
+    audio().play.mockImplementation(async () => {
+      expect(session.metadata?.title).toBe('a');
+      audio().paused = false;
+      audio().dispatchEvent(new Event('playing'));
+    });
+    await act(async () => player.selectTrack(tracks[0], tracks));
+    await act(async () => audio().metadata());
+    for (const [target, event] of [
+      [audio(), 'playing'], [audio(), 'loadedmetadata'],
+      [window, 'pagehide'], [window, 'pageshow'],
+      [document, 'visibilitychange'],
+    ] as const) {
+      session.metadata = null;
+      await act(async () => target.dispatchEvent(new Event(event)));
+      expect(session.metadata).toMatchObject({ title: 'a' });
+      expect(session.playbackState).toBe('playing');
+    }
+    expect(audio().play).toHaveBeenCalledOnce();
+    await act(async () => root.unmount());
+    session.metadata = null;
+    window.dispatchEvent(new Event('pageshow'));
+    audio().dispatchEvent(new Event('playing'));
+    expect(session.metadata).toBeNull();
+    root = createRoot(host);
+  });
+
   it('ignores an older ticket that resolves after the latest selection', async () => {
     const a = deferred<PlayTicket>();
     const b = deferred<PlayTicket>();

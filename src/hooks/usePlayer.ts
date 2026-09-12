@@ -12,6 +12,7 @@ import { ApiError, getPlayTicket } from '../lib/api';
 import { getDemoPlayTicket, revokeDemoAudioUrls } from '../lib/demo';
 import {
   clearMediaSession,
+  publishMediaSession,
   registerMediaSessionActionHandlers,
   setMediaSessionMetadata,
   setMediaSessionPlaybackState,
@@ -269,6 +270,8 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
   const safePlay = useCallback(
     async (audio: HTMLAudioElement, operationId: number, trackId: string): Promise<void> => {
       try {
+        const track = tracksRef.current.find(item => item.id === trackId);
+        if (track) publishMediaSession(track, audio);
         await audio.play();
         if (
           !mayContinueAsyncPlayback(
@@ -281,6 +284,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
           if (!wantsPlaybackRef.current) audio.pause();
           return;
         }
+        if (track) publishMediaSession(track, audio);
         setStatus('playing');
         setNoticeState(null);
       } catch (playError) {
@@ -669,6 +673,12 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
     audio.volume = volumeRef.current;
     audioRef.current = audio;
 
+    const publishCurrentMedia = () => {
+      const id = activeTrackIdRef.current;
+      if (!id || id !== currentTrackIdRef.current) return;
+      const track = tracksRef.current.find(item => item.id === id);
+      if (track) publishMediaSession(track, audio);
+    };
     const onTimeUpdate = () => {
       if (!mediaReadyRef.current || !Number.isFinite(audio.currentTime)) return;
       setCurrentTime(Math.max(0, audio.currentTime));
@@ -679,12 +689,14 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       if (nextDuration !== null) setDuration(nextDuration);
     };
     const onPlaying = () => {
+      publishCurrentMedia();
       if (wantsPlaybackRef.current) setStatus('playing');
     };
     const onWaiting = () => {
       if (wantsPlaybackRef.current) setStatus('buffering');
     };
     const onPause = () => {
+      publishCurrentMedia();
       if (
         activeTrackIdRef.current &&
         statusRef.current !== 'loading' &&
@@ -703,6 +715,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       if (mediaReadyRef.current && wantsPlaybackRef.current) handleEndedRef.current();
     };
     const onVisibilityChange = () => {
+      publishCurrentMedia();
       if (document.visibilityState !== 'visible') return;
       const currentId = currentTrackIdRef.current;
       if (!currentId || activeTrackIdRef.current !== currentId || !mediaReadyRef.current) return;
@@ -720,6 +733,9 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       }
     };
 
+    audio.addEventListener('loadedmetadata', publishCurrentMedia);
+    window.addEventListener('pageshow', onVisibilityChange);
+    window.addEventListener('pagehide', publishCurrentMedia);
     audio.addEventListener('timeupdate', onTimeUpdate);
     audio.addEventListener('durationchange', onDurationChange);
     audio.addEventListener('playing', onPlaying);
@@ -735,6 +751,9 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       requestAbortRef.current = null;
       metadataWaitRef.current?.cancel(createAbortError());
       metadataWaitRef.current = null;
+      audio.removeEventListener('loadedmetadata', publishCurrentMedia);
+      window.removeEventListener('pageshow', onVisibilityChange);
+      window.removeEventListener('pagehide', publishCurrentMedia);
       audio.removeEventListener('timeupdate', onTimeUpdate);
       audio.removeEventListener('durationchange', onDurationChange);
       audio.removeEventListener('playing', onPlaying);

@@ -67,6 +67,13 @@ export function setMediaSessionPositionState(
   }
 }
 
+// Publish from native events as well as React: Safari may recreate its media session.
+export function publishMediaSession(track: Track, audio: HTMLAudioElement): void {
+  setMediaSessionMetadata(track);
+  setMediaSessionPlaybackState(!audio.paused && !audio.ended ? 'playing' : 'paused');
+  setMediaSessionPositionState(audio.duration, audio.currentTime, audio.playbackRate);
+}
+
 export function registerMediaSessionActionHandlers(
   handlers: MediaSessionHandlers,
 ): () => void {
