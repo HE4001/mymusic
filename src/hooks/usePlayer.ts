@@ -375,12 +375,18 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
         setDuration(nextDuration);
         const nextPosition =
           nextDuration === null ? Math.max(0, position) : clampMediaTime(position, nextDuration);
-        try {
-          audio.currentTime = nextPosition;
-        } catch {
-          // A browser may reject assignment until metadata is completely ready.
+        if (nextPosition > 0) {
+          try {
+            audio.currentTime = nextPosition;
+          } catch {
+            // A browser may reject assignment until metadata is completely ready.
+          }
         }
-        setCurrentTime(nextPosition);
+        const actualPosition =
+          nextPosition === 0 && startedPlay && Number.isFinite(audio.currentTime)
+            ? Math.max(0, audio.currentTime)
+            : nextPosition;
+        setCurrentTime(actualPosition);
         setMediaReady(true);
 
         if (shouldPlay && wantsPlaybackRef.current) {
@@ -394,7 +400,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
         if (directPlayback) window.dispatchEvent(new Event('session-check'));
         if (
           ticketRef.current !== null &&
-          isTicketNearExpiry(ticketRef.current) &&
+          (directPlayback || isTicketNearExpiry(ticketRef.current)) &&
           !recoveryUsedRef.current
         ) {
           recoveryUsedRef.current = true;
@@ -439,7 +445,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       }
       if (
         ticketRef.current !== null &&
-        isTicketNearExpiry(ticketRef.current) &&
+        (directPlayback || isTicketNearExpiry(ticketRef.current)) &&
         !recoveryUsedRef.current
       ) {
         recoveryUsedRef.current = true;
@@ -452,7 +458,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       }
       setFailure('音频加载失败，请重试');
     },
-    [setFailure],
+    [directPlayback, setFailure],
   );
   handleMediaFailureRef.current = handleMediaFailure;
 
@@ -522,7 +528,8 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       wantsPlaybackRef.current = true;
       setErrorState(null);
       setNoticeState(null);
-      if (isTicketNearExpiry(ticketRef.current)) {
+      // The same-origin stream route is stable; only signed media URLs expire.
+      if (!directPlayback && isTicketNearExpiry(ticketRef.current)) {
         void loadTrackRef.current(currentId, currentTimeRef.current, true, {
           resetRecovery: true,
         });
@@ -535,7 +542,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
     void loadTrackRef.current(currentId, currentTimeRef.current, true, {
       resetRecovery: true,
     });
-  }, [pause, safePlay, setQueue, setStatus]);
+  }, [directPlayback, pause, safePlay, setQueue, setStatus]);
 
   const selectTrack = useCallback(
     (track: Track, nextTracks: Track[]) => {
@@ -602,7 +609,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
         persistPreferences();
         return;
       }
-      if (isTicketNearExpiry(ticketRef.current)) {
+      if (!directPlayback && isTicketNearExpiry(ticketRef.current)) {
         void loadTrackRef.current(currentId, nextTime, wantsPlaybackRef.current, {
           resetRecovery: true,
         });
@@ -612,7 +619,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       setCurrentTime(nextTime);
       persistPreferences();
     },
-    [persistPreferences, setCurrentTime],
+    [directPlayback, persistPreferences, setCurrentTime],
   );
 
   const setVolume = useCallback(

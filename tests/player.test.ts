@@ -122,6 +122,73 @@ describe('player flow', () => {
     expect(audio().paused).toBe(true);
     expect(getPlayTicket).not.toHaveBeenCalled();
   });
+
+  it('seeks and resumes a direct stream without resetting or reloading its source', async () => {
+    await act(async () => root.render(createElement(Harness, {
+      list: tracks, options: { libraryLoaded: true, directPlayback: true },
+    })));
+    act(() => player.selectTrack(tracks[0], tracks));
+    await act(async () => audio().metadata());
+    act(() => player.pause());
+
+    const load = vi.spyOn(audio(), 'load');
+    act(() => player.seek(42));
+    expect(audio().currentTime).toBe(42);
+    expect(player.status).toBe('paused');
+    expect(audio().play).toHaveBeenCalledOnce();
+    expect(load).not.toHaveBeenCalled();
+
+    act(() => player.toggle());
+    expect(audio().play).toHaveBeenCalledTimes(2);
+    expect(player.status).toBe('playing');
+    expect(audio().src).toBe('/api/stream?id=a');
+    expect(load).not.toHaveBeenCalled();
+
+    act(() => {
+      player.seek(64);
+      player.seek(96);
+    });
+    expect(audio().currentTime).toBe(96);
+    expect(player.status).toBe('playing');
+    expect(audio().play).toHaveBeenCalledTimes(2);
+    expect(load).not.toHaveBeenCalled();
+  });
+
+  it('does not rewind a direct stream when metadata arrives after playback starts', async () => {
+    await act(async () => root.render(createElement(Harness, {
+      list: tracks, options: { libraryLoaded: true, directPlayback: true },
+    })));
+    audio().play.mockImplementation(async () => {
+      audio().paused = false;
+      audio().currentTime = 0.4;
+      audio().dispatchEvent(new Event('playing'));
+    });
+
+    act(() => player.selectTrack(tracks[0], tracks));
+    await act(async () => audio().metadata());
+    expect(audio().currentTime).toBe(0.4);
+    expect(player.currentTime).toBe(0.4);
+  });
+
+  it('recovers a failed direct stream once and stops after a second media error', async () => {
+    await act(async () => root.render(createElement(Harness, {
+      list: tracks, options: { libraryLoaded: true, directPlayback: true },
+    })));
+    act(() => player.selectTrack(tracks[0], tracks));
+    await act(async () => audio().metadata());
+    const load = vi.spyOn(audio(), 'load');
+
+    act(() => audio().dispatchEvent(new Event('error')));
+    expect(load).toHaveBeenCalledTimes(2);
+    await act(async () => audio().metadata());
+    expect(player.status).toBe('playing');
+
+    load.mockClear();
+    act(() => audio().dispatchEvent(new Event('error')));
+    expect(load).not.toHaveBeenCalled();
+    expect(player.status).toBe('error');
+    expect(audio().paused).toBe(true);
+  });
   it('publishes before native play and restores metadata on lifecycle events without restarting audio', async () => {
     const session = new FakeMediaSession();
     Object.defineProperty(navigator, 'mediaSession', { configurable: true, value: session });

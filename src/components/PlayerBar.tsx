@@ -1,5 +1,5 @@
 import { Icon } from './Icon';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import type { PlaybackMode, PlaybackStatus, PlayerController } from '../types';
 import { formatTime } from './TrackList';
 
@@ -54,13 +54,28 @@ export function PlayerBar({ controller, onOpenQueue }: PlayerBarProps) {
   } = controller;
   const [seekPreview, setSeekPreview] = useState<number | null>(null);
   const seekPreviewRef = useRef<number | null>(null);
+  const seekInteractionRef = useRef<{
+    pointerId: number;
+    input: HTMLInputElement;
+    changed: boolean;
+  } | null>(null);
   const [expanded, setExpanded] = useState(false);
   const expandedDialog = useRef<HTMLDialogElement>(null);
 
-  useEffect(() => {
+  const cancelSeek = useCallback(() => {
+    const interaction = seekInteractionRef.current;
+    seekInteractionRef.current = null;
     seekPreviewRef.current = null;
     setSeekPreview(null);
-  }, [currentTrack?.id]);
+    if (interaction?.input.hasPointerCapture?.(interaction.pointerId)) {
+      interaction.input.releasePointerCapture?.(interaction.pointerId);
+    }
+  }, []);
+
+  useEffect(() => {
+    cancelSeek();
+    return cancelSeek;
+  }, [cancelSeek, currentTrack?.id]);
 
   useEffect(() => {
     const dialog = expandedDialog.current;
@@ -80,17 +95,55 @@ export function PlayerBar({ controller, onOpenQueue }: PlayerBarProps) {
   const isFavorite = currentTrack ? favorites.includes(currentTrack.id) : false;
   const mobileMessage = error || notice;
 
-  const previewSeek = (seconds: number) => {
+  useEffect(() => {
+    if (!canSeek || safeDuration === null) cancelSeek();
+  }, [canSeek, cancelSeek, safeDuration]);
+
+  const previewSeek = (seconds: number, input: HTMLInputElement) => {
+    const interaction = seekInteractionRef.current;
+    if (interaction && interaction.input !== input) return;
     seekPreviewRef.current = seconds;
+    if (interaction) interaction.changed = true;
     setSeekPreview(seconds);
   };
 
   const commitSeek = () => {
+    const interaction = seekInteractionRef.current;
+    if (interaction && !interaction.changed) {
+      cancelSeek();
+      return;
+    }
     const seconds = seekPreviewRef.current;
-    if (seconds === null) return;
-    seekPreviewRef.current = null;
-    setSeekPreview(null);
+    if (seconds === null) {
+      cancelSeek();
+      return;
+    }
+    cancelSeek();
     if (canSeek) seek(seconds);
+  };
+
+  const beginPointerSeek = (event: ReactPointerEvent<HTMLInputElement>, initialValue: number) => {
+    if (event.button !== 0 || !event.isPrimary || seekInteractionRef.current) return;
+    seekInteractionRef.current = {
+      pointerId: event.pointerId,
+      input: event.currentTarget,
+      changed: false,
+    };
+    // Keep the thumb on the current position until the native range emits its first change.
+    seekPreviewRef.current = initialValue;
+    setSeekPreview(initialValue);
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+  };
+
+  const commitPointerSeek = (event: ReactPointerEvent<HTMLInputElement>) => {
+    const interaction = seekInteractionRef.current;
+    if (interaction && interaction.pointerId !== event.pointerId) return;
+    commitSeek();
+  };
+
+  const cancelPointerSeek = (event: ReactPointerEvent<HTMLInputElement>) => {
+    const interaction = seekInteractionRef.current;
+    if (!interaction || interaction.pointerId === event.pointerId) cancelSeek();
   };
 
   const openQueueFromExpanded = () => {
@@ -108,12 +161,15 @@ export function PlayerBar({ controller, onOpenQueue }: PlayerBarProps) {
         type="range"
         min="0"
         max={rangeMax}
-        step="1"
+        step="0.1"
         value={rangeValue}
         disabled={!canSeek || safeDuration === null}
         aria-valuetext={`${formatTime(shownTime)} / ${formatTime(safeDuration)}`}
-        onChange={(event) => previewSeek(Number(event.target.value))}
-        onPointerUp={commitSeek}
+        onPointerDown={(event) => beginPointerSeek(event, rangeValue)}
+        onChange={(event) => previewSeek(Number(event.target.value), event.currentTarget)}
+        onPointerUp={commitPointerSeek}
+        onPointerCancel={cancelPointerSeek}
+        onLostPointerCapture={cancelPointerSeek}
         onKeyUp={commitSeek}
         onBlur={commitSeek}
       />
