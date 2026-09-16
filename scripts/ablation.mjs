@@ -21,6 +21,7 @@ const sourcePath = resolve(projectRoot, 'src/hooks/usePlayer.ts');
 const copiedFiles = [
   'server/b2.ts',
   'server/http.ts',
+  'server/auth.ts',
   'server/library.ts',
   'server/library.json',
   'functions/api/_middleware.ts',
@@ -33,6 +34,7 @@ const copiedFiles = [
   'src/lib/api.ts',
   'src/lib/demo.ts',
   'src/lib/player.ts',
+  'src/lib/media-session.ts',
   'src/lib/preferences.ts',
   'src/lib/queue.ts',
   'vitest.config.ts',

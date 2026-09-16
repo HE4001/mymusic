@@ -31,9 +31,9 @@ npx wrangler pages deploy dist --project-name cloud-music
 
 不要使用普通 Worker 的 `wrangler deploy`。由于 [`../wrangler.jsonc`](../wrangler.jsonc) 声明了 `pages_build_output_dir`，它是 Pages 项目配置的 source of truth；不要在 Dashboard 另行维护同一组普通变量。
 
-## 3. 配置五项运行时配置
+## 3. 配置 B2 与网站密码
 
-项目只使用以下五项配置：两项普通变量和三项 Pages Secrets。生产和 Preview 应分别配置自己的值；`.dev.vars.example` 仅供本地占位，不是生产配置。
+B2 使用以下五项配置：两项普通变量和三项 Pages Secrets。网站另需 `SITE_PASSWORD` Secret，设置方法见本文“网站密码与 iOS Safari”。生产和 Preview 应分别配置自己的值；`.dev.vars.example` 仅供本地占位，不是生产配置。
 
 | 名称 | 配置来源 | 填写内容 |
 | --- | --- | --- |
@@ -59,12 +59,15 @@ npx wrangler pages secret put B2_APPLICATION_KEY --project-name cloud-music --en
 
 不要使用 `VITE_` 前缀，也不要把 `.dev.vars` 提交到 Git。B2 密钥只在 Pages Function 服务端签名，绝不发送给浏览器。
 
-## 4. 公开接口与平台策略
+## 4. 登录保护与平台策略
 
-代码不执行登录、JWT 或其他用户认证。任何访客都可以请求：
+访客通过 `POST /api/session` 提交网站密码，服务端校验后签发 HttpOnly 会话 Cookie。以下接口要求有效会话，未登录返回401：
 
 - `GET /api/library`：读取曲库展示字段；
-- `GET /api/play-url?id=...`：为清单中存在的曲目获取短期 B2 签名。
+- `GET /api/play-url?id=...`：为清单中存在的曲目获取短期 B2 签名；
+- `GET /api/stream?id=...`：302 跳转到短期播放地址，音频由浏览器直接向 B2 请求。
+
+`GET /api/session` 查询登录状态，`DELETE /api/session` 退出。密码未配置或少于12个字符时服务端返回503，关闭访问。
 
 接口不接受客户端提交的 bucket、host、object key 或任意远程 URL。签名 URL 是有效期内的持有者凭据，浏览器网络面板可以看到 URL、bucket、对象路径和短期签名；这不等于 B2 桶被设为公开。短期 URL 失效后需要重新请求，服务端密钥仍不离开 Pages Functions。
 
@@ -80,7 +83,7 @@ npx wrangler pages secret put B2_APPLICATION_KEY --project-name cloud-music --en
 
 ## 6. 发布后验收
 
-1. 在未登录浏览器打开播放器，确认 `/api/library` 能返回曲库，`/api/play-url` 能为合法曲目返回短期地址。
+1. 在未登录浏览器打开播放器，确认受保护接口返回401；输入网站密码后，`/api/library` 返回曲库，`/api/play-url` 能为合法曲目返回短期地址。
 2. 使用返回地址播放、暂停、切歌和拖动；有效 Range 请求应返回 `206` 和正确的 `Content-Range`，普通完整读取返回 `200` 也可能是正常的。
 3. 空曲库、不存在的 id、缺少 B2 配置和 B2 中不存在的对象都应显示可读错误并允许重试。
 4. 在测试环境使用短 TTL，等待真实地址过期后继续播放或拖动，客户端最多自动刷新一次签名，不应无限重试。
