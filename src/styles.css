@@ -29,8 +29,6 @@ button:disabled, input:disabled { opacity: .4; cursor: not-allowed; }
 .now-art { position: relative; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; background: #34332f; border: 5px double #68665f; }
 .now-art::after { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--page); border: 3px solid var(--accent); }
 h1,h2,h3,p { margin: 0; }
-.demo-banner { display: flex; gap: 12px; max-width: 1160px; margin: 16px auto 0; padding: 0; color: var(--muted); font-size: 11px; }
-.demo-banner strong { font-weight: 500; color: var(--accent); }
 .workspace { max-width: 1240px; margin: auto; padding: max(64px, calc(24px + env(safe-area-inset-top))) max(20px, env(safe-area-inset-right)) 0 max(20px, env(safe-area-inset-left)); }
 .library-panel { min-width: 0; }
 .library-heading { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 32px; }
@@ -135,12 +133,10 @@ dialog::backdrop { background: #24221c55; }
 .expanded-tools .tool-button { flex-direction: column; gap: 10px; min-width: 70px; min-height: 64px; }
 .expanded-message { max-width: 520px; margin-top: 18px; font-size: 13px; text-align: center; }
 @media (max-width: 1200px) {
-  .demo-banner { margin-left: 40px; margin-right: 40px; }
   .player-tools .tool-button > span { display: none; }
 }
 @media (max-width: 899px) {
   :root { --player-height: calc(76px + env(safe-area-inset-bottom)); }
-  .demo-banner { margin: 12px 20px 0; }
   .library-heading { margin-bottom: 24px; }
   .track-list-header { display: none; }
   .track-row { grid-template-columns: 24px minmax(0,1fr) 40px; gap: 8px; padding: 8px 0; min-height: 74px; }

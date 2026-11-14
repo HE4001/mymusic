@@ -8,7 +8,6 @@ dist/
 !.dev.vars.example
 .env
 .env.*
-coverage/
 *.log
 .DS_Store
 server/library.json.tmp

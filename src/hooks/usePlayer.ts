@@ -9,7 +9,6 @@ import type {
   Track,
 } from '../types';
 import { ApiError, getPlayTicket } from '../lib/api';
-import { getDemoPlayTicket, revokeDemoAudioUrls } from '../lib/demo';
 import {
   clearMediaSession,
   publishMediaSession,
@@ -19,7 +18,6 @@ import {
   setMediaSessionPositionState,
 } from '../lib/media-session';
 import {
-  DEFAULT_PREFERENCES,
   loadPreferences,
   prunePreferences,
   savePreferences,
@@ -84,13 +82,10 @@ function playbackErrorMessage(error: unknown): string {
 }
 
 export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerController {
-  const demoEnabled = import.meta.env.DEV && options.demo === true;
-  const directPlayback = options.directPlayback === true && !demoEnabled;
+  const directPlayback = options.directPlayback === true;
   const initialPreferencesRef = useRef<PlayerPreferences | null>(null);
   if (initialPreferencesRef.current === null) {
-    initialPreferencesRef.current = demoEnabled
-      ? { ...DEFAULT_PREFERENCES, favorites: [] }
-      : loadPreferences();
+    initialPreferencesRef.current = loadPreferences();
   }
   const initialPreferences = initialPreferencesRef.current;
 
@@ -173,7 +168,6 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
   }, []);
 
   const writePreferences = useCallback(() => {
-    if (demoEnabled) return;
     savePreferences({
       favorites: favoritesRef.current,
       recentTrackId: currentTrackIdRef.current,
@@ -182,11 +176,10 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       volume: volumeRef.current,
     });
     lastSavedAtRef.current = Date.now();
-  }, [demoEnabled]);
+  }, []);
 
   const persistPreferences = useCallback(
     (force = false) => {
-      if (demoEnabled) return;
       const elapsed = Date.now() - lastSavedAtRef.current;
       if (force || elapsed >= SAVE_INTERVAL_MS) {
         if (saveTimerRef.current !== null) {
@@ -203,7 +196,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
         }, SAVE_INTERVAL_MS - elapsed);
       }
     },
-    [demoEnabled, writePreferences],
+    [writePreferences],
   );
 
   const beginOperation = useCallback((resetRecovery: boolean): number => {
@@ -306,19 +299,6 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
     [setFailure, setStatus],
   );
 
-  const requestTicket = useCallback(
-    async (id: string, signal: AbortSignal): Promise<PlayTicket> => {
-      if (demoEnabled) {
-        if (signal.aborted) throw createAbortError();
-        const ticket = getDemoPlayTicket(id);
-        if (signal.aborted) throw createAbortError();
-        return ticket;
-      }
-      return getPlayTicket(id, signal);
-    },
-    [demoEnabled],
-  );
-
   const loadTrack = useCallback(
     async (
       id: string,
@@ -358,7 +338,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       try {
         const ticket: PlayTicket = directPlayback
           ? { trackId: id, url: `/api/stream?id=${encodeURIComponent(id)}`, expiresAt: Date.now() + 60_000 }
-          : await requestTicket(id, abortController.signal);
+          : await getPlayTicket(id, abortController.signal);
         if (operationId !== operationIdRef.current || abortController.signal.aborted) return;
 
         ticketRef.current = ticket;
@@ -421,7 +401,6 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       directPlayback,
       beginOperation,
       persistPreferences,
-      requestTicket,
       safePlay,
       setCurrentTime,
       setCurrentTrackId,
@@ -780,9 +759,8 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
         saveTimerRef.current = null;
       }
       writePreferences();
-      if (demoEnabled) revokeDemoAudioUrls();
     };
-  }, [demoEnabled, persistPreferences, setCurrentTime, setDuration, setStatus, writePreferences]);
+  }, [persistPreferences, setCurrentTime, setDuration, setStatus, writePreferences]);
 
   useEffect(() => {
     setMediaSessionMetadata(currentTrack);
@@ -829,11 +807,10 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
   useEffect(() => () => clearMediaSession(), []);
 
   useEffect(() => {
-    if (demoEnabled) return undefined;
     const onPageHide = () => writePreferences();
     window.addEventListener('pagehide', onPageHide);
     return () => window.removeEventListener('pagehide', onPageHide);
-  }, [demoEnabled, writePreferences]);
+  }, [writePreferences]);
 
   useEffect(() => {
     if (options.libraryLoaded !== true) {

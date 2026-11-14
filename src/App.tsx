@@ -6,7 +6,6 @@ import { QueuePanel } from './components/QueuePanel';
 import { TrackList } from './components/TrackList';
 import { usePlayer } from './hooks/usePlayer';
 import { getLibrary } from './lib/api';
-import { demoLibrary } from './lib/demo';
 import type { Library, Track } from './types';
 import './styles.css';
 
@@ -61,15 +60,12 @@ function FilterButtons({
 }
 
 export default function App() {
-  const demo = import.meta.env.DEV && new URLSearchParams(window.location.search).get('demo') === '1';
-  return demo ? <LibraryApp /> : <AuthGate><LibraryApp /></AuthGate>;
+  return <AuthGate><LibraryApp /></AuthGate>;
 }
 
 function LibraryApp() {
-  const demoMode =
-    import.meta.env.DEV && new URLSearchParams(window.location.search).get('demo') === '1';
-  const [library, setLibrary] = useState<Library | null>(demoMode ? demoLibrary : null);
-  const [libraryState, setLibraryState] = useState<LibraryState>(demoMode ? 'ready' : 'loading');
+  const [library, setLibrary] = useState<Library | null>(null);
+  const [libraryState, setLibraryState] = useState<LibraryState>('loading');
   const [loadError, setLoadError] = useState<LoadError | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
   const [filter, setFilter] = useState<Filter>('all');
@@ -77,13 +73,6 @@ function LibraryApp() {
   const [queueOpen, setQueueOpen] = useState(false);
 
   useEffect(() => {
-    if (demoMode) {
-      setLibrary(demoLibrary);
-      setLibraryState('ready');
-      setLoadError(null);
-      return undefined;
-    }
-
     const request = new AbortController();
     setLibrary(null);
     setLibraryState('loading');
@@ -102,11 +91,10 @@ function LibraryApp() {
       });
 
     return () => request.abort();
-  }, [demoMode, reloadKey]);
+  }, [reloadKey]);
 
   const tracks = library?.tracks ?? [];
   const player = usePlayer(tracks, {
-    demo: demoMode,
     directPlayback: true,
     libraryLoaded: libraryState === 'ready',
   });
@@ -166,14 +154,6 @@ function LibraryApp() {
 
   return (
     <div className="app-shell">
-
-      {demoMode ? (
-        <div className="demo-banner" role="status">
-          <strong>演示曲库</strong>
-          <span>本地试听 · {demoLibrary.tracks.length} 段测试音频</span>
-        </div>
-      ) : null}
-
       <div className="workspace">
 
         <main className="library-panel" id="main-content">
