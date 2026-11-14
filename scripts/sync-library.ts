@@ -8,9 +8,8 @@ import { readAudioTags } from './audio-metadata';
 try {
   const target = new URL('../server/library.json', import.meta.url);
   const previous = validateLibrary(JSON.parse(await readFile(target, 'utf8')));
-  // Keep old object paths available until this manifest has been deployed.
-  console.log('曲库路径迁移：本次使用已校验清单，迁移完成后恢复 B2 自动同步。');
-  const library = previous;
+  const keys = await listAudioKeys(process.env);
+  const library = makeLibrary(keys, previous, await readAudioTags(keys, process.env));
   const temporary = new URL('../server/library.json.tmp', import.meta.url);
   await writeFile(temporary, `${JSON.stringify(library, null, 2)}\n`, 'utf8');
   await rename(temporary, target);
