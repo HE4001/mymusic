@@ -77,7 +77,10 @@ export function TrackList({
                 </span>
                 <span className="track-title-block">
                   <strong title={track.title}>{track.title}</strong>
-                  <span className="mobile-track-artist" title={`${artist} · ${album}`}>{artist} · {album}</span>
+                  <span className="mobile-track-meta">
+                    <span className="mobile-track-artist" title={`${artist} · ${album}`}>{artist} · {album}</span>
+                    <span className="mobile-track-duration" aria-label={`时长 ${formatTime(track.duration)}`}>{formatTime(track.duration)}</span>
+                  </span>
                 </span>
               </button>
               <span className="track-cell track-artist" title={artist}>{artist}</span>

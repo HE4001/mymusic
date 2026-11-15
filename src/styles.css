@@ -63,7 +63,8 @@ kbd { font-family: inherit; font-size: 10px; border: 1px solid var(--line); padd
 .track-title-block, .queue-track-copy, .now-copy { display: flex; flex-direction: column; min-width: 0; }
 .track-title-block strong, .queue-track-copy strong, .now-copy strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; font-weight: 500; }
 .track-cell { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; color: var(--muted); }
-.mobile-track-artist { display: none; }
+.track-title-block { flex: 1; }
+.mobile-track-meta { display: none; }
 .favorite-button, .icon-button { display: grid; place-items: center; flex: 0 0 auto; width: 40px; height: 44px; padding: 0; border: 0; background: transparent; color: var(--muted); }
 .favorite-button .icon { width: 17px; height: 17px; }
 .favorite-button:hover, .icon-button:hover, [aria-pressed="true"] .icon { color: var(--accent); }
@@ -144,7 +145,9 @@ dialog::backdrop { background: #24221c55; }
   .track-number { font-size: 10px; }
   .track-main-action { gap: 10px; }
   .row-play-icon { width: 18px; }
-  .mobile-track-artist { display: block; margin-top: 6px; color: var(--muted); font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .mobile-track-meta { display: flex; align-items: center; gap: 8px; margin-top: 6px; color: var(--muted); font-size: 11px; }
+  .mobile-track-artist { min-width: 0; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .mobile-track-duration { flex: 0 0 auto; font: 11px ui-monospace, SFMono-Regular, Consolas, monospace; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .track-title-block strong { font-size: 13px; }
   .player-bar { padding: 0 16px env(safe-area-inset-bottom); }
   .desktop-player, .player-message { display: none; }

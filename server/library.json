@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-14T11:27:35.400Z",
+  "updatedAt": "2026-11-15T16:16:09.911Z",
   "tracks": [
     {
       "id": "b2_3f3172a1e424fa0448f8f939",
       "title": "事情要从1995年说起",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 99,
       "mimeType": "audio/flac",
       "objectKey": "李志/09我爱南京现场 Live/01 - 事情要从1995年说起.flac"
     },
@@ -16,7 +16,7 @@
       "title": "黑色信封",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 318,
       "mimeType": "audio/flac",
       "objectKey": "李志/09我爱南京现场 Live/02 - 黑色信封.flac"
     },
@@ -25,7 +25,7 @@
       "title": "董卓瑶",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 203,
       "mimeType": "audio/flac",
       "objectKey": "李志/09我爱南京现场 Live/03 - 董卓瑶.flac"
     },
@@ -34,7 +34,7 @@
       "title": "春末的南方城市",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 234,
       "mimeType": "audio/flac",
       "objectKey": "李志/09我爱南京现场 Live/04 - 春末的南方城市.flac"
     },
@@ -43,7 +43,7 @@
       "title": "来了",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 418,
       "mimeType": "audio/flac",
       "objectKey": "李志/09我爱南京现场 Live/05 - 来了.flac"
     },
@@ -52,7 +52,7 @@
       "title": "广场",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 231,
       "mimeType": "audio/flac",
       "objectKey": "李志/09我爱南京现场 Live/06 - 广场.flac"
     },
@@ -61,7 +61,7 @@
       "title": "青春",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 155,
       "mimeType": "audio/flac",
       "objectKey": "李志/09我爱南京现场 Live/07 - 青春.flac"
     },
@@ -70,7 +70,7 @@
       "title": "他们",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 273,
       "mimeType": "audio/flac",
       "objectKey": "李志/09我爱南京现场 Live/08 - 他们.flac"
     },
@@ -79,7 +79,7 @@
       "title": "被禁忌的游戏",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 278,
       "mimeType": "audio/flac",
       "objectKey": "李志/09我爱南京现场 Live/09 - 被禁忌的游戏.flac"
     },
@@ -88,7 +88,7 @@
       "title": "这个世界会好吗",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 243,
       "mimeType": "audio/flac",
       "objectKey": "李志/09我爱南京现场 Live/10 - 这个世界会好吗.flac"
     },
@@ -97,7 +97,7 @@
       "title": "妈妈",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 222,
       "mimeType": "audio/flac",
       "objectKey": "李志/09我爱南京现场 Live/11 - 妈妈.flac"
     },
@@ -106,7 +106,7 @@
       "title": "听妈妈讲那过去的事情",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 114,
       "mimeType": "audio/flac",
       "objectKey": "李志/09我爱南京现场 Live/12 - 听妈妈讲那过去的事情.flac"
     },
@@ -115,7 +115,7 @@
       "title": "倒影",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 183.024,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/09我爱南京现场 Live/13 - 倒影.mp3"
     },
@@ -124,7 +124,7 @@
       "title": "鸵鸟",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 284.04,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/09我爱南京现场 Live/14 - 鸵鸟.mp3"
     },
@@ -133,7 +133,7 @@
       "title": "天空之城",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 238.032,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/09我爱南京现场 Live/15 - 天空之城.mp3"
     },
@@ -142,7 +142,7 @@
       "title": "苍井空",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 261.024,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/09我爱南京现场 Live/16 - 苍井空.mp3"
     },
@@ -151,7 +151,7 @@
       "title": "意味",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 191.04,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/09我爱南京现场 Live/17 - 意味.mp3"
     },
@@ -160,7 +160,7 @@
       "title": "家乡",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 304.032,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/09我爱南京现场 Live/18 - 家乡（草他妈版）.mp3"
     },
@@ -169,7 +169,7 @@
       "title": "冬妮娅",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 214.032,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/09我爱南京现场 Live/20 - 冬妮娅.mp3"
     },
@@ -178,7 +178,7 @@
       "title": "末尾曲",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 272.04,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/09我爱南京现场 Live/21 - 末尾曲.mp3"
     },
@@ -187,7 +187,7 @@
       "title": "1990年的春天",
       "artist": "李志",
       "album": "2009我爱南京首发现场",
-      "duration": null,
+      "duration": 301.032,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/09我爱南京现场 Live/1990年的春天.mp3"
     },
@@ -196,7 +196,7 @@
       "title": "阿兰",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 261.7469387755102,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/阿兰.mp3"
     },
@@ -205,7 +205,7 @@
       "title": "倒影",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 165.0938775510204,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/倒影.mp3"
     },
@@ -214,7 +214,7 @@
       "title": "董卓瑶",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 197.32897959183674,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/董卓瑶.mp3"
     },
@@ -223,7 +223,7 @@
       "title": "关于郑州的记忆",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 230.03428571428572,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/关于郑州的记忆.mp3"
     },
@@ -232,7 +232,7 @@
       "title": "广场",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 316.02938775510205,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/广场.mp3"
     },
@@ -241,7 +241,7 @@
       "title": "和你在一起",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 210.8865306122449,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/和你在一起.mp3"
     },
@@ -250,7 +250,7 @@
       "title": "和你在一起",
       "artist": "观众们",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 207.0465306122449,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/和你在一起合唱.mp3"
     },
@@ -259,7 +259,7 @@
       "title": "黑色信封",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 324.85877551020405,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/黑色信封.mp3"
     },
@@ -268,7 +268,7 @@
       "title": "忽然",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 193.17551020408163,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/忽然.mp3"
     },
@@ -277,7 +277,7 @@
       "title": "姐姐",
       "artist": "张楚",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 409.18204081632655,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/姐姐.mp3"
     },
@@ -286,7 +286,7 @@
       "title": "尽头",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 287.7387755102041,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/尽头.mp3"
     },
@@ -295,7 +295,7 @@
       "title": "来了",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 528.065306122449,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/来了.mp3"
     },
@@ -304,7 +304,7 @@
       "title": "墙上的向日葵",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 528.1697959183673,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/墙上的向日葵.mp3"
     },
@@ -313,7 +313,7 @@
       "title": "青春",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 164.28408163265306,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/青春.mp3"
     },
@@ -322,7 +322,7 @@
       "title": "人民不需要自由",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 487.73224489795916,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/人民不需要自由.mp3"
     },
@@ -331,7 +331,7 @@
       "title": "山阴路的夏天",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 314.80163265306123,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/山阴路的夏天.mp3"
     },
@@ -340,7 +340,7 @@
       "title": "山阴路的独白",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 265.0383673469388,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/山阴路独白版.mp3"
     },
@@ -349,7 +349,7 @@
       "title": "她+我们不能失去信仰+1990年的春天（2012 Live）",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 957.3877551020408,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/她+我们不能失去信仰+1990年的春天.mp3"
     },
@@ -358,7 +358,7 @@
       "title": "下雨",
       "artist": "李志",
       "album": "108个关键词",
-      "duration": null,
+      "duration": 314.72326530612247,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/108 个关键词 2012 Live/下雨.mp3"
     },
@@ -367,7 +367,7 @@
       "title": "阿兰",
       "artist": "李志",
       "album": "2005 被禁忌的游戏",
-      "duration": null,
+      "duration": 166.09333333333333,
       "mimeType": "audio/wav",
       "objectKey": "李志/2005 被禁忌的游戏/阿兰.wav"
     },
@@ -376,7 +376,7 @@
       "title": "被禁忌的游戏",
       "artist": "李志",
       "album": "2005 被禁忌的游戏",
-      "duration": null,
+      "duration": 377.82666666666665,
       "mimeType": "audio/wav",
       "objectKey": "李志/2005 被禁忌的游戏/被禁忌的游戏.wav"
     },
@@ -385,7 +385,7 @@
       "title": "黑色信封",
       "artist": "李志",
       "album": "2005 被禁忌的游戏",
-      "duration": null,
+      "duration": 287.26666666666665,
       "mimeType": "audio/wav",
       "objectKey": "李志/2005 被禁忌的游戏/黑色信封.wav"
     },
@@ -394,7 +394,7 @@
       "title": "红色气球",
       "artist": "李志",
       "album": "2005 被禁忌的游戏",
-      "duration": null,
+      "duration": 173.36,
       "mimeType": "audio/wav",
       "objectKey": "李志/2005 被禁忌的游戏/红色气球.wav"
     },
@@ -403,7 +403,7 @@
       "title": "欢愉",
       "artist": "李志",
       "album": "2005 被禁忌的游戏",
-      "duration": null,
+      "duration": 207.45333333333335,
       "mimeType": "audio/wav",
       "objectKey": "李志/2005 被禁忌的游戏/欢愉.wav"
     },
@@ -412,7 +412,7 @@
       "title": "卡夫卡",
       "artist": "李志",
       "album": "2005 被禁忌的游戏",
-      "duration": null,
+      "duration": 176.88,
       "mimeType": "audio/wav",
       "objectKey": "李志/2005 被禁忌的游戏/卡夫卡.wav"
     },
@@ -421,7 +421,7 @@
       "title": "离婚",
       "artist": "李志",
       "album": "2005 被禁忌的游戏",
-      "duration": null,
+      "duration": 295.81333333333333,
       "mimeType": "audio/wav",
       "objectKey": "李志/2005 被禁忌的游戏/离婚.wav"
     },
@@ -430,7 +430,7 @@
       "title": "罗庄的冬天",
       "artist": "李志",
       "album": "2005 被禁忌的游戏",
-      "duration": null,
+      "duration": 410.8933333333333,
       "mimeType": "audio/wav",
       "objectKey": "李志/2005 被禁忌的游戏/罗庄的冬天.wav"
     },
@@ -439,7 +439,7 @@
       "title": "青春",
       "artist": "李志",
       "album": "2005 被禁忌的游戏",
-      "duration": null,
+      "duration": 192.56,
       "mimeType": "audio/wav",
       "objectKey": "李志/2005 被禁忌的游戏/青春.wav"
     },
@@ -448,7 +448,7 @@
       "title": "海的女儿",
       "artist": "李志",
       "album": "2006 这个世界会好吗",
-      "duration": null,
+      "duration": 210.92,
       "mimeType": "audio/wav",
       "objectKey": "李志/2006 这个世界会好吗/海的女儿.wav"
     },
@@ -457,7 +457,7 @@
       "title": "和你在一起",
       "artist": "李志",
       "album": "2006 这个世界会好吗",
-      "duration": null,
+      "duration": 251.93333333333334,
       "mimeType": "audio/wav",
       "objectKey": "李志/2006 这个世界会好吗/和你在一起.wav"
     },
@@ -466,7 +466,7 @@
       "title": "交河",
       "artist": "李志",
       "album": "2006 这个世界会好吗",
-      "duration": null,
+      "duration": 218.42666666666668,
       "mimeType": "audio/wav",
       "objectKey": "李志/2006 这个世界会好吗/交河.wav"
     },
@@ -475,7 +475,7 @@
       "title": "卡纳斯",
       "artist": "李志",
       "album": "2006 这个世界会好吗",
-      "duration": null,
+      "duration": 320,
       "mimeType": "audio/wav",
       "objectKey": "李志/2006 这个世界会好吗/卡纳斯.wav"
     },
@@ -484,7 +484,7 @@
       "title": "妈妈",
       "artist": "李志",
       "album": "2006 这个世界会好吗",
-      "duration": null,
+      "duration": 244.10666666666665,
       "mimeType": "audio/wav",
       "objectKey": "李志/2006 这个世界会好吗/妈妈.wav"
     },
@@ -493,7 +493,7 @@
       "title": "人民不需要自由",
       "artist": "李志",
       "album": "2006 这个世界会好吗",
-      "duration": null,
+      "duration": 280.5,
       "mimeType": "audio/flac",
       "objectKey": "李志/2006 这个世界会好吗/人民不需要自由.flac"
     },
@@ -502,7 +502,7 @@
       "title": "他们",
       "artist": "李志",
       "album": "2006 这个世界会好吗",
-      "duration": null,
+      "duration": 297,
       "mimeType": "audio/wav",
       "objectKey": "李志/2006 这个世界会好吗/他们.wav"
     },
@@ -511,7 +511,7 @@
       "title": "翁庆年的六英镑",
       "artist": "李志",
       "album": "2006 这个世界会好吗",
-      "duration": null,
+      "duration": 256.48,
       "mimeType": "audio/wav",
       "objectKey": "李志/2006 这个世界会好吗/翁庆年的六英镑.wav"
     },
@@ -520,7 +520,7 @@
       "title": "我们不能失去信仰——献给刘艺",
       "artist": "李志",
       "album": "2006 这个世界会好吗",
-      "duration": null,
+      "duration": 251.90666666666667,
       "mimeType": "audio/wav",
       "objectKey": "李志/2006 这个世界会好吗/我们不能失去信仰——献给刘艺.wav"
     },
@@ -529,7 +529,7 @@
       "title": "这个世界会好吗",
       "artist": "李志",
       "album": "2006 这个世界会好吗",
-      "duration": null,
+      "duration": 238.12090702947845,
       "mimeType": "audio/wav",
       "objectKey": "李志/2006 这个世界会好吗/这个世界会好吗.wav"
     },
@@ -538,7 +538,7 @@
       "title": "暧昧",
       "artist": "李志",
       "album": "2007 梵高先生",
-      "duration": null,
+      "duration": 217.62666666666667,
       "mimeType": "audio/wav",
       "objectKey": "李志/2007 梵高先生/暧昧.wav"
     },
@@ -547,7 +547,7 @@
       "title": "春末的南方城市",
       "artist": "李志",
       "album": "2007 梵高先生",
-      "duration": null,
+      "duration": 246.74666666666667,
       "mimeType": "audio/wav",
       "objectKey": "李志/2007 梵高先生/春末的南方城市.wav"
     },
@@ -556,7 +556,7 @@
       "title": "董卓谣",
       "artist": "李志",
       "album": "2007 梵高先生",
-      "duration": null,
+      "duration": 197.78666666666666,
       "mimeType": "audio/wav",
       "objectKey": "李志/2007 梵高先生/董卓谣.wav"
     },
@@ -565,7 +565,7 @@
       "title": "梵高先生",
       "artist": "李志",
       "album": "2007 梵高先生",
-      "duration": null,
+      "duration": 249.74666666666667,
       "mimeType": "audio/wav",
       "objectKey": "李志/2007 梵高先生/梵高先生.wav"
     },
@@ -574,7 +574,7 @@
       "title": "广场",
       "artist": "李志",
       "album": "2007 梵高先生",
-      "duration": null,
+      "duration": 251.32,
       "mimeType": "audio/wav",
       "objectKey": "李志/2007 梵高先生/广场.wav"
     },
@@ -583,7 +583,7 @@
       "title": "来了",
       "artist": "李志",
       "album": "2007 梵高先生",
-      "duration": null,
+      "duration": 311.56,
       "mimeType": "audio/wav",
       "objectKey": "李志/2007 梵高先生/来了.wav"
     },
@@ -592,7 +592,7 @@
       "title": "你离开了南京，从此没有人和我说话",
       "artist": "李志",
       "album": "2007 梵高先生",
-      "duration": null,
+      "duration": 71.81333333333333,
       "mimeType": "audio/wav",
       "objectKey": "李志/2007 梵高先生/你离开了南京，从此没有人和我说话.wav"
     },
@@ -601,7 +601,7 @@
       "title": "人民不需要自由",
       "artist": "李志",
       "album": "2007 梵高先生",
-      "duration": null,
+      "duration": 280.5,
       "mimeType": "audio/flac",
       "objectKey": "李志/2007 梵高先生/人民不需要自由.flac"
     },
@@ -610,7 +610,7 @@
       "title": "想起了他",
       "artist": "李志",
       "album": "2007 梵高先生",
-      "duration": null,
+      "duration": 273.49333333333334,
       "mimeType": "audio/wav",
       "objectKey": "李志/2007 梵高先生/想起了他.wav"
     },
@@ -619,7 +619,7 @@
       "title": "斜",
       "artist": "李志",
       "album": "2007 梵高先生",
-      "duration": null,
+      "duration": 216.76,
       "mimeType": "audio/wav",
       "objectKey": "李志/2007 梵高先生/斜.wav"
     },
@@ -628,7 +628,7 @@
       "title": "冬妮娅",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 232.41267573696146,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/01 - 冬妮娅.wav"
     },
@@ -637,7 +637,7 @@
       "title": "意味",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 201.70122448979592,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/01 - 意味.wav"
     },
@@ -646,7 +646,7 @@
       "title": "苍井空",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 260.2901360544218,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/02 - 苍井空.wav"
     },
@@ -655,7 +655,7 @@
       "title": "听妈妈讲那过去的事情",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 169.6932879818594,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/02 - 听妈妈讲那过去的事情.wav"
     },
@@ -664,7 +664,7 @@
       "title": "结婚",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 352.62065759637187,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/03 - 结婚.wav"
     },
@@ -673,7 +673,7 @@
       "title": "美丽的梭罗河",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 149.33886621315193,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/03 - 美丽的梭罗河.wav"
     },
@@ -682,7 +682,7 @@
       "title": "米店",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 210.99995464852609,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/04 - 米店.wav"
     },
@@ -691,7 +691,7 @@
       "title": "鸵鸟",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 267.1912925170068,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/04 - 鸵鸟.wav"
     },
@@ -700,7 +700,7 @@
       "title": "思念观世音",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 193.2731746031746,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/05 - 思念观世音.wav"
     },
@@ -709,7 +709,7 @@
       "title": "天空之城",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 223.0152380952381,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/05 - 天空之城.wav"
     },
@@ -718,7 +718,7 @@
       "title": "倒影",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 182.86485260770976,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/06 - 倒影.wav"
     },
@@ -727,7 +727,7 @@
       "title": "在那遥远的地方",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 171.8012244897959,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/06 - 在那遥远的地方.wav"
     },
@@ -736,7 +736,7 @@
       "title": "爱",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 200.8188888888889,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/07 - 爱.wav"
     },
@@ -745,7 +745,7 @@
       "title": "再见",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 88.87943310657596,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/07 - 再见.wav"
     },
@@ -754,7 +754,7 @@
       "title": "家乡",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 343.2930612244898,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/08 - 家乡.wav"
     },
@@ -763,7 +763,7 @@
       "title": "1990年的春天",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 269.4916780045352,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/09 - 1990年的春天.wav"
     },
@@ -772,7 +772,7 @@
       "title": "爸爸在天上看我（我爱南京未发表歌曲）",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 196.8,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/爸爸在天上看我（我爱南京未发表歌曲）.wav"
     },
@@ -781,7 +781,7 @@
       "title": "歌（我爱南京未发表歌曲）",
       "artist": "李志",
       "album": "2009 我爱南京",
-      "duration": null,
+      "duration": 173.26977324263038,
       "mimeType": "audio/wav",
       "objectKey": "李志/2009 我爱南京/歌（我爱南京未发表歌曲）.wav"
     },
@@ -790,7 +790,7 @@
       "title": "铅笔",
       "artist": "李志",
       "album": "2010 你好，郑州",
-      "duration": null,
+      "duration": 274.62666666666667,
       "mimeType": "audio/wav",
       "objectKey": "李志/2010 你好，郑州/01 - 铅笔.wav"
     },
@@ -799,7 +799,7 @@
       "title": "墙上的向日葵",
       "artist": "李志",
       "album": "2010 你好，郑州",
-      "duration": null,
+      "duration": 296.14666666666665,
       "mimeType": "audio/wav",
       "objectKey": "李志/2010 你好，郑州/01 - 墙上的向日葵.wav"
     },
@@ -808,7 +808,7 @@
       "title": "关于郑州的记忆",
       "artist": "李志",
       "album": "2010 你好，郑州",
-      "duration": null,
+      "duration": 228.14666666666668,
       "mimeType": "audio/wav",
       "objectKey": "李志/2010 你好，郑州/03 - 关于郑州的记忆.wav"
     },
@@ -817,7 +817,7 @@
       "title": "忽然",
       "artist": "李志",
       "album": "2010 你好，郑州",
-      "duration": null,
+      "duration": 126.85333333333334,
       "mimeType": "audio/wav",
       "objectKey": "李志/2010 你好，郑州/04 - 忽然.wav"
     },
@@ -826,7 +826,7 @@
       "title": "秋天的老狼",
       "artist": "李志",
       "album": "2010 你好，郑州",
-      "duration": null,
+      "duration": 236.29333333333332,
       "mimeType": "audio/wav",
       "objectKey": "李志/2010 你好，郑州/05 - 秋天的老狼.wav"
     },
@@ -835,7 +835,7 @@
       "title": "带亲",
       "artist": "李志",
       "album": "2010 你好，郑州",
-      "duration": null,
+      "duration": 222.10666666666665,
       "mimeType": "audio/wav",
       "objectKey": "李志/2010 你好，郑州/06 - 带亲.wav"
     },
@@ -844,7 +844,7 @@
       "title": "她",
       "artist": "李志",
       "album": "2010 你好，郑州",
-      "duration": null,
+      "duration": 247.46666666666667,
       "mimeType": "audio/wav",
       "objectKey": "李志/2010 你好，郑州/07 - 她.wav"
     },
@@ -853,7 +853,7 @@
       "title": "路 (李志、邵夷贝)",
       "artist": "李志",
       "album": "2010 你好，郑州",
-      "duration": null,
+      "duration": 143.34666666666666,
       "mimeType": "audio/wav",
       "objectKey": "李志/2010 你好，郑州/08 - 路 (李志、邵夷贝).wav"
     },
@@ -862,7 +862,7 @@
       "title": "夜",
       "artist": "李志",
       "album": "2010 你好，郑州",
-      "duration": null,
+      "duration": 274.81333333333333,
       "mimeType": "audio/wav",
       "objectKey": "李志/2010 你好，郑州/09 - 夜.wav"
     },
@@ -871,7 +871,7 @@
       "title": "铅笔(吉松浩版)",
       "artist": "李志",
       "album": "2010 你好，郑州",
-      "duration": null,
+      "duration": 276.5733333333333,
       "mimeType": "audio/wav",
       "objectKey": "李志/2010 你好，郑州/铅笔(吉松浩版).wav"
     },
@@ -880,7 +880,7 @@
       "title": "青春",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 192,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD1/01 - 青春.flac"
     },
@@ -889,7 +889,7 @@
       "title": "离婚",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 363.0133333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD1/02 - 离婚.flac"
     },
@@ -898,7 +898,7 @@
       "title": "我们不能失去信仰",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 256.8666666666667,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD1/03 - 我们不能失去信仰.flac"
     },
@@ -907,7 +907,7 @@
       "title": "喀纳斯",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 270.53333333333336,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD1/04 - 喀纳斯.flac"
     },
@@ -916,7 +916,7 @@
       "title": "天空之城",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 215.10666666666665,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD1/05 - 天空之城.flac"
     },
@@ -925,7 +925,7 @@
       "title": "苍井空",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 252.88,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD1/06 - 苍井空.flac"
     },
@@ -934,7 +934,7 @@
       "title": "关于郑州的记忆",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 238.28,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD1/07 - 关于郑州的记忆.flac"
     },
@@ -943,7 +943,7 @@
       "title": "海的女儿",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 301.36,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD1/08 - 海的女儿.flac"
     },
@@ -952,7 +952,7 @@
       "title": "她",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 317.06666666666666,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD1/09 - 她.flac"
     },
@@ -961,7 +961,7 @@
       "title": "家乡",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 376.41333333333336,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD1/10 - 家乡.flac"
     },
@@ -970,7 +970,7 @@
       "title": "结婚",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 426.44,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/01 - 结婚.flac"
     },
@@ -979,7 +979,7 @@
       "title": "红色气球",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 281.6533333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/02 - 红色气球.flac"
     },
@@ -988,7 +988,7 @@
       "title": "被禁忌的游戏",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 273.4266666666667,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/03 - 被禁忌的游戏.flac"
     },
@@ -997,7 +997,7 @@
       "title": "寻找",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 236.14666666666668,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/04 - 寻找.flac"
     },
@@ -1006,7 +1006,7 @@
       "title": "斜",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 207.52,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/05 - 斜.flac"
     },
@@ -1015,7 +1015,7 @@
       "title": "和你在一起",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 236.49333333333334,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/06 - 和你在一起.flac"
     },
@@ -1024,7 +1024,7 @@
       "title": "门",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 428.94666666666666,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/07 - 门.flac"
     },
@@ -1033,7 +1033,7 @@
       "title": "尽头",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 287.7866666666667,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/08 - 尽头.flac"
     },
@@ -1042,7 +1042,7 @@
       "title": "女神",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 293.3066666666667,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/09 - 女神.flac"
     },
@@ -1051,7 +1051,7 @@
       "title": "杭州",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 227.32,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/10 - 杭州.flac"
     },
@@ -1060,7 +1060,7 @@
       "title": "翁庆年的六英镑",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 256.08,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/11 - 翁庆年的六英镑.flac"
     },
@@ -1069,7 +1069,7 @@
       "title": "秋天的老狼",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 255.76,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/12 - 秋天的老狼.flac"
     },
@@ -1078,7 +1078,7 @@
       "title": "1990的春天",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 306.73333333333335,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/13 - 1990的春天.flac"
     },
@@ -1087,7 +1087,7 @@
       "title": "结尾",
       "artist": "李志",
       "album": "Imagine - 2011跨年演唱会",
-      "duration": null,
+      "duration": 64.66666666666667,
       "mimeType": "audio/flac",
       "objectKey": "李志/2011 - IMAGINE跨年音乐会/CD2/14 - 结尾.flac"
     },
@@ -1096,7 +1096,7 @@
       "title": "大象",
       "artist": "李志",
       "album": "2014 1701",
-      "duration": null,
+      "duration": 326.5920181405896,
       "mimeType": "audio/wav",
       "objectKey": "李志/2014 1701/1-01 - 大象.wav"
     },
@@ -1105,7 +1105,7 @@
       "title": "鼠说",
       "artist": "李志",
       "album": "2014 1701",
-      "duration": null,
+      "duration": 317.1840136054422,
       "mimeType": "audio/wav",
       "objectKey": "李志/2014 1701/1-02 - 鼠说.wav"
     },
@@ -1114,7 +1114,7 @@
       "title": "定西",
       "artist": "李志",
       "album": "2014 1701",
-      "duration": null,
+      "duration": 295.88267573696146,
       "mimeType": "audio/wav",
       "objectKey": "李志/2014 1701/1-03 - 定西.wav"
     },
@@ -1123,7 +1123,7 @@
       "title": "看见",
       "artist": "李志",
       "album": "2014 1701",
-      "duration": null,
+      "duration": 253.50401360544217,
       "mimeType": "audio/wav",
       "objectKey": "李志/2014 1701/1-04 - 看见.wav"
     },
@@ -1132,7 +1132,7 @@
       "title": "不多",
       "artist": "李志",
       "album": "2014 1701",
-      "duration": null,
+      "duration": 236.5418820861678,
       "mimeType": "audio/wav",
       "objectKey": "李志/2014 1701/1-05 - 不多.wav"
     },
@@ -1141,7 +1141,7 @@
       "title": "热河",
       "artist": "李志",
       "album": "2014 1701",
-      "duration": null,
+      "duration": 406.53868480725623,
       "mimeType": "audio/wav",
       "objectKey": "李志/2014 1701/1-06 - 热河.wav"
     },
@@ -1150,7 +1150,7 @@
       "title": "好威武支持有希望",
       "artist": "李志",
       "album": "2014 1701",
-      "duration": null,
+      "duration": 360.0853514739229,
       "mimeType": "audio/wav",
       "objectKey": "李志/2014 1701/1-07 - 好威武支持有希望.wav"
     },
@@ -1159,7 +1159,7 @@
       "title": "方式",
       "artist": "李志",
       "album": "2014 1701",
-      "duration": null,
+      "duration": 245.8453514739229,
       "mimeType": "audio/wav",
       "objectKey": "李志/2014 1701/1-08 - 方式.wav"
     },
@@ -1168,7 +1168,7 @@
       "title": "寻找",
       "artist": "李志",
       "album": "F",
-      "duration": null,
+      "duration": 226.90666666666667,
       "mimeType": "audio/flac",
       "objectKey": "李志/2014 F/01 - 寻找.flac"
     },
@@ -1177,7 +1177,7 @@
       "title": "尽头",
       "artist": "李志",
       "album": "F",
-      "duration": null,
+      "duration": 276.2,
       "mimeType": "audio/flac",
       "objectKey": "李志/2014 F/02 - 尽头.flac"
     },
@@ -1186,7 +1186,7 @@
       "title": "门",
       "artist": "李志",
       "album": "F",
-      "duration": null,
+      "duration": 388.76,
       "mimeType": "audio/flac",
       "objectKey": "李志/2014 F/03 - 门.flac"
     },
@@ -1195,7 +1195,7 @@
       "title": "下雨",
       "artist": "李志",
       "album": "F",
-      "duration": null,
+      "duration": 309.06666666666666,
       "mimeType": "audio/flac",
       "objectKey": "李志/2014 F/04 - 下雨.flac"
     },
@@ -1204,7 +1204,7 @@
       "title": "山阴路的夏天",
       "artist": "李志",
       "album": "F",
-      "duration": null,
+      "duration": 279.93333333333334,
       "mimeType": "audio/flac",
       "objectKey": "李志/2014 F/05 - 山阴路的夏天.flac"
     },
@@ -1213,7 +1213,7 @@
       "title": "女神",
       "artist": "李志",
       "album": "F",
-      "duration": null,
+      "duration": 302.04,
       "mimeType": "audio/flac",
       "objectKey": "李志/2014 F/06 - 女神.flac"
     },
@@ -1222,7 +1222,7 @@
       "title": "你的早晨",
       "artist": "李志",
       "album": "F",
-      "duration": null,
+      "duration": 249.64,
       "mimeType": "audio/flac",
       "objectKey": "李志/2014 F/07 - 你的早晨.flac"
     },
@@ -1231,7 +1231,7 @@
       "title": "杭州",
       "artist": "李志",
       "album": "F",
-      "duration": null,
+      "duration": 240.2,
       "mimeType": "audio/flac",
       "objectKey": "李志/2014 F/08 - 杭州.flac"
     },
@@ -1240,7 +1240,7 @@
       "title": "日",
       "artist": "李志",
       "album": "F",
-      "duration": null,
+      "duration": 162.73333333333332,
       "mimeType": "audio/flac",
       "objectKey": "李志/2014 F/09 - 日.flac"
     },
@@ -1249,7 +1249,7 @@
       "title": "1990年的春天2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 330.13551020408164,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/1990年的春天2013版LIVE.mp3"
     },
@@ -1258,7 +1258,7 @@
       "title": "106.被禁忌的游戏2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 498.5991836734694,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/被禁忌的游戏2013版LIVE.mp3"
     },
@@ -1267,7 +1267,7 @@
       "title": "111.春末的南方城市2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 277.00244897959186,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/春末的南方城市2013版LIVE.mp3"
     },
@@ -1276,7 +1276,7 @@
       "title": "董卓瑶2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 305.03183673469385,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/董卓瑶2013版LIVE.mp3"
     },
@@ -1285,7 +1285,7 @@
       "title": "杭州&我们不能失去信仰2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 542.72,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/杭州&我们不能失去信仰2013版LIVE.mp3"
     },
@@ -1294,7 +1294,7 @@
       "title": "101.和你在一起2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 261.7730612244898,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/和你在一起2013版LIVE.mp3"
     },
@@ -1303,7 +1303,7 @@
       "title": "黑色信封2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 327.26204081632653,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/黑色信封2013版LIVE.mp3"
     },
@@ -1312,7 +1312,7 @@
       "title": "来了2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 428.66938775510204,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/来了2013版LIVE.mp3"
     },
@@ -1321,7 +1321,7 @@
       "title": "108.离婚2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 280.0587755102041,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/离婚2013版LIVE.mp3"
     },
@@ -1330,7 +1330,7 @@
       "title": "妈妈2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 253.64897959183673,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/妈妈2013版LIVE.mp3"
     },
@@ -1339,7 +1339,7 @@
       "title": "109.门2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 398.0016326530612,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/门2013版LIVE.mp3"
     },
@@ -1348,7 +1348,7 @@
       "title": "105.你的早晨&天空之城2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 547.7877551020408,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/你的早晨&天空之城2013版LIVE.mp3"
     },
@@ -1357,7 +1357,7 @@
       "title": "103.铅笔2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 244.24489795918367,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/铅笔2013版LIVE.mp3"
     },
@@ -1366,7 +1366,7 @@
       "title": "102.墙上的向日葵2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 445.83183673469387,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/墙上的向日葵2013版LIVE.mp3"
     },
@@ -1375,7 +1375,7 @@
       "title": "107.秋天的老狼2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 432.8228571428571,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/秋天的老狼2013版LIVE.mp3"
     },
@@ -1384,7 +1384,7 @@
       "title": "山阴路的夏天2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 337.9983673469388,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/山阴路的夏天2013版LIVE.mp3"
     },
@@ -1393,7 +1393,7 @@
       "title": "翁庆年的六英镑2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 269.9755102040816,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/翁庆年的六英镑2013版LIVE.mp3"
     },
@@ -1402,7 +1402,7 @@
       "title": "104.下雨2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 286.58938775510205,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/下雨2013版LIVE.mp3"
     },
@@ -1411,7 +1411,7 @@
       "title": "110.斜2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 202.39673469387756,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/斜2013版LIVE.mp3"
     },
@@ -1420,7 +1420,7 @@
       "title": "意味2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 329.3518367346939,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/意味2013版LIVE.mp3"
     },
@@ -1429,7 +1429,7 @@
       "title": "这个世界会好吗2013版LIVE",
       "artist": "李志",
       "album": "勾三搭四2013-李志和你在一起跨年演唱会",
-      "duration": null,
+      "duration": 303.7779591836735,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/2014年《勾三搭四》/这个世界会好吗2013版LIVE.mp3"
     },
@@ -1438,7 +1438,7 @@
       "title": "采蘑菇的小姑娘",
       "artist": "李志",
       "album": "《8》",
-      "duration": null,
+      "duration": 132.70356009070295,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 8/采蘑菇的小姑娘.flac"
     },
@@ -1447,7 +1447,7 @@
       "title": "歌声与微笑",
       "artist": "李志",
       "album": "《8》",
-      "duration": null,
+      "duration": 190.40362811791383,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 8/歌声与微笑.flac"
     },
@@ -1456,7 +1456,7 @@
       "title": "兰花草",
       "artist": "李志",
       "album": "《8》",
-      "duration": null,
+      "duration": 164.0257596371882,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 8/兰花草.flac"
     },
@@ -1465,7 +1465,7 @@
       "title": "朋友越多越快乐",
       "artist": "李志",
       "album": "《8》",
-      "duration": null,
+      "duration": 141.80467120181405,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 8/朋友越多越快乐.flac"
     },
@@ -1474,7 +1474,7 @@
       "title": "数鸭子",
       "artist": "李志",
       "album": "《8》",
-      "duration": null,
+      "duration": 135.41877551020409,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 8/数鸭子.flac"
     },
@@ -1483,7 +1483,7 @@
       "title": "送别",
       "artist": "李志",
       "album": "《8》",
-      "duration": null,
+      "duration": 202.42750566893423,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 8/送别.flac"
     },
@@ -1492,7 +1492,7 @@
       "title": "蜗牛与黄鹂鸟",
       "artist": "李志",
       "album": "《8》",
-      "duration": null,
+      "duration": 155.2021768707483,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 8/蜗牛与黄鹂鸟.flac"
     },
@@ -1501,7 +1501,7 @@
       "title": "小螺号",
       "artist": "李志",
       "album": "《8》",
-      "duration": null,
+      "duration": 211.39446712018142,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 8/小螺号.flac"
     },
@@ -1510,7 +1510,7 @@
       "title": "Hey Jude",
       "artist": "李志",
       "album": "《8》",
-      "duration": null,
+      "duration": 263.59292517006804,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 8/Hey Jude.flac"
     },
@@ -1519,7 +1519,7 @@
       "title": "春末的南方城市",
       "artist": "李志",
       "album": "北京不插电现场",
-      "duration": null,
+      "duration": 404.47546485260773,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 北京不插电现场/春末的南方城市 (2016 unplugged).flac"
     },
@@ -1528,7 +1528,7 @@
       "title": "大象",
       "artist": "李志",
       "album": "北京不插电现场",
-      "duration": null,
+      "duration": 340.66716553287984,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 北京不插电现场/大象 (2016 unplugged).flac"
     },
@@ -1537,7 +1537,7 @@
       "title": "定西",
       "artist": "李志",
       "album": "北京不插电现场",
-      "duration": null,
+      "duration": 473.9329931972789,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 北京不插电现场/定西 (2016 unplugged).flac"
     },
@@ -1546,7 +1546,7 @@
       "title": "关于郑州的记忆",
       "artist": "李志",
       "album": "北京不插电现场",
-      "duration": null,
+      "duration": 287.348820861678,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 北京不插电现场/关于郑州的记忆 (2016 unplugged).flac"
     },
@@ -1555,7 +1555,7 @@
       "title": "杭州",
       "artist": "李志",
       "album": "北京不插电现场",
-      "duration": null,
+      "duration": 222.40054421768707,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 北京不插电现场/杭州 (2016 unplugged).flac"
     },
@@ -1564,7 +1564,7 @@
       "title": "黑色信封",
       "artist": "李志",
       "album": "北京不插电现场",
-      "duration": null,
+      "duration": 280.2078911564626,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 北京不插电现场/黑色信封 (2016 unplugged).flac"
     },
@@ -1573,7 +1573,7 @@
       "title": "结婚",
       "artist": "李志",
       "album": "北京不插电现场",
-      "duration": null,
+      "duration": 420.9601133786848,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 北京不插电现场/结婚 (2016 unplugged).flac"
     },
@@ -1582,7 +1582,7 @@
       "title": "热河",
       "artist": "李志",
       "album": "北京不插电现场",
-      "duration": null,
+      "duration": 364.684126984127,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 北京不插电现场/热河 (2016 unplugged).flac"
     },
@@ -1591,7 +1591,7 @@
       "title": "山阴路的夏天",
       "artist": "李志",
       "album": "北京不插电现场",
-      "duration": null,
+      "duration": 343.4184126984127,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 北京不插电现场/山阴路的夏天 (2016 unplugged).flac"
     },
@@ -1600,7 +1600,7 @@
       "title": "鼠说",
       "artist": "李志",
       "album": "北京不插电现场",
-      "duration": null,
+      "duration": 485.0639455782313,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 北京不插电现场/鼠说 (2016 unplugged).flac"
     },
@@ -1609,7 +1609,7 @@
       "title": "鸵鸟",
       "artist": "李志",
       "album": "北京不插电现场",
-      "duration": null,
+      "duration": 259.0115873015873,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 北京不插电现场/鸵鸟 (2016 unplugged).flac"
     },
@@ -1618,7 +1618,7 @@
       "title": "这个世界会好吗",
       "artist": "李志",
       "album": "北京不插电现场",
-      "duration": null,
+      "duration": 273.68086167800453,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 北京不插电现场/这个世界会好吗 (2016 unplugged).flac"
     },
@@ -1627,7 +1627,7 @@
       "title": "彩色派对",
       "artist": "李志",
       "album": "在每一条伤心的应天大街上",
-      "duration": null,
+      "duration": 208.90625850340135,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 在每一条伤心的应天大街上/彩色派对.flac"
     },
@@ -1636,7 +1636,7 @@
       "title": "克兰河",
       "artist": "李志",
       "album": "在每一条伤心的应天大街上",
-      "duration": null,
+      "duration": 360.3750113378685,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 在每一条伤心的应天大街上/克兰河.flac"
     },
@@ -1645,7 +1645,7 @@
       "title": "你好明天",
       "artist": "李志",
       "album": "在每一条伤心的应天大街上",
-      "duration": null,
+      "duration": 267.4687528344671,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 在每一条伤心的应天大街上/你好明天.flac"
     },
@@ -1654,7 +1654,7 @@
       "title": "哦吼",
       "artist": "李志",
       "album": "在每一条伤心的应天大街上",
-      "duration": null,
+      "duration": 243.65625850340135,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 在每一条伤心的应天大街上/哦吼.flac"
     },
@@ -1663,7 +1663,7 @@
       "title": "死人",
       "artist": "李志",
       "album": "在每一条伤心的应天大街上",
-      "duration": null,
+      "duration": 289.43750566893425,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 在每一条伤心的应天大街上/死人.flac"
     },
@@ -1672,7 +1672,7 @@
       "title": "一个夜晚",
       "artist": "李志",
       "album": "在每一条伤心的应天大街上",
-      "duration": null,
+      "duration": 281.5625170068027,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 在每一条伤心的应天大街上/一个夜晚.flac"
     },
@@ -1681,7 +1681,7 @@
       "title": "一头偶像",
       "artist": "李志",
       "album": "在每一条伤心的应天大街上",
-      "duration": null,
+      "duration": 222.5937641723356,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 在每一条伤心的应天大街上/一头偶像.flac"
     },
@@ -1690,7 +1690,7 @@
       "title": "在每一条伤心的应天大街上",
       "artist": "李志",
       "album": "在每一条伤心的应天大街上",
-      "duration": null,
+      "duration": 429.68750566893425,
       "mimeType": "audio/flac",
       "objectKey": "李志/2016 在每一条伤心的应天大街上/在每一条伤心的应天大街上.flac"
     },
@@ -1699,7 +1699,7 @@
       "title": "春末的南方城市",
       "artist": "李志",
       "album": "李志、电声与管弦乐",
-      "duration": null,
+      "duration": 256.8213378684807,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅰ/春末的南方城市.flac"
     },
@@ -1708,7 +1708,7 @@
       "title": "大象",
       "artist": "李志",
       "album": "李志、电声与管弦乐",
-      "duration": null,
+      "duration": 409.51467120181405,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅰ/大象.flac"
     },
@@ -1717,7 +1717,7 @@
       "title": "定西",
       "artist": "李志",
       "album": "李志、电声与管弦乐",
-      "duration": null,
+      "duration": 363.73333333333335,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅰ/定西.flac"
     },
@@ -1726,7 +1726,7 @@
       "title": "杭州",
       "artist": "李志",
       "album": "李志、电声与管弦乐",
-      "duration": null,
+      "duration": 331.4108843537415,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅰ/杭州.flac"
     },
@@ -1735,7 +1735,7 @@
       "title": "和你在一起",
       "artist": "李志",
       "album": "李志、电声与管弦乐",
-      "duration": null,
+      "duration": 259.6053514739229,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅰ/和你在一起.flac"
     },
@@ -1744,7 +1744,7 @@
       "title": "黑色信封",
       "artist": "李志",
       "album": "李志、电声与管弦乐",
-      "duration": null,
+      "duration": 333.9520181405896,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅰ/黑色信封.flac"
     },
@@ -1753,7 +1753,7 @@
       "title": "回答",
       "artist": "李志",
       "album": "李志、电声与管弦乐",
-      "duration": null,
+      "duration": 378.37868480725626,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅰ/回答.flac"
     },
@@ -1762,7 +1762,7 @@
       "title": "尽头",
       "artist": "李志",
       "album": "李志、电声与管弦乐",
-      "duration": null,
+      "duration": 258.53868480725623,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅰ/尽头.flac"
     },
@@ -1771,7 +1771,7 @@
       "title": "门",
       "artist": "李志",
       "album": "李志、电声与管弦乐",
-      "duration": null,
+      "duration": 402.5813378684807,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅰ/门.flac"
     },
@@ -1780,7 +1780,7 @@
       "title": "铅笔",
       "artist": "李志",
       "album": "李志、电声与管弦乐",
-      "duration": null,
+      "duration": 312.43201814058955,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅰ/铅笔.flac"
     },
@@ -1789,7 +1789,7 @@
       "title": "墙上的向日葵",
       "artist": "李志",
       "album": "李志、电声与管弦乐",
-      "duration": null,
+      "duration": 465.0453514739229,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅰ/墙上的向日葵.flac"
     },
@@ -1798,7 +1798,7 @@
       "title": "序曲",
       "artist": "李志",
       "album": "李志、电声与管弦乐",
-      "duration": null,
+      "duration": 289.7560090702948,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅰ/序曲.flac"
     },
@@ -1807,7 +1807,7 @@
       "title": "家乡 (相信未来版)",
       "artist": "李志",
       "album": "李志、电声与管弦乐II",
-      "duration": null,
+      "duration": 425.83467120181405,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅱ/家乡 (相信未来版).flac"
     },
@@ -1816,7 +1816,7 @@
       "title": "你好明天 (相信未来版)",
       "artist": "李志",
       "album": "李志、电声与管弦乐II",
-      "duration": null,
+      "duration": 307.2213378684807,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅱ/你好明天 (相信未来版).flac"
     },
@@ -1825,7 +1825,7 @@
       "title": "哦吼 (相信未来版)",
       "artist": "李志",
       "album": "李志、电声与管弦乐II",
-      "duration": null,
+      "duration": 324.79401360544216,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅱ/哦吼 (相信未来版).flac"
     },
@@ -1834,7 +1834,7 @@
       "title": "山阴路的夏天 (相信未来版)",
       "artist": "李志",
       "album": "李志、电声与管弦乐II",
-      "duration": null,
+      "duration": 289.0506802721088,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅱ/山阴路的夏天 (相信未来版).flac"
     },
@@ -1843,7 +1843,7 @@
       "title": "天空之城 (相信未来版)",
       "artist": "李志",
       "album": "李志、电声与管弦乐II",
-      "duration": null,
+      "duration": 291.25333333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅱ/天空之城 (相信未来版).flac"
     },
@@ -1852,7 +1852,7 @@
       "title": "相信未来序曲 (乐曲)",
       "artist": "李志",
       "album": "李志、电声与管弦乐II",
-      "duration": null,
+      "duration": 306.44267573696146,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅱ/相信未来序曲 (乐曲).flac"
     },
@@ -1861,7 +1861,7 @@
       "title": "寻找 (相信未来版)",
       "artist": "李志",
       "album": "李志、电声与管弦乐II",
-      "duration": null,
+      "duration": 259.6106802721088,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅱ/寻找 (相信未来版).flac"
     },
@@ -1870,7 +1870,7 @@
       "title": "一头偶像 (相信未来版)",
       "artist": "李志",
       "album": "李志、电声与管弦乐II",
-      "duration": null,
+      "duration": 289.3973469387755,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅱ/一头偶像 (相信未来版).flac"
     },
@@ -1879,7 +1879,7 @@
       "title": "这个世界会好吗 (相信未来版)",
       "artist": "李志",
       "album": "李志、电声与管弦乐II",
-      "duration": null,
+      "duration": 374.39467120181405,
       "mimeType": "audio/flac",
       "objectKey": "李志/电声与管弦乐 Ⅱ/这个世界会好吗 (相信未来版).flac"
     },
@@ -1888,7 +1888,7 @@
       "title": "地方 (2015动静版)",
       "artist": "李志",
       "album": "动静（2015Live）",
-      "duration": null,
+      "duration": 361.13068027210886,
       "mimeType": "audio/flac",
       "objectKey": "李志/动静 2015 Live/地方 (2015动静版).flac"
     },
@@ -1897,7 +1897,7 @@
       "title": "定西 (2015动静版)",
       "artist": "李志",
       "album": "动静（2015Live）",
-      "duration": null,
+      "duration": 265.19034013605443,
       "mimeType": "audio/flac",
       "objectKey": "李志/动静 2015 Live/定西 (2015动静版) - 李志.flac"
     },
@@ -1906,7 +1906,7 @@
       "title": "好威武支持有希望&倒影&青春&人民不需要自由 (2015动静版)",
       "artist": "李志",
       "album": "动静（2015Live）",
-      "duration": null,
+      "duration": 665.0986848072563,
       "mimeType": "audio/flac",
       "objectKey": "李志/动静 2015 Live/好威武支持有希望&倒影&青春&人民不需要自由 (2015动静版).flac"
     },
@@ -1915,7 +1915,7 @@
       "title": "和你在一起 (2015动静版)",
       "artist": "李志",
       "album": "动静（2015Live）",
-      "duration": null,
+      "duration": 280.0213378684807,
       "mimeType": "audio/flac",
       "objectKey": "李志/动静 2015 Live/和你在一起 (2015动静版) - 李志.flac"
     },
@@ -1924,7 +1924,7 @@
       "title": "忽然 (2015动静版)",
       "artist": "李志",
       "album": "动静（2015Live）",
-      "duration": null,
+      "duration": 266.4960090702948,
       "mimeType": "audio/flac",
       "objectKey": "李志/动静 2015 Live/忽然（2015动静版）.flac"
     },
@@ -1933,7 +1933,7 @@
       "title": "尽头 (2015动静版)",
       "artist": "李志",
       "album": "动静（2015Live）",
-      "duration": null,
+      "duration": 206.1280045351474,
       "mimeType": "audio/flac",
       "objectKey": "李志/动静 2015 Live/尽头 (2015动静版).flac"
     },
@@ -1942,7 +1942,7 @@
       "title": "定西 (2015动静版)",
       "artist": "李志",
       "album": "动静（2015Live）",
-      "duration": null,
+      "duration": 265.19034013605443,
       "mimeType": "audio/flac",
       "objectKey": "李志/动静 2015 Live/李志 - 定西 (2015动静版).flac"
     },
@@ -1951,7 +1951,7 @@
       "title": "和你在一起 (2015动静版)",
       "artist": "李志",
       "album": "动静（2015Live）",
-      "duration": null,
+      "duration": 280.0213378684807,
       "mimeType": "audio/flac",
       "objectKey": "李志/动静 2015 Live/李志 - 和你在一起 (2015动静版).flac"
     },
@@ -1960,7 +1960,7 @@
       "title": "墙上的向日葵 (2015动静版)",
       "artist": "李志",
       "album": "动静（2015Live）",
-      "duration": null,
+      "duration": 405.2426757369615,
       "mimeType": "audio/flac",
       "objectKey": "李志/动静 2015 Live/墙上的向日葵 (2015动静版).flac"
     },
@@ -1969,7 +1969,7 @@
       "title": "你的早晨 (2015动静版)",
       "artist": "李志",
       "album": "动静（2015Live）",
-      "duration": null,
+      "duration": 339.9680045351474,
       "mimeType": "audio/flac",
       "objectKey": "李志/动静 2015 Live/你的早晨 (2015动静版).flac"
     },
@@ -1978,7 +1978,7 @@
       "title": "这个世界会好吗 (2015动静版)",
       "artist": "李志",
       "album": "动静（2015Live）",
-      "duration": null,
+      "duration": 314.09068027210884,
       "mimeType": "audio/flac",
       "objectKey": "李志/动静 2015 Live/这个世界会好吗 (2015动静版).flac"
     },
@@ -1987,7 +1987,7 @@
       "title": "1990年的春天",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 314.50666666666666,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/1990年的春天.flac"
     },
@@ -1996,7 +1996,7 @@
       "title": "被禁忌的游戏",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 277.12,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/被禁忌的游戏.flac"
     },
@@ -2005,7 +2005,7 @@
       "title": "苍井空",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 252.57333333333332,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/苍井空.flac"
     },
@@ -2014,7 +2014,7 @@
       "title": "春末的南方城市",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 223.37333333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/春末的南方城市.flac"
     },
@@ -2023,7 +2023,7 @@
       "title": "达摩流浪者",
       "artist": "万晓利",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 267.37333333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/达摩流浪者.flac"
     },
@@ -2032,7 +2032,7 @@
       "title": "倒影",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 185.56,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/倒影.flac"
     },
@@ -2041,7 +2041,7 @@
       "title": "冬妮娅",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 233.58666666666667,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/冬妮娅.flac"
     },
@@ -2050,7 +2050,7 @@
       "title": "董卓瑶",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 207.02666666666667,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/董卓瑶.flac"
     },
@@ -2059,7 +2059,7 @@
       "title": "广场",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 240.72,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/广场.flac"
     },
@@ -2068,7 +2068,7 @@
       "title": "狐狸",
       "artist": "万晓利",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 289.3066666666667,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/狐貍.flac"
     },
@@ -2077,7 +2077,7 @@
       "title": "虎口脱险",
       "artist": "老狼",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 311.16,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/虎口脱险.flac"
     },
@@ -2086,7 +2086,7 @@
       "title": "家乡",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 315.81333333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/家乡.flac"
     },
@@ -2095,7 +2095,7 @@
       "title": "结婚",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 337.92,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/结婚.flac"
     },
@@ -2104,7 +2104,7 @@
       "title": "来了",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 420.70666666666665,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/来了.flac"
     },
@@ -2113,7 +2113,7 @@
       "title": "来自我心",
       "artist": "老狼",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 252,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/来自我心.flac"
     },
@@ -2122,7 +2122,7 @@
       "title": "恋恋风尘",
       "artist": "老狼",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 278.0933333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/恋恋风尘.flac"
     },
@@ -2131,7 +2131,7 @@
       "title": "妈妈",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 227.25333333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/妈妈.flac"
     },
@@ -2140,7 +2140,7 @@
       "title": "鸟语",
       "artist": "万晓利",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 415.0133333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/鸟语.flac"
     },
@@ -2149,7 +2149,7 @@
       "title": "青春",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 154.13333333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/青春.flac"
     },
@@ -2158,7 +2158,7 @@
       "title": "他们",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 268.64,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/他们.flac"
     },
@@ -2167,7 +2167,7 @@
       "title": "天空之城",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 255.28,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/天空之城.flac"
     },
@@ -2176,7 +2176,7 @@
       "title": "听妈妈讲那过去的故事",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 108.84,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/听妈妈讲那过去的故事.flac"
     },
@@ -2185,7 +2185,7 @@
       "title": "陀螺",
       "artist": "万晓利",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 360.50666666666666,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/陀螺.flac"
     },
@@ -2194,7 +2194,7 @@
       "title": "鸵鸟",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 278.93333333333334,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/鸵鸟.flac"
     },
@@ -2203,7 +2203,7 @@
       "title": "信封",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 323.73333333333335,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/信封.flac"
     },
@@ -2212,7 +2212,7 @@
       "title": "意味",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 194.34666666666666,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/意味.flac"
     },
@@ -2221,7 +2221,7 @@
       "title": "这个世界会好吗",
       "artist": "李志",
       "album": "二零零九年十月十六日事件",
-      "duration": null,
+      "duration": 239.97333333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/二零零九年十月十六日事件/这个世界会好吗.flac"
     },
@@ -2230,7 +2230,7 @@
       "title": "被禁忌的游戏",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 266.016,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/被禁忌的游戏.mp3"
     },
@@ -2239,7 +2239,7 @@
       "title": "苍井空",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 239.064,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/苍井空.mp3"
     },
@@ -2248,7 +2248,7 @@
       "title": "春末的南方城市",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 409.2,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/春末的南方城市.mp3"
     },
@@ -2257,7 +2257,7 @@
       "title": "忽然 余赣宁",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 163.464,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/忽然 余赣宁.mp3"
     },
@@ -2266,7 +2266,7 @@
       "title": "结婚",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 414.768,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/结婚.mp3"
     },
@@ -2275,7 +2275,7 @@
       "title": "喀纳斯",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 413.76,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/喀纳斯.mp3"
     },
@@ -2284,7 +2284,7 @@
       "title": "开场关于郑州的记忆",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 229.536,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/开场关于郑州的记忆.mp3"
     },
@@ -2293,7 +2293,7 @@
       "title": "来了",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 472.032,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/来了.mp3"
     },
@@ -2302,7 +2302,7 @@
       "title": "妈妈",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 344.64,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/妈妈.mp3"
     },
@@ -2311,7 +2311,7 @@
       "title": "你的早晨 天空之城 和你在一起",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 696.816,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/你的早晨 天空之城 和你在一起.mp3"
     },
@@ -2320,7 +2320,7 @@
       "title": "你离开了南京从此没有人陪我说话，合唱关于郑州的记忆",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 467.544,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/你离开了南京从此没有人陪我说话，合唱关于郑州的记忆.mp3"
     },
@@ -2329,7 +2329,7 @@
       "title": "铅笔",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 260.76,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/铅笔.mp3"
     },
@@ -2338,7 +2338,7 @@
       "title": "墙上的向日葵",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 430.176,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/墙上的向日葵.mp3"
     },
@@ -2347,7 +2347,7 @@
       "title": "人民不需要自由",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 220.92,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/人民不需要自由.mp3"
     },
@@ -2356,7 +2356,7 @@
       "title": "山阴路的夏天",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 264.576,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/山阴路的夏天.mp3"
     },
@@ -2365,7 +2365,7 @@
       "title": "他们 广场",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 469.968,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/他们 广场.mp3"
     },
@@ -2374,7 +2374,7 @@
       "title": "我们不能失去信仰 1990年的春天",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 686.616,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/我们不能失去信仰 1990年的春天.mp3"
     },
@@ -2383,7 +2383,7 @@
       "title": "寻找",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 191.544,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/寻找.mp3"
     },
@@ -2392,7 +2392,7 @@
       "title": "这个世界会好吗",
       "artist": "李志",
       "album": "20140417李志郑州站音频文件",
-      "duration": null,
+      "duration": 353.544,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/20140417李志郑州站音频文件/这个世界会好吗.mp3"
     },
@@ -2401,7 +2401,7 @@
       "title": "梵高先生",
       "artist": "李志",
       "album": "李志的现场",
-      "duration": null,
+      "duration": 410.69714285714286,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/梵高先生Live.mp3"
     },
@@ -2410,7 +2410,7 @@
       "title": "公路之光",
       "artist": "李志",
       "album": "李志的现场翻唱",
-      "duration": null,
+      "duration": 545.3322448979592,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/公路之光.mp3"
     },
@@ -2419,7 +2419,7 @@
       "title": "广场",
       "artist": "李志",
       "album": "李志的现场",
-      "duration": null,
+      "duration": 341.4465306122449,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/广场.Live.mp3"
     },
@@ -2428,7 +2428,7 @@
       "title": "墙上的向日葵",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 421.04163265306124,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/01 - 墙上的向日葵.mp3"
     },
@@ -2437,7 +2437,7 @@
       "title": "铅笔",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 364.5910204081633,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/02 - 铅笔.mp3"
     },
@@ -2446,7 +2446,7 @@
       "title": "黑色信封",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 294.84408163265306,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/03 - 黑色信封.mp3"
     },
@@ -2455,7 +2455,7 @@
       "title": "苍井空",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 310.0473469387755,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/04 - 苍井空.mp3"
     },
@@ -2464,7 +2464,7 @@
       "title": "定西",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 296.6987755102041,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/05 - 定西.mp3"
     },
@@ -2473,7 +2473,7 @@
       "title": "大象",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 317.93632653061223,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/06 - 大象.mp3"
     },
@@ -2482,7 +2482,7 @@
       "title": "1990年的春天",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 336.0391836734694,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/07 - 1990年的春天.mp3"
     },
@@ -2491,7 +2491,7 @@
       "title": "这个世界会好吗",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 323.4742857142857,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/08 - 这个世界会好吗.mp3"
     },
@@ -2500,7 +2500,7 @@
       "title": "董卓瑶",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 279.77142857142854,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/09 - 董卓瑶.mp3"
     },
@@ -2509,7 +2509,7 @@
       "title": "妈妈",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 296.0195918367347,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/10 - 妈妈.mp3"
     },
@@ -2518,7 +2518,7 @@
       "title": "寻找",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 202.18775510204082,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/11 - 寻找.mp3"
     },
@@ -2527,7 +2527,7 @@
       "title": "他们",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 362.6579591836735,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/12 - 他们.mp3"
     },
@@ -2536,7 +2536,7 @@
       "title": "广场",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 311.9020408163265,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/13 - 广场.mp3"
     },
@@ -2545,7 +2545,7 @@
       "title": "和你在一起",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 276.7673469387755,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/14 - 和你在一起.mp3"
     },
@@ -2554,7 +2554,7 @@
       "title": "门",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 616.4114285714286,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/15 - 门.mp3"
     },
@@ -2563,7 +2563,7 @@
       "title": "结婚",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 311.0138775510204,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/16 - 结婚.mp3"
     },
@@ -2572,7 +2572,7 @@
       "title": "春末的南方城市",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 259.5526530612245,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/17 - 春末的南方城市.mp3"
     },
@@ -2581,7 +2581,7 @@
       "title": "关于郑州的记忆",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 245.55102040816325,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/18 - 关于郑州的记忆.mp3"
     },
@@ -2590,7 +2590,7 @@
       "title": "热河",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 481.88081632653063,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/19 - 热河.mp3"
     },
@@ -2599,7 +2599,7 @@
       "title": "下雨",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 338.9387755102041,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/20 - 下雨.mp3"
     },
@@ -2608,7 +2608,7 @@
       "title": "杭州&倒影&天空之城",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 675.8661224489796,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/21 - 杭州&倒影&天空之城.mp3"
     },
@@ -2617,7 +2617,7 @@
       "title": "来了",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 332.1208163265306,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/22 - 来了.mp3"
     },
@@ -2626,7 +2626,7 @@
       "title": "山阴路的夏天",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 332.5910204081633,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/23 - 山阴路的夏天.mp3"
     },
@@ -2635,7 +2635,7 @@
       "title": "千年等一回",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 242.67755102040817,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/24 - 千年等一回.mp3"
     },
@@ -2644,7 +2644,7 @@
       "title": "虎口脱险",
       "artist": "李志",
       "album": "李志20150808杭州酒球会一身酒气",
-      "duration": null,
+      "duration": 285.51836734693876,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/李志20150808杭州酒球会一身酒气/25 - 虎口脱险.mp3"
     },
@@ -2653,7 +2653,7 @@
       "title": "鹿港小镇",
       "artist": "李志",
       "album": "那些未做成CD的live",
-      "duration": null,
+      "duration": 96.67918367346938,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/鹿港小镇.mp3"
     },
@@ -2662,7 +2662,7 @@
       "title": "山阴路的夏天Live",
       "artist": "李志",
       "album": "李志的现场",
-      "duration": null,
+      "duration": 374.8048979591837,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/山阴路的夏天Live.mp3"
     },
@@ -2680,7 +2680,7 @@
       "title": "长安县",
       "artist": "李志",
       "album": "李志的现场翻唱",
-      "duration": null,
+      "duration": 270.3934693877551,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/长安县.mp3"
     },
@@ -2689,7 +2689,7 @@
       "title": "走进新时代",
       "artist": "李志",
       "album": "李志的现场翻唱",
-      "duration": null,
+      "duration": 396.98285714285714,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/非官方/走进新时代.mp3"
     },
@@ -2698,7 +2698,7 @@
       "title": "阿兰 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 215.52761904761905,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/阿兰.m4a"
     },
@@ -2707,7 +2707,7 @@
       "title": "暧昧 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 194.42068027210885,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/暧昧.m4a"
     },
@@ -2716,7 +2716,7 @@
       "title": "被禁忌的游戏 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 330.74503401360545,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/被禁忌的游戏.m4a"
     },
@@ -2725,7 +2725,7 @@
       "title": "春末的南方城市 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 200.73650793650793,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/春末的南方城市.m4a"
     },
@@ -2734,7 +2734,7 @@
       "title": "董卓瑶 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 199.48263038548754,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/董卓瑶.m4a"
     },
@@ -2743,7 +2743,7 @@
       "title": "和你在一起 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 231.13142857142856,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/和你在一起.m4a"
     },
@@ -2752,7 +2752,7 @@
       "title": "黑色信封 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 289.0187755102041,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/黑色信封.m4a"
     },
@@ -2761,7 +2761,7 @@
       "title": "红色气球 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 221.12362811791382,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/红色气球.m4a"
     },
@@ -2770,7 +2770,7 @@
       "title": "结婚 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 265.0093424036281,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/结婚.m4a"
     },
@@ -2779,7 +2779,7 @@
       "title": "卡夫卡 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 204.358820861678,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/卡夫卡.m4a"
     },
@@ -2788,7 +2788,7 @@
       "title": "来了 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 323.45396825396824,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/来了.m4a"
     },
@@ -2797,7 +2797,7 @@
       "title": "青春 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 143.59219954648526,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/青春.m4a"
     },
@@ -2806,7 +2806,7 @@
       "title": "他们 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 257.6021768707483,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/他们.m4a"
     },
@@ -2815,7 +2815,7 @@
       "title": "想起了她 [Live Bonus Track]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 775.7322448979592,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/想起了她.m4a"
     },
@@ -2824,7 +2824,7 @@
       "title": "月亮代表我的心 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 109.64462585034013,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/月亮代表我的心.m4a"
     },
@@ -2833,7 +2833,7 @@
       "title": "这个世界会好吗 [Live]",
       "artist": "李志",
       "album": "工体东路没有人 (Live.2009.1.11)",
-      "duration": null,
+      "duration": 256.78947845804987,
       "mimeType": "audio/mp4",
       "objectKey": "李志/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/工体东路没有人 2009 Live/这个世界会好吗.m4a"
     },
@@ -2842,7 +2842,7 @@
       "title": "爱",
       "artist": "李志",
       "album": "爵士乐与不插电新编12首",
-      "duration": null,
+      "duration": 279.1680045351474,
       "mimeType": "audio/flac",
       "objectKey": "李志/爵士与不插电新编12首/爱 (相信未来版).flac"
     },
@@ -2851,7 +2851,7 @@
       "title": "董卓瑶",
       "artist": "李志",
       "album": "爵士乐与不插电新编12首",
-      "duration": null,
+      "duration": 309.695873015873,
       "mimeType": "audio/flac",
       "objectKey": "李志/爵士与不插电新编12首/董卓瑶 (相信未来版).flac"
     },
@@ -2860,7 +2860,7 @@
       "title": "关于郑州的记忆",
       "artist": "李志",
       "album": "爵士乐与不插电新编12首",
-      "duration": null,
+      "duration": 360.1066666666667,
       "mimeType": "audio/flac",
       "objectKey": "李志/爵士与不插电新编12首/关于郑州的记忆 (相信未来版).flac"
     },
@@ -2869,7 +2869,7 @@
       "title": "卡夫卡",
       "artist": "李志",
       "album": "爵士乐与不插电新编12首",
-      "duration": null,
+      "duration": 322.74666666666667,
       "mimeType": "audio/flac",
       "objectKey": "李志/爵士与不插电新编12首/卡夫卡 (相信未来版).flac"
     },
@@ -2878,7 +2878,7 @@
       "title": "看见",
       "artist": "李志",
       "album": "爵士乐与不插电新编12首",
-      "duration": null,
+      "duration": 233.04533333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/爵士与不插电新编12首/看见 (相信未来版).flac"
     },
@@ -2887,7 +2887,7 @@
       "title": "离婚",
       "artist": "李志",
       "album": "爵士乐与不插电新编12首",
-      "duration": null,
+      "duration": 277.504,
       "mimeType": "audio/flac",
       "objectKey": "李志/爵士与不插电新编12首/离婚 (相信未来版).flac"
     },
@@ -2896,7 +2896,7 @@
       "title": "热河",
       "artist": "李志",
       "album": "爵士乐与不插电新编12首",
-      "duration": null,
+      "duration": 477.71733333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/爵士与不插电新编12首/热河 (相信未来版).flac"
     },
@@ -2905,7 +2905,7 @@
       "title": "鼠说",
       "artist": "李志",
       "album": "爵士乐与不插电新编12首",
-      "duration": null,
+      "duration": 502.69142857142856,
       "mimeType": "audio/flac",
       "objectKey": "李志/爵士与不插电新编12首/鼠说 (相信未来版).flac"
     },
@@ -2914,7 +2914,7 @@
       "title": "死人",
       "artist": "李志",
       "album": "爵士乐与不插电新编12首",
-      "duration": null,
+      "duration": 250.20596371882087,
       "mimeType": "audio/flac",
       "objectKey": "李志/爵士与不插电新编12首/死人 (相信未来版).flac"
     },
@@ -2923,7 +2923,7 @@
       "title": "鸵鸟",
       "artist": "李志",
       "album": "爵士乐与不插电新编12首",
-      "duration": null,
+      "duration": 237.71733333333333,
       "mimeType": "audio/flac",
       "objectKey": "李志/爵士与不插电新编12首/鸵鸟 (相信未来版).flac"
     },
@@ -2932,7 +2932,7 @@
       "title": "翁庆年的六英镑",
       "artist": "李志",
       "album": "爵士乐与不插电新编12首",
-      "duration": null,
+      "duration": 406.02823129251703,
       "mimeType": "audio/flac",
       "objectKey": "李志/爵士与不插电新编12首/翁庆年的六英镑 (相信未来版).flac"
     },
@@ -2941,7 +2941,7 @@
       "title": "一个夜晚",
       "artist": "李志",
       "album": "爵士乐与不插电新编12首",
-      "duration": null,
+      "duration": 328.5039909297052,
       "mimeType": "audio/flac",
       "objectKey": "李志/爵士与不插电新编12首/一个夜晚 (相信未来版).flac"
     },
@@ -2950,7 +2950,7 @@
       "title": "苍井空 2015现场版",
       "artist": "李志",
       "album": "看见",
-      "duration": null,
+      "duration": 307.59183673469386,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/看见 2015 Live/苍井空 2015现场版.mp3"
     },
@@ -2959,7 +2959,7 @@
       "title": "春末的南方城市 2015现场版",
       "artist": "李志",
       "album": "看见",
-      "duration": null,
+      "duration": 247.6930612244898,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/看见 2015 Live/春末的南方城市 2015现场版.mp3"
     },
@@ -2968,7 +2968,7 @@
       "title": "董卓瑶 2015现场版",
       "artist": "李志",
       "album": "看见",
-      "duration": null,
+      "duration": 278.90938775510205,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/看见 2015 Live/董卓瑶 2015现场版.mp3"
     },
@@ -2977,7 +2977,7 @@
       "title": "梵高先生 2015伴奏版",
       "artist": "李志",
       "album": "看见",
-      "duration": null,
+      "duration": 166.66122448979593,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/看见 2015 Live/梵高先生 2015伴奏版.mp3"
     },
@@ -2986,7 +2986,7 @@
       "title": "黑色信封 2015现场版",
       "artist": "李志",
       "album": "看见",
-      "duration": null,
+      "duration": 292.25795918367345,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/看见 2015 Live/黑色信封 2015现场版.mp3"
     },
@@ -2995,7 +2995,7 @@
       "title": "看见 2015现场版",
       "artist": "李志",
       "album": "看见",
-      "duration": null,
+      "duration": 140.01632653061225,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/看见 2015 Live/看见 2015现场版.mp3"
     },
@@ -3004,7 +3004,7 @@
       "title": "离婚 2015现场版",
       "artist": "李志",
       "album": "看见",
-      "duration": null,
+      "duration": 289.2016326530612,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/看见 2015 Live/离婚 2015现场版.mp3"
     },
@@ -3013,7 +3013,7 @@
       "title": "你离开了南京，从此没有人和我说话 2015现场版",
       "artist": "李志",
       "album": "看见",
-      "duration": null,
+      "duration": 124.68244897959184,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/看见 2015 Live/你离开了南京，从此没有人和我说话 2015现场版.mp3"
     },
@@ -3022,7 +3022,7 @@
       "title": "热河 2015现场版",
       "artist": "李志",
       "album": "看见",
-      "duration": null,
+      "duration": 484.545306122449,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/看见 2015 Live/热河 2015现场版.mp3"
     },
@@ -3031,7 +3031,7 @@
       "title": "下雨（看见Live）",
       "artist": "李志",
       "album": "看见",
-      "duration": null,
+      "duration": 332.8261224489796,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/看见 2015 Live/下雨（看见Live）.mp3"
     },
@@ -3040,7 +3040,7 @@
       "title": "被禁忌的游戏",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 330,
       "mimeType": "audio/flac",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/被禁忌的游戏.flac"
     },
@@ -3049,7 +3049,7 @@
       "title": "梵高先生",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 161.26666666666668,
       "mimeType": "audio/flac",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/梵高先生 - 玩偶之主录音棚.flac"
     },
@@ -3058,7 +3058,7 @@
       "title": "被禁忌的游戏（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 331.70285714285717,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/被禁忌的游戏（洗心革面版）.mp3"
     },
@@ -3067,7 +3067,7 @@
       "title": "大象（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 371.2522448979592,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/大象（洗心革面版）.mp3"
     },
@@ -3076,7 +3076,7 @@
       "title": "倒影（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 292.545306122449,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/倒影（洗心革面版）.mp3"
     },
@@ -3085,7 +3085,7 @@
       "title": "定西（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 289.85469387755103,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/定西（洗心革面版）.mp3"
     },
@@ -3094,7 +3094,7 @@
       "title": "董卓瑶&春末的南方城市（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 517.955918367347,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/董卓瑶&春末的南方城市（洗心革面版）.mp3"
     },
@@ -3103,7 +3103,7 @@
       "title": "方式（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 263.3142857142857,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/方式（洗心革面版）.mp3"
     },
@@ -3112,7 +3112,7 @@
       "title": "关于郑州的回忆（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 379.74204081632655,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/关于郑州的回忆（洗心革面版）.mp3"
     },
@@ -3121,7 +3121,7 @@
       "title": "和你在一起（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 260.70204081632653,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/和你在一起（洗心革面版）.mp3"
     },
@@ -3130,7 +3130,7 @@
       "title": "黑色信封（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 275.14775510204083,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/黑色信封（洗心革面版）.mp3"
     },
@@ -3139,7 +3139,7 @@
       "title": "结婚（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 448.6530612244898,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/结婚（洗心革面版）.mp3"
     },
@@ -3148,7 +3148,7 @@
       "title": "尽头&来了（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 512.3918367346939,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/尽头&来了（洗心革面版）.mp3"
     },
@@ -3157,7 +3157,7 @@
       "title": "路（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 216.89469387755102,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/路（洗心革面版）.mp3"
     },
@@ -3166,7 +3166,7 @@
       "title": "门（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 420.3885714285714,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/门（洗心革面版）.mp3"
     },
@@ -3175,7 +3175,7 @@
       "title": "你好明天&不多&杭州（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 757.4726530612245,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/你好明天&不多&杭州（洗心革面版）.mp3"
     },
@@ -3184,7 +3184,7 @@
       "title": "你离开了南京，从此没有人和我说话（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 185.9395918367347,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/你离开了南京，从此没有人和我说话（洗心革面版）.mp3"
     },
@@ -3193,7 +3193,7 @@
       "title": "哦吼（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 327.41877551020406,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/哦吼（洗心革面版）.mp3"
     },
@@ -3202,7 +3202,7 @@
       "title": "墙上的向日葵（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 505.10367346938773,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/墙上的向日葵（洗心革面版）.mp3"
     },
@@ -3211,7 +3211,7 @@
       "title": "山阴路的夏天（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 406.9877551020408,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/山阴路的夏天（洗心革面版）.mp3"
     },
@@ -3220,7 +3220,7 @@
       "title": "死人（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 357.5118367346939,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/死人（洗心革面版）.mp3"
     },
@@ -3229,7 +3229,7 @@
       "title": "天空之城（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 221.3877551020408,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/天空之城（洗心革面版）.mp3"
     },
@@ -3238,7 +3238,7 @@
       "title": "鸵鸟（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 465.7371428571429,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/鸵鸟（洗心革面版）.mp3"
     },
@@ -3247,7 +3247,7 @@
       "title": "寻找&忽然&热河（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 815.1771428571428,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/寻找&忽然&热河（洗心革面版）.mp3"
     },
@@ -3256,7 +3256,7 @@
       "title": "一个夜晚（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 424.93387755102043,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/一个夜晚（洗心革面版）.mp3"
     },
@@ -3265,7 +3265,7 @@
       "title": "这个世界会好吗（洗心革面版）",
       "artist": "李志",
       "album": "洗心革面",
-      "duration": null,
+      "duration": 192.54857142857142,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/洗心革面 - 2019跨年音乐会/这个世界会好吗（洗心革面版）.mp3"
     },
@@ -3274,7 +3274,7 @@
       "title": "Intro",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 61.632,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/01 - Intro.mp3"
     },
@@ -3283,7 +3283,7 @@
       "title": "杭州",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 242.28,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/02 - 杭州.mp3"
     },
@@ -3292,7 +3292,7 @@
       "title": "关于郑州的记忆",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 227.184,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/03 - 关于郑州的记忆.mp3"
     },
@@ -3301,7 +3301,7 @@
       "title": "墙上的向日葵",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 512.256,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/04 - 墙上的向日葵.mp3"
     },
@@ -3310,7 +3310,7 @@
       "title": "黑色信封",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 305.976,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/05 - 黑色信封.mp3"
     },
@@ -3319,7 +3319,7 @@
       "title": "春末的南方城市",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 258.192,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/06 - 春末的南方城市.mp3"
     },
@@ -3328,7 +3328,7 @@
       "title": "被禁忌的游戏",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 397.656,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/07 - 被禁忌的游戏.mp3"
     },
@@ -3337,7 +3337,7 @@
       "title": "铅笔",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 383.112,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/08 - 铅笔.mp3"
     },
@@ -3346,7 +3346,7 @@
       "title": "来了",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 302.544,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/09 - 来了.mp3"
     },
@@ -3355,7 +3355,7 @@
       "title": "我们是比较慢热的（Talking）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 98.016,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/10 - 我们是比较慢热的（Talking）.mp3"
     },
@@ -3364,7 +3364,7 @@
       "title": "苍井空",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 332.064,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/12 - 苍井空.mp3"
     },
@@ -3373,7 +3373,7 @@
       "title": "寻找",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 282.504,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/13 - 寻找.mp3"
     },
@@ -3382,7 +3382,7 @@
       "title": "我们试试看，好吧（Talking）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 154.488,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/14 - 我们试试看，好吧（Talking）.mp3"
     },
@@ -3391,7 +3391,7 @@
       "title": "1990年的春天",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 335.112,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/15 - 1990年的春天.mp3"
     },
@@ -3400,7 +3400,7 @@
       "title": "你的早晨",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 273.696,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/16 - 你的早晨.mp3"
     },
@@ -3409,7 +3409,7 @@
       "title": "他们",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 213.696,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/17 - 他们.mp3"
     },
@@ -3418,7 +3418,7 @@
       "title": "广场",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 281.472,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/18 - 广场.mp3"
     },
@@ -3427,7 +3427,7 @@
       "title": "这个世界会好吗",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 286.224,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/19 - 这个世界会好吗.mp3"
     },
@@ -3436,7 +3436,7 @@
       "title": "妈妈",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 329.952,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/20 - 妈妈.mp3"
     },
@@ -3445,7 +3445,7 @@
       "title": "坦白说到现在为止我们没有去年演得好但是我可以再努力嘛（Talking）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 212.808,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/21 - 坦白说到现在为止我们没有去年演得好但是我可以再努力嘛（Talking）.mp3"
     },
@@ -3454,7 +3454,7 @@
       "title": "大象",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 337.8,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/22 - 大象.mp3"
     },
@@ -3463,7 +3463,7 @@
       "title": "鼠说",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 325.08,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/23 - 鼠说.mp3"
     },
@@ -3472,7 +3472,7 @@
       "title": "定西",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 382.464,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/24 - 定西.mp3"
     },
@@ -3481,7 +3481,7 @@
       "title": "看见",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 270.312,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/25 - 看见.mp3"
     },
@@ -3490,7 +3490,7 @@
       "title": "不多",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 283.32,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/26 - 不多.mp3"
     },
@@ -3499,7 +3499,7 @@
       "title": "方式",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 289.032,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/27 - 方式.mp3"
     },
@@ -3508,7 +3508,7 @@
       "title": "热河",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 514.416,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/28 - 热河.mp3"
     },
@@ -3517,7 +3517,7 @@
       "title": "不知不觉（Talking）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 52.488,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/29 - 不知不觉（Talking）.mp3"
     },
@@ -3526,7 +3526,7 @@
       "title": "确定是谁的时候就尖叫一下吧（Talking）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 362.904,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/30 - 确定是谁的时候就尖叫一下吧（Talking）.mp3"
     },
@@ -3535,7 +3535,7 @@
       "title": "傲慢的上校（朴树）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 313.44,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/31 - 傲慢的上校（朴树）.mp3"
     },
@@ -3544,7 +3544,7 @@
       "title": "Radio In My Head（朴树）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 237.024,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/32 - Radio In My Head（朴树）.mp3"
     },
@@ -3553,7 +3553,7 @@
       "title": "Colorful Days（朴树）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 252.456,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/33 - Colorful Days（朴树）.mp3"
     },
@@ -3562,7 +3562,7 @@
       "title": "可能一直会跟李志在一块儿混（朴树 Talking）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 183.888,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/34 - 可能一直会跟李志在一块儿混（朴树 Talking）.mp3"
     },
@@ -3571,7 +3571,7 @@
       "title": "白桦林（朴树）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 268.344,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/35 - 白桦林（朴树）.mp3"
     },
@@ -3580,7 +3580,7 @@
       "title": "那些花儿（朴树）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 349.728,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/36 - 那些花儿（朴树）.mp3"
     },
@@ -3589,7 +3589,7 @@
       "title": "旅途（朴树）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 289.8,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/37 - 旅途（朴树）.mp3"
     },
@@ -3598,7 +3598,7 @@
       "title": "我去2000年（朴树）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 342.144,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/38 - 我去2000年（朴树）.mp3"
     },
@@ -3607,7 +3607,7 @@
       "title": "生如夏花",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 331.44,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/39 - 生如夏花.mp3"
     },
@@ -3616,7 +3616,7 @@
       "title": "平凡之路（朴树）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 329.832,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/40 - 平凡之路（朴树）.mp3"
     },
@@ -3625,7 +3625,7 @@
       "title": "在希望的田野上（朴树）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 413.16,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/41 - 在希望的田野上（朴树）.mp3"
     },
@@ -3634,7 +3634,7 @@
       "title": "别，千万别 法语版（朴树）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 569.976,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/42 - 别，千万别 法语版（朴树）.mp3"
     },
@@ -3643,7 +3643,7 @@
       "title": "我，现在可以，正儿八经地，正大光明地，搞摇滚乐了（Talking）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 354.264,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/43 - 我，现在可以，正儿八经地，正大光明地，搞摇滚乐了（Talking）.mp3"
     },
@@ -3652,7 +3652,7 @@
       "title": "和你在一起",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 254.424,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/44 - 和你在一起.mp3"
     },
@@ -3661,7 +3661,7 @@
       "title": "离婚",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 309,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/45 - 离婚.mp3"
     },
@@ -3670,7 +3670,7 @@
       "title": "秋天的老狼",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 448.824,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/46 - 秋天的老狼.mp3"
     },
@@ -3679,7 +3679,7 @@
       "title": "鸵鸟",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 225.84,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/47 - 鸵鸟.mp3"
     },
@@ -3688,7 +3688,7 @@
       "title": "天空之城&我们不能失去信仰",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 410.928,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/48 - 天空之城&我们不能失去信仰.mp3"
     },
@@ -3697,7 +3697,7 @@
       "title": "意味",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 322.896,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/49 - 意味.mp3"
     },
@@ -3706,7 +3706,7 @@
       "title": "山阴路的夏天",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 330.936,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/50 - 山阴路的夏天.mp3"
     },
@@ -3715,7 +3715,7 @@
       "title": "你离开了南京，从此没有人和我说话",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 162.456,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/51 - 你离开了南京，从此没有人和我说话.mp3"
     },
@@ -3724,7 +3724,7 @@
       "title": "致谢&谢幕（Talking）",
       "artist": "李志",
       "album": "i/O李志跨年音乐会音频纪录",
-      "duration": null,
+      "duration": 562.152,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/52 - 致谢&谢幕（Talking）.mp3"
     },
@@ -3733,7 +3733,7 @@
       "title": "杭州",
       "artist": "李志",
       "album": "i/O",
-      "duration": null,
+      "duration": 247.64081632653063,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/专辑版/01 - 杭州.mp3"
     },
@@ -3742,7 +3742,7 @@
       "title": "墙上的向日葵",
       "artist": "李志",
       "album": "i/O",
-      "duration": null,
+      "duration": 482.2726530612245,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/专辑版/02 - 墙上的向日葵.mp3"
     },
@@ -3751,7 +3751,7 @@
       "title": "铅笔",
       "artist": "李志",
       "album": "i/O",
-      "duration": null,
+      "duration": 374.2563265306122,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/专辑版/03 - 铅笔.mp3"
     },
@@ -3760,7 +3760,7 @@
       "title": "来了",
       "artist": "李志",
       "album": "i/O",
-      "duration": null,
+      "duration": 286.0408163265306,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/专辑版/04 - 来了.mp3"
     },
@@ -3769,7 +3769,7 @@
       "title": "下雨 & 董卓瑶 & 忽然",
       "artist": "李志",
       "album": "i/O",
-      "duration": null,
+      "duration": 720.9273469387755,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/专辑版/05 - 下雨 & 董卓瑶 & 忽然.mp3"
     },
@@ -3778,7 +3778,7 @@
       "title": "这个世界会好吗",
       "artist": "李志",
       "album": "i/O",
-      "duration": null,
+      "duration": 265.4563265306123,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/专辑版/06 - 这个世界会好吗.mp3"
     },
@@ -3787,7 +3787,7 @@
       "title": "妈妈",
       "artist": "李志",
       "album": "i/O",
-      "duration": null,
+      "duration": 298.44897959183675,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/专辑版/07 - 妈妈.mp3"
     },
@@ -3796,7 +3796,7 @@
       "title": "定西",
       "artist": "李志",
       "album": "i/O",
-      "duration": null,
+      "duration": 301.60979591836735,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/专辑版/08 - 定西.mp3"
     },
@@ -3805,7 +3805,7 @@
       "title": "方式",
       "artist": "李志",
       "album": "i/O",
-      "duration": null,
+      "duration": 261.4595918367347,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/专辑版/09 - 方式.mp3"
     },
@@ -3814,7 +3814,7 @@
       "title": "鸵鸟 & 天空之城 & 我们不能失去信仰",
       "artist": "李志",
       "album": "i/O",
-      "duration": null,
+      "duration": 606.145306122449,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/专辑版/10 - 鸵鸟 & 天空之城 & 我们不能失去信仰.mp3"
     },
@@ -3823,7 +3823,7 @@
       "title": "山阴路的夏天",
       "artist": "李志",
       "album": "i/O",
-      "duration": null,
+      "duration": 313.2081632653061,
       "mimeType": "audio/mpeg",
       "objectKey": "李志/IO 2014-2015 跨年音乐会/专辑版/11 - 山阴路的夏天.mp3"
     }
