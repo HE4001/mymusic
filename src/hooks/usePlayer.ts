@@ -75,6 +75,12 @@ function validMediaDuration(audio: HTMLAudioElement): number | null {
   return Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : null;
 }
 
+function hasReachedMediaEnd(audio: HTMLAudioElement): boolean {
+  const duration = validMediaDuration(audio);
+  // A browser can report ended=false when loop is enabled at the end of the track.
+  return audio.ended || (audio.loop && duration !== null && audio.currentTime >= duration);
+}
+
 function playbackErrorMessage(error: unknown): string {
   if (error instanceof ApiError || error instanceof MediaLoadError) return error.message;
   if (error instanceof Error && error.message) return error.message;
@@ -428,9 +434,12 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
         !recoveryUsedRef.current
       ) {
         recoveryUsedRef.current = true;
-        const audio = audioRef.current;
-        const position = Math.max(0, audio?.currentTime || currentTimeRef.current);
-        void loadTrackRef.current(trackId, position, wantsPlaybackRef.current, {
+        const mediaTime = audioRef.current?.currentTime;
+        const position =
+          mediaReadyRef.current && mediaTime !== undefined && Number.isFinite(mediaTime)
+            ? mediaTime
+            : currentTimeRef.current;
+        void loadTrackRef.current(trackId, Math.max(0, position), wantsPlaybackRef.current, {
           resetRecovery: false,
         });
         return;
@@ -449,17 +458,13 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
   }, [persistPreferences, setStatus]);
 
   const advance = useCallback(
-    (natural: boolean) => {
+    () => {
       const currentId = currentTrackIdRef.current;
       if (!currentId) return;
-      let nextId: string | null;
-      if (natural && modeRef.current === 'repeat-one') {
-        nextId = currentId;
-      } else if (modeRef.current === 'shuffle') {
-        nextId = getShuffleNext(queueRef.current, shuffleVisitedRef.current);
-      } else {
-        nextId = getSequentialNext(queueRef.current, currentId);
-      }
+      const nextId =
+        modeRef.current === 'shuffle'
+          ? getShuffleNext(queueRef.current, shuffleVisitedRef.current)
+          : getSequentialNext(queueRef.current, currentId);
       if (!nextId) {
         finishQueue();
         return;
@@ -470,7 +475,32 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
     },
     [finishQueue],
   );
-  handleEndedRef.current = () => advance(true);
+  const restartTrack = useCallback(
+    (audio: HTMLAudioElement, trackId: string) => {
+      const operationId = beginOperation(true);
+      setCurrentTime(0);
+      persistPreferences(true);
+      try {
+        audio.currentTime = 0;
+      } catch {
+        setFailure('无法从头播放，请重试');
+        return;
+      }
+      setStatus('buffering');
+      void safePlay(audio, operationId, trackId);
+    },
+    [beginOperation, persistPreferences, safePlay, setCurrentTime, setFailure, setStatus],
+  );
+  handleEndedRef.current = () => {
+    if (modeRef.current !== 'repeat-one') {
+      advance();
+      return;
+    }
+
+    const audio = audioRef.current;
+    const currentId = currentTrackIdRef.current;
+    if (audio && currentId && activeTrackIdRef.current === currentId) restartTrack(audio, currentId);
+  };
 
   const pause = useCallback(() => {
     if (!currentTrackIdRef.current) return;
@@ -507,11 +537,14 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       wantsPlaybackRef.current = true;
       setErrorState(null);
       setNoticeState(null);
+      const restart = audio.loop && hasReachedMediaEnd(audio);
       // The same-origin stream route is stable; only signed media URLs expire.
       if (!directPlayback && isTicketNearExpiry(ticketRef.current)) {
-        void loadTrackRef.current(currentId, currentTimeRef.current, true, {
+        void loadTrackRef.current(currentId, restart ? 0 : currentTimeRef.current, true, {
           resetRecovery: true,
         });
+      } else if (restart) {
+        restartTrack(audio, currentId);
       } else {
         setStatus('buffering');
         void safePlay(audio, operationIdRef.current, currentId);
@@ -521,7 +554,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
     void loadTrackRef.current(currentId, currentTimeRef.current, true, {
       resetRecovery: true,
     });
-  }, [directPlayback, pause, safePlay, setQueue, setStatus]);
+  }, [directPlayback, pause, restartTrack, safePlay, setQueue, setStatus]);
 
   const selectTrack = useCallback(
     (track: Track, nextTracks: Track[]) => {
@@ -553,7 +586,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
     [toggle],
   );
 
-  const next = useCallback(() => advance(false), [advance]);
+  const next = advance;
 
   const previous = useCallback(() => {
     const currentId = currentTrackIdRef.current;
@@ -616,6 +649,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
   const setMode = useCallback(
     (value: PlaybackMode) => {
       modeRef.current = value;
+      if (audioRef.current) audioRef.current.loop = value === 'repeat-one';
       setModeState(value);
       shuffleVisitedRef.current = currentTrackIdRef.current
         ? new Set([currentTrackIdRef.current])
@@ -656,6 +690,7 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
     const audio = new Audio();
     // Native audio playback does not need CORS; no Web Audio processing is used.
     audio.preload = 'metadata';
+    audio.loop = modeRef.current === 'repeat-one';
     audio.volume = volumeRef.current;
     audioRef.current = audio;
 
@@ -687,7 +722,8 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
         activeTrackIdRef.current &&
         statusRef.current !== 'loading' &&
         statusRef.current !== 'error' &&
-        !audio.ended
+        audio.paused &&
+        !hasReachedMediaEnd(audio)
       ) {
         wantsPlaybackRef.current = false;
         setStatus('paused');
@@ -698,7 +734,9 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       handleMediaFailureRef.current(operationIdRef.current, activeTrackIdRef.current);
     };
     const onEnded = () => {
-      if (mediaReadyRef.current && wantsPlaybackRef.current) handleEndedRef.current();
+      if (mediaReadyRef.current && wantsPlaybackRef.current && hasReachedMediaEnd(audio)) {
+        handleEndedRef.current();
+      }
     };
     const onVisibilityChange = () => {
       publishCurrentMedia();
@@ -710,6 +748,8 @@ export function usePlayer(tracks: Track[], options: PlayerOptions = {}): PlayerC
       const nextDuration = validMediaDuration(audio);
       if (nextDuration !== null) setDuration(nextDuration);
 
+      // Let the queued ended event handle natural completion.
+      if (wantsPlaybackRef.current && hasReachedMediaEnd(audio)) return;
       if (audio.ended || audio.paused) {
         wantsPlaybackRef.current = false;
         if (statusRef.current !== 'error') setStatus('paused');
